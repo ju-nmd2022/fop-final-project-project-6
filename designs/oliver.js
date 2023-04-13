@@ -101,6 +101,9 @@ fill(40, 40, 60);
 rect(wallX + 80, wallY, 5);
 rect(wallX + 80, wallY + 5, 5);
 rect(wallX + 80, wallY + 10, 5);
+rect(wallX + 80, wallY + 30, 5);
+rect(wallX + 80, wallY + 35, 5);
+rect(wallX + 80, wallY + 40, 5);
 
 rect(wallX + 35, wallY, 5);
 rect(wallX + 35, wallY + 5, 5);
@@ -109,6 +112,9 @@ rect(wallX + 35, wallY + 10, 5);
 rect(wallX - 10, wallY, 5);
 rect(wallX - 10, wallY + 5, 5);
 rect(wallX - 10, wallY + 10, 5);
+rect(wallX - 10, wallY + 30, 5);
+rect(wallX - 10, wallY + 35, 5);
+rect(wallX - 10, wallY + 40, 5);
 
 push();
 fill(20, 20, 40);
@@ -182,6 +188,7 @@ rect(wallX + 10, wallY + 45, 5);
 rect(wallX + 5, wallY + 45, 5);
 rect(wallX, wallY + 45, 5);
 rect(wallX - 5, wallY + 45, 5);
+rect(wallX - 10, wallY + 45, 5);
 
 pop();
 
@@ -200,7 +207,27 @@ fill(40, 40, 50);
 rect(wallX + 60, wallY + 45, 5);
 rect(wallX + 65, wallY + 45, 5);
 rect(wallX + 70, wallY + 45, 5);
+rect(wallX + 75, wallY + 45, 5);
+rect(wallX + 80, wallY + 45, 5);
 rect(wallX + 40, wallY + 45, 5);
 rect(wallX + 35, wallY + 45, 5);
+
+pop();
+
+push();
+
+fill(40, 40, 50);
+rect(wallX + 15, wallY + 40, 5);
+rect(wallX + 15, wallY + 35, 5);
+rect(wallX + 15, wallY + 30, 5);
+
+pop();
+
+push();
+
+fill(20, 20, 40);
+rect(wallX + 55, wallY + 40, 5);
+rect(wallX + 55, wallY + 35, 5);
+rect(wallX + 55, wallY + 30, 5);
 
 pop();

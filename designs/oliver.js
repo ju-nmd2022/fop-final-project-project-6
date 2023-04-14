@@ -4,7 +4,7 @@ let wallY = 100;
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px)
 
-background(100, 100, 100);
+background(10, 30, 35);
 
 noStroke();
 
@@ -525,6 +525,19 @@ function downWall(wallX, wallY) {
 
   pop();
 }
+
+//BACKGROUND
+push();
+
+fill(255, 0, 0);
+rect(wallX - 100, wallY + 100, 5);
+rect(wallX - 95, wallY + 95, 5);
+rect(wallX - 90, wallY + 90, 5);
+rect(wallX - 85, wallY + 85, 5);
+rect(wallX - 80, wallY + 85, 5);
+rect(wallX - 75, wallY + 85, 5);
+
+pop();
 
 // straightWall(10, 10);
 // straightWall(10, 90);

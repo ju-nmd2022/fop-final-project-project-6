@@ -1,12 +1,83 @@
 let wallX = 100;
 let wallY = 100;
+let groundX = 100;
+let groundY = 100;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px)
 
-background(10, 30, 35);
+background(10, 10, 10);
 
 noStroke();
+
+// BACKGROUND
+function groundGraphic(groundX, groundY) {
+  fill(10, 30, 35);
+  rect(groundX, groundY + 200, 100);
+
+  //Big Stone
+  fill(50, 50, 50);
+  rect(groundX + 35, groundY + 295, 5);
+  rect(groundX + 40, groundY + 295, 5);
+  rect(groundX + 45, groundY + 295, 5);
+  rect(groundX + 50, groundY + 295, 5);
+  rect(groundX + 45, groundY + 290, 5);
+  rect(groundX + 40, groundY + 290, 5);
+  rect(groundX + 35, groundY + 290, 5);
+  rect(groundX + 30, groundY + 295, 5);
+  rect(groundX + 35, groundY + 285, 5);
+  rect(groundX + 40, groundY + 285, 5);
+
+  //Shadow Stone
+  fill(80, 80, 80);
+  rect(groundX + 45, groundY + 295, 5);
+  rect(groundX + 40, groundY + 295, 5);
+  rect(groundX + 35, groundY + 295, 5);
+  rect(groundX + 40, groundY + 290, 5);
+
+  //Small Stones
+  fill(40, 40, 40);
+  rect(groundX + 15, groundY + 260, 5);
+  rect(groundX + 45, groundY + 230, 5);
+  rect(groundX + 55, groundY + 270, 5);
+  rect(groundX + 5, groundY + 210, 5);
+  rect(groundX + 75, groundY + 220, 5);
+  rect(groundX + 90, groundY + 290, 5);
+  rect(groundX + 5, groundY + 295, 5);
+
+  //Grass
+  fill(0, 60, 20);
+  rect(groundX + 70, groundY + 260, 5);
+  rect(groundX + 70, groundY + 255, 5);
+  rect(groundX + 80, groundY + 255, 5);
+
+  fill(0, 70, 40);
+  rect(groundX + 75, groundY + 260, 5);
+  rect(groundX + 65, groundY + 250, 5);
+  rect(groundX + 85, groundY + 250, 5);
+
+  //Small Stone
+  fill(50, 50, 50);
+  rect(groundX + 5, groundY + 245, 5);
+  rect(groundX + 10, groundY + 245, 5);
+  rect(groundX + 15, groundY + 245, 5);
+  rect(groundX + 20, groundY + 245, 5);
+  rect(groundX + 10, groundY + 240, 5);
+  rect(groundX + 15, groundY + 240, 5);
+
+  //Gunk
+  fill(70, 75, 70);
+  rect(groundX + 30, groundY + 235, 5);
+  rect(groundX + 20, groundY + 220, 5);
+  rect(groundX + 45, groundY + 265, 5);
+  rect(groundX + 60, groundY + 205, 5);
+  rect(groundX + 40, groundY + 210, 5);
+  rect(groundX + 30, groundY + 275, 5);
+  rect(groundX + 10, groundY + 280, 5);
+  rect(groundX + 90, groundY + 260, 5);
+  rect(groundX + 95, groundY + 230, 5);
+  rect(groundX + 65, groundY + 285, 5);
+}
 
 //Straight Wall Function
 function straightWall(wallX, wallY) {
@@ -537,3 +608,7 @@ function downWall(wallX, wallY) {
 // downWall(100, 175);
 // downWall(175, 175);
 // downWall(10, 90);
+
+for (let i = 0; i < 10; i++) {
+  groundGraphic(i * 100, -200);
+}

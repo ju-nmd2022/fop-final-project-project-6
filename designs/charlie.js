@@ -715,26 +715,22 @@ function characterRight(characterX, characterY) {
   fill(skinColor);
   rect(characterX + 15, characterY - 35, 5);
   rect(characterX + 10, characterY - 35, 5);
-
   rect(characterX + 20, characterY - 30, 5);
   rect(characterX + 15, characterY - 30, 5);
   rect(characterX + 10, characterY - 30, 5);
   rect(characterX + 5, characterY - 30, 5);
   rect(characterX - 5, characterY - 30, 5);
-
   rect(characterX + 20, characterY - 25, 5);
   rect(characterX + 10, characterY - 25, 5);
   rect(characterX + 5, characterY - 25, 5);
   rect(characterX + 0, characterY - 25, 5);
   rect(characterX - 5, characterY - 25, 5);
-
   rect(characterX + 20, characterY - 20, 5);
   rect(characterX + 10, characterY - 20, 5);
   rect(characterX + 5, characterY - 20, 5);
   rect(characterX + 0, characterY - 20, 5);
   rect(characterX - 5, characterY - 20, 5);
   rect(characterX - 10, characterY - 20, 5);
-
   rect(characterX + 15, characterY - 15, 5);
   rect(characterX + 10, characterY - 15, 5);
   rect(characterX + 5, characterY - 15, 5);
@@ -742,17 +738,69 @@ function characterRight(characterX, characterY) {
   rect(characterX - 5, characterY - 15, 5);
   rect(characterX - 10, characterY - 15, 5);
   rect(characterX - 15, characterY - 15, 5);
-
   rect(characterX + 10, characterY - 10, 5);
   rect(characterX + 5, characterY - 10, 5);
   rect(characterX + 0, characterY - 10, 5);
   rect(characterX - 5, characterY - 10, 5);
   rect(characterX - 10, characterY - 10, 5);
-
   rect(characterX + 5, characterY + 5, 5);
   rect(characterX + 5, characterY + 10, 5);
   rect(characterX + 0, characterY + 5, 5);
   rect(characterX + 0, characterY + 10, 5);
+}
+
+function donkItem(x, y) {
+  // outlines of donk
+  fill(220, 220, 220);
+  rect(x - 10, y - 5, 5);
+  rect(x - 5, y - 10, 5);
+  rect(x + 0, y - 10, 5);
+  rect(x + 5, y - 5, 5);
+  rect(x + 5, y + 0, 5);
+  rect(x + 0, y + 0, 5);
+  rect(x - 5, y + 0, 5);
+  rect(x - 10, y + 0, 5);
+  rect(x - 15, y + 0, 5);
+  rect(x - 20, y + 0, 5);
+  rect(x - 20, y + 5, 5);
+  rect(x - 20, y + 10, 5);
+  rect(x - 20, y + 15, 5);
+  rect(x - 20, y + 20, 5);
+  rect(x - 15, y + 25, 5);
+  rect(x - 10, y + 25, 5);
+  rect(x - 5, y + 25, 5);
+  rect(x + 0, y + 25, 5);
+  rect(x + 5, y + 20, 5);
+  rect(x + 5, y + 15, 5);
+  rect(x + 5, y + 10, 5);
+  rect(x + 5, y + 5, 5);
+  // cork
+  fill(0, 0, 0);
+  rect(x - 20, y - 5, 5);
+  rect(x - 15, y - 5, 5);
+
+  // liquid
+  fill(255, 175, 0);
+  rect(x - 15, y + 5, 5);
+  rect(x - 10, y + 5, 5);
+  rect(x - 5, y + 5, 5);
+  rect(x + 0, y + 5, 5);
+  fill(255, 155, 0);
+  rect(x - 15, y + 10, 5);
+  rect(x - 10, y + 10, 5);
+  rect(x - 5, y + 10, 5);
+  rect(x + 0, y + 10, 5);
+  fill(240, 140, 0);
+  rect(x - 15, y + 15, 5);
+  rect(x - 10, y + 15, 5);
+  rect(x - 5, y + 15, 5);
+  rect(x + 0, y + 15, 5);
+  fill(225, 125, 0);
+  rect(x - 10, y + 20, 5);
+  rect(x - 5, y + 20, 5);
+  fill(240, 140, 0);
+  rect(x - 15, y + 20, 5);
+  rect(x + 0, y + 20, 5);
 }
 function draw() {
   noStroke();
@@ -760,4 +808,5 @@ function draw() {
   characterUp(100, 200);
   characterLeft(200, 100);
   characterRight(200, 200);
+  donkItem(300, 200);
 }

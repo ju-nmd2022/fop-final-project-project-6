@@ -963,9 +963,9 @@ function plateau() {
 }
 
 //Draw the character
-// function draw() {
-//   characterDown(250, 100);
-// }
+function draw() {
+  characterDown(250, 150);
+}
 
 //Spreading out the ground tiles in a for loop
 const length = 10;

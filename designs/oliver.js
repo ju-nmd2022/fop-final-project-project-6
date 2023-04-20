@@ -3,6 +3,12 @@ let wallY = 100;
 let groundX = 100;
 let groundY = 100;
 
+//character array for colours
+let shirtColor = [255, 0, 0];
+let pantsColor = [255, 225, 0];
+let hairColor = [255, 155, 0];
+let shoeColor = [120, 50, 50];
+
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px)
 
@@ -597,18 +603,393 @@ function downWall(wallX, wallY) {
   pop();
 }
 
-// straightWall(10, 10);
-// straightWall(10, 90);
-// straightWall(100, 175);
-// straightWall(280, 175);
-// straightWall(100, 10);
-// straightWall(190, 95);
+//Character Going Down Graphic
+function characterDown(characterX, characterY) {
+  noStroke();
+  // outlines of front of character
+  fill(0, 0, 0);
+  //   head
+  rect(characterX - 5, characterY - 5, 5);
+  rect(characterX, characterY - 5, 5);
+  rect(characterX + 5, characterY - 5, 5);
+  rect(characterX + 10, characterY - 5, 5);
+  rect(characterX + 15, characterY - 10, 5);
+  rect(characterX + 20, characterY - 15, 5);
+  rect(characterX + 25, characterY - 20, 5);
+  rect(characterX + 30, characterY - 25, 5);
+  rect(characterX + 30, characterY - 30, 5);
+  rect(characterX + 30, characterY - 35, 5);
+  rect(characterX + 25, characterY - 40, 5);
+  rect(characterX + 25, characterY - 45, 5);
+  rect(characterX + 20, characterY - 50, 5);
+  rect(characterX + 15, characterY - 50, 5);
+  rect(characterX + 10, characterY - 55, 5);
+  rect(characterX + 5, characterY - 55, 5);
+  rect(characterX + 0, characterY - 55, 5);
+  rect(characterX - 5, characterY - 55, 5);
+  rect(characterX - 10, characterY - 50, 5);
+  rect(characterX - 15, characterY - 50, 5);
+  rect(characterX - 20, characterY - 45, 5);
+  rect(characterX - 20, characterY - 40, 5);
+  rect(characterX - 25, characterY - 35, 5);
+  rect(characterX - 25, characterY - 30, 5);
+  rect(characterX - 25, characterY - 25, 5);
+  rect(characterX - 20, characterY - 20, 5);
+  rect(characterX - 15, characterY - 15, 5);
+  rect(characterX - 10, characterY - 10, 5);
+  //   caracter eyes
+  rect(characterX - 5, characterY - 15, 5);
+  rect(characterX - 5, characterY - 20, 5);
+  rect(characterX - 5, characterY - 15, 5);
+  rect(characterX + 10, characterY - 15, 5);
+  rect(characterX + 10, characterY - 20, 5);
+  rect(characterX - 5, characterY - 15, 5);
+  // body
+  rect(characterX + 25, characterY - 10, 5);
+  rect(characterX + 30, characterY - 5, 5);
+  rect(characterX + 35, characterY + 0, 5);
+  rect(characterX + 35, characterY + 5, 5);
+  rect(characterX + 30, characterY + 10, 5);
+  rect(characterX + 25, characterY + 10, 5);
+  rect(characterX + 25, characterY + 15, 5);
+  rect(characterX + 25, characterY + 20, 5);
+  rect(characterX + 25, characterY + 25, 5);
+  rect(characterX + 20, characterY + 30, 5);
+  rect(characterX + 15, characterY + 30, 5);
+  rect(characterX + 10, characterY + 30, 5);
 
-// downWall(100, 10);
-// downWall(100, 175);
-// downWall(175, 175);
-// downWall(10, 90);
+  rect(characterX + 5, characterY + 25, 5);
+  rect(characterX + 5, characterY + 20, 5);
+  rect(characterX + 0, characterY + 25, 5);
+  rect(characterX + 0, characterY + 20, 5);
 
-for (let i = 0; i < 10; i++) {
-  groundGraphic(i * 100, -200);
+  rect(characterX - 15, characterY + 30, 5);
+  rect(characterX - 10, characterY + 30, 5);
+  rect(characterX - 5, characterY + 30, 5);
+
+  rect(characterX - 20, characterY + 25, 5);
+  rect(characterX - 20, characterY + 20, 5);
+  rect(characterX - 20, characterY + 15, 5);
+  rect(characterX - 20, characterY + 10, 5);
+  rect(characterX - 25, characterY + 10, 5);
+  rect(characterX - 30, characterY + 5, 5);
+  rect(characterX - 30, characterY + 0, 5);
+  rect(characterX - 25, characterY - 5, 5);
+  rect(characterX - 20, characterY - 10, 5);
+
+  rect(characterX - 10, characterY + 10, 5);
+  rect(characterX - 5, characterY + 10, 5);
+  rect(characterX + 0, characterY + 10, 5);
+  rect(characterX + 5, characterY + 10, 5);
+  rect(characterX + 10, characterY + 10, 5);
+  rect(characterX + 15, characterY + 10, 5);
+  rect(characterX + 20, characterY + 5, 5);
+  rect(characterX + 20, characterY + 0, 5);
+  rect(characterX - 15, characterY + 5, 5);
+  rect(characterX - 15, characterY + 0, 5);
+
+  fill(shirtColor);
+  // red shirt on front of character
+  rect(characterX - 15, characterY - 10, 5);
+  rect(characterX - 15, characterY - 5, 5);
+  rect(characterX - 10, characterY - 5, 5);
+  rect(characterX - 10, characterY, 5);
+  rect(characterX - 5, characterY, 5);
+  rect(characterX, characterY, 5);
+  rect(characterX + 5, characterY, 5);
+  rect(characterX + 10, characterY, 5);
+  rect(characterX + 15, characterY, 5);
+  rect(characterX + 15, characterY - 5, 5);
+  rect(characterX + 20, characterY - 5, 5);
+  rect(characterX + 20, characterY - 10, 5);
+  rect(characterX - 10, characterY + 5, 5);
+  rect(characterX - 5, characterY + 5, 5);
+  rect(characterX + 0, characterY + 5, 5);
+  rect(characterX + 5, characterY + 5, 5);
+  rect(characterX + 10, characterY + 5, 5);
+  rect(characterX + 15, characterY + 5, 5);
+
+  //   hair on front of character
+  fill(hairColor);
+  rect(characterX + 10, characterY - 50, 5);
+  rect(characterX + 5, characterY - 50, 5);
+  rect(characterX + 0, characterY - 50, 5);
+  rect(characterX - 5, characterY - 50, 5);
+  rect(characterX + 20, characterY - 45, 5);
+  rect(characterX + 15, characterY - 45, 5);
+  rect(characterX + 10, characterY - 45, 5);
+  rect(characterX + 5, characterY - 45, 5);
+  rect(characterX + 0, characterY - 45, 5);
+  rect(characterX - 5, characterY - 45, 5);
+  rect(characterX - 10, characterY - 45, 5);
+  rect(characterX - 15, characterY - 45, 5);
+  rect(characterX + 20, characterY - 40, 5);
+  rect(characterX + 15, characterY - 40, 5);
+  rect(characterX + 10, characterY - 40, 5);
+  rect(characterX + 5, characterY - 40, 5);
+  rect(characterX + 0, characterY - 40, 5);
+  rect(characterX - 5, characterY - 40, 5);
+  rect(characterX - 10, characterY - 40, 5);
+  rect(characterX - 15, characterY - 40, 5);
+  rect(characterX + 25, characterY - 35, 5);
+  rect(characterX + 20, characterY - 35, 5);
+  rect(characterX + 15, characterY - 35, 5);
+  rect(characterX + 10, characterY - 35, 5);
+  rect(characterX + 5, characterY - 35, 5);
+  rect(characterX + 0, characterY - 35, 5);
+  rect(characterX - 5, characterY - 35, 5);
+  rect(characterX - 10, characterY - 35, 5);
+  rect(characterX - 20, characterY - 35, 5);
+  rect(characterX + 20, characterY - 30, 5);
+  rect(characterX + 15, characterY - 30, 5);
+  rect(characterX + 10, characterY - 30, 5);
+  rect(characterX + 5, characterY - 30, 5);
+  rect(characterX + 0, characterY - 30, 5);
+
+  //   skin on front of character
+  fill(245, 220, 200);
+  rect(characterX - 15, characterY - 35, 5);
+  rect(characterX - 20, characterY - 30, 5);
+  rect(characterX - 15, characterY - 30, 5);
+  rect(characterX - 10, characterY - 30, 5);
+  rect(characterX - 5, characterY - 30, 5);
+  rect(characterX + 25, characterY - 30, 5);
+  rect(characterX - 20, characterY - 25, 5);
+  rect(characterX - 15, characterY - 25, 5);
+  rect(characterX - 10, characterY - 25, 5);
+  rect(characterX - 5, characterY - 25, 5);
+  rect(characterX + 0, characterY - 25, 5);
+  rect(characterX + 5, characterY - 25, 5);
+  rect(characterX + 10, characterY - 25, 5);
+  rect(characterX + 15, characterY - 25, 5);
+  rect(characterX + 20, characterY - 25, 5);
+  rect(characterX + 25, characterY - 25, 5);
+
+  rect(characterX - 15, characterY - 20, 5);
+  rect(characterX - 10, characterY - 20, 5);
+  rect(characterX + 0, characterY - 20, 5);
+  rect(characterX + 5, characterY - 20, 5);
+  rect(characterX + 15, characterY - 20, 5);
+  rect(characterX + 20, characterY - 20, 5);
+
+  rect(characterX - 10, characterY - 15, 5);
+  rect(characterX + 0, characterY - 15, 5);
+  rect(characterX + 5, characterY - 15, 5);
+  rect(characterX + 15, characterY - 15, 5);
+
+  rect(characterX - 5, characterY - 10, 5);
+  rect(characterX + 0, characterY - 10, 5);
+  rect(characterX + 5, characterY - 10, 5);
+  rect(characterX + 10, characterY - 10, 5);
+  // Hands
+  rect(characterX + 25, characterY - 5, 5);
+  rect(characterX + 25, characterY + 0, 5);
+  rect(characterX + 25, characterY + 5, 5);
+  rect(characterX + 30, characterY + 0, 5);
+  rect(characterX + 30, characterY + 5, 5);
+  rect(characterX - 20, characterY - 5, 5);
+  rect(characterX - 20, characterY + 0, 5);
+  rect(characterX - 20, characterY + 5, 5);
+  rect(characterX - 25, characterY + 0, 5);
+  rect(characterX - 25, characterY + 5, 5);
+
+  //   pants on front caracter
+  fill(pantsColor);
+  rect(characterX - 15, characterY + 10, 5);
+  rect(characterX + 20, characterY + 10, 5);
+
+  rect(characterX - 15, characterY + 15, 5);
+  rect(characterX - 10, characterY + 15, 5);
+  rect(characterX - 5, characterY + 15, 5);
+  rect(characterX + 0, characterY + 15, 5);
+  rect(characterX + 5, characterY + 15, 5);
+  rect(characterX + 10, characterY + 15, 5);
+  rect(characterX + 15, characterY + 15, 5);
+  rect(characterX + 20, characterY + 15, 5);
+
+  rect(characterX - 15, characterY + 20, 5);
+  rect(characterX - 10, characterY + 20, 5);
+  rect(characterX - 5, characterY + 20, 5);
+  rect(characterX + 10, characterY + 20, 5);
+  rect(characterX + 15, characterY + 20, 5);
+  rect(characterX + 20, characterY + 20, 5);
+
+  fill(shoeColor);
+  rect(characterX - 15, characterY + 25, 5);
+  rect(characterX - 10, characterY + 25, 5);
+  rect(characterX - 5, characterY + 25, 5);
+  rect(characterX + 10, characterY + 25, 5);
+  rect(characterX + 15, characterY + 25, 5);
+  rect(characterX + 20, characterY + 25, 5);
 }
+
+//Item PLateu
+function plateau() {
+  let plateauX = 0;
+  let plateauY = 0;
+
+  //Base Square
+  fill(70, 90, 70);
+  rect(plateauX + 10, plateauY + 95, 60);
+
+  //Steps
+  push();
+  fill(60, 80, 60);
+  rect(plateauX + 70, plateauY + 95, 5);
+  rect(plateauX + 70, plateauY + 100, 5);
+  rect(plateauX + 70, plateauY + 105, 5);
+  rect(plateauX + 70, plateauY + 110, 5);
+  rect(plateauX + 70, plateauY + 115, 5);
+  rect(plateauX + 70, plateauY + 120, 5);
+  rect(plateauX + 70, plateauY + 125, 5);
+  rect(plateauX + 70, plateauY + 130, 5);
+  rect(plateauX + 70, plateauY + 135, 5);
+  rect(plateauX + 70, plateauY + 140, 5);
+  rect(plateauX + 70, plateauY + 145, 5);
+  rect(plateauX + 70, plateauY + 150, 5);
+  pop();
+
+  push();
+  fill(50, 70, 50);
+  rect(plateauX + 75, plateauY + 100, 5);
+  rect(plateauX + 75, plateauY + 105, 5);
+  rect(plateauX + 75, plateauY + 110, 5);
+  rect(plateauX + 75, plateauY + 115, 5);
+  rect(plateauX + 75, plateauY + 120, 5);
+  rect(plateauX + 75, plateauY + 125, 5);
+  rect(plateauX + 75, plateauY + 130, 5);
+  rect(plateauX + 75, plateauY + 135, 5);
+  rect(plateauX + 75, plateauY + 140, 5);
+  rect(plateauX + 75, plateauY + 145, 5);
+  rect(plateauX + 75, plateauY + 150, 5);
+  pop();
+
+  push();
+  fill(40, 60, 40);
+  rect(plateauX + 80, plateauY + 105, 5);
+  rect(plateauX + 80, plateauY + 110, 5);
+  rect(plateauX + 80, plateauY + 115, 5);
+  rect(plateauX + 80, plateauY + 120, 5);
+  rect(plateauX + 80, plateauY + 125, 5);
+  rect(plateauX + 80, plateauY + 130, 5);
+  rect(plateauX + 80, plateauY + 135, 5);
+  rect(plateauX + 80, plateauY + 140, 5);
+  rect(plateauX + 80, plateauY + 145, 5);
+  rect(plateauX + 80, plateauY + 150, 5);
+  pop();
+
+  push();
+  fill(30, 50, 30);
+  rect(plateauX + 85, plateauY + 110, 5);
+  rect(plateauX + 85, plateauY + 115, 5);
+  rect(plateauX + 85, plateauY + 120, 5);
+  rect(plateauX + 85, plateauY + 125, 5);
+  rect(plateauX + 85, plateauY + 130, 5);
+  rect(plateauX + 85, plateauY + 135, 5);
+  rect(plateauX + 85, plateauY + 140, 5);
+  rect(plateauX + 85, plateauY + 145, 5);
+  rect(plateauX + 85, plateauY + 150, 5);
+  pop();
+
+  push();
+  fill(20, 40, 20);
+  rect(plateauX + 85, plateauY + 110, 5);
+  rect(plateauX + 80, plateauY + 105, 5);
+  rect(plateauX + 75, plateauY + 100, 5);
+  rect(plateauX + 70, plateauY + 95, 5);
+  pop();
+
+  push();
+  fill(30, 50, 30);
+  rect(plateauX + 85, plateauY + 115, 5);
+  rect(plateauX + 80, plateauY + 110, 5);
+  rect(plateauX + 75, plateauY + 105, 5);
+  rect(plateauX + 70, plateauY + 100, 5);
+  pop();
+
+  //Under Shadows
+  push();
+  fill(50, 70, 50);
+  rect(plateauX + 10, plateauY + 155, 5);
+  rect(plateauX + 15, plateauY + 155, 5);
+  rect(plateauX + 20, plateauY + 155, 5);
+  rect(plateauX + 25, plateauY + 155, 5);
+  rect(plateauX + 30, plateauY + 155, 5);
+  rect(plateauX + 35, plateauY + 155, 5);
+  rect(plateauX + 40, plateauY + 155, 5);
+  rect(plateauX + 45, plateauY + 155, 5);
+  rect(plateauX + 50, plateauY + 155, 5);
+  rect(plateauX + 55, plateauY + 155, 5);
+  rect(plateauX + 60, plateauY + 155, 5);
+  rect(plateauX + 65, plateauY + 155, 5);
+  rect(plateauX + 70, plateauY + 155, 5);
+  pop();
+
+  push();
+  fill(40, 60, 40);
+  rect(plateauX + 10, plateauY + 160, 5);
+  rect(plateauX + 15, plateauY + 160, 5);
+  rect(plateauX + 20, plateauY + 160, 5);
+  rect(plateauX + 25, plateauY + 160, 5);
+  rect(plateauX + 30, plateauY + 160, 5);
+  rect(plateauX + 35, plateauY + 160, 5);
+  rect(plateauX + 40, plateauY + 160, 5);
+  rect(plateauX + 45, plateauY + 160, 5);
+  rect(plateauX + 50, plateauY + 160, 5);
+  rect(plateauX + 55, plateauY + 160, 5);
+  rect(plateauX + 60, plateauY + 160, 5);
+  pop();
+
+  //Cracks
+  push();
+  fill(40, 40, 40);
+  rect(plateauX + 10, plateauY + 140, 5);
+  rect(plateauX + 15, plateauY + 140, 5);
+  rect(plateauX + 20, plateauY + 145, 5);
+  rect(plateauX + 25, plateauY + 150, 5);
+  rect(plateauX + 20, plateauY + 135, 5);
+  rect(plateauX + 65, plateauY + 105, 5);
+  rect(plateauX + 60, plateauY + 110, 5);
+  rect(plateauX + 55, plateauY + 115, 5);
+  rect(plateauX + 50, plateauY + 110, 5);
+  rect(plateauX + 50, plateauY + 150, 5);
+  rect(plateauX + 55, plateauY + 145, 5);
+  rect(plateauX + 60, plateauY + 150, 5);
+  rect(plateauX + 15, plateauY + 95, 5);
+  rect(plateauX + 20, plateauY + 95, 5);
+  rect(plateauX + 25, plateauY + 100, 5);
+  rect(plateauX + 20, plateauY + 105, 5);
+  pop();
+}
+
+//Draw the character
+function draw() {
+  characterDown(250, 150);
+}
+
+//Spreading out the ground tiles in a for loop
+const length = 10;
+
+for (let x = 0; x < length; x++) {
+  for (let y = 0; y < length; y++) {
+    groundGraphic(x * groundX, y * groundY - 200);
+  }
+}
+
+//Stage 1
+
+straightWall(10, 200);
+straightWall(100, 200);
+straightWall(10, 5);
+straightWall(100, 5);
+
+straightWall(200, 5);
+straightWall(200, 200);
+straightWall(290, 200);
+straightWall(290, 90);
+
+downWall(100, 5);
+downWall(100, 165);
+downWall(200, 5);
+
+plateau();

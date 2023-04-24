@@ -1095,3 +1095,6 @@ downWall(470, 170);
 downWall(470, 250);
 
 plateau();
+
+//wall collision
+// https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection

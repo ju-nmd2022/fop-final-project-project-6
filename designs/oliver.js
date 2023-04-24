@@ -10,7 +10,7 @@ let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
 
 //downWall Size(w 40px, h 85px)
-//straightWall Size(w 105px, h 55px)
+//straightWall Size(w 105px, h 55px) 90px width for seamless connection
 
 background(10, 10, 10);
 
@@ -1043,9 +1043,55 @@ straightWall(200, 5);
 straightWall(200, 200);
 straightWall(290, 200);
 straightWall(290, 90);
+straightWall(380, 90);
+straightWall(470, 90);
+downWall(470, 330);
+straightWall(485, 410);
+straightWall(395, 410);
+straightWall(305, 410);
+downWall(290, 200);
+straightWall(305, 280);
+straightWall(215, 280);
+straightWall(125, 280);
+downWall(200, 410);
+downWall(20, 280);
+downWall(20, 360);
+downWall(20, 440);
+downWall(20, 470);
+
+straightWall(290, 465);
+straightWall(380, 465);
+straightWall(470, 465);
+straightWall(560, 465);
+straightWall(650, 175);
+straightWall(740, 175);
+straightWall(830, 175);
+straightWall(915, 175);
+downWall(560, 430);
+downWall(560, 350);
+downWall(560, 270);
+downWall(560, 190);
+
+straightWall(810, 335);
+straightWall(850, 335);
+straightWall(915, 335);
+downWall(720, 510);
+downWall(720, 430);
+downWall(720, 350);
+straightWall(110, 555);
+straightWall(200, 555);
+straightWall(290, 555);
+straightWall(380, 555);
+straightWall(470, 555);
+straightWall(560, 555);
+straightWall(650, 555);
+straightWall(740, 555);
 
 downWall(100, 5);
 downWall(100, 165);
 downWall(200, 5);
+downWall(470, 90);
+downWall(470, 170);
+downWall(470, 250);
 
 plateau();

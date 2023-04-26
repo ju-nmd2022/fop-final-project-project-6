@@ -1139,3 +1139,26 @@ if (isGameActive) {
   //   losingScreenActive = true;
   // }
 }
+
+// Trying out Wallcollision
+
+function wallCollision(x, y, width, height) {
+  for (let i = 0; i < wallsArray.length; i++) {
+    let stoneWall = wallArray[i];
+
+    if (
+      characterX > stoneWall.x &&
+      characterX < stoneWall.x + stoneWall.width &&
+      characterY > stoneWall.y &&
+      characterY > stoneWall.y
+    ) {
+      characterSpeed = -2;
+    }
+  }
+}
+
+// Objects for the walls
+let topWall = { x: 0, y: 55, width: 280, height: 55 };
+let bottomWall = { x: 0, y: 195, width: 180, height: 55 };
+
+let wallArray = [topWall, bottomWall];

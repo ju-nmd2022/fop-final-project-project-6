@@ -2,12 +2,16 @@ let wallX = 100;
 let wallY = 100;
 let groundX = 100;
 let groundY = 100;
-
 //character array for colours
 let shirtColor = [255, 0, 0];
 let pantsColor = [255, 225, 0];
 let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
+let characterX = 185;
+let characterY = 120;
+const characterSpeed = 3;
+
+let isGameActive = true;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
@@ -962,6 +966,74 @@ function plateau() {
   pop();
 }
 
+function level1() {
+  //Stage 1
+
+  straightWall(10, 200);
+  straightWall(100, 200);
+  straightWall(10, 5);
+  straightWall(100, 5);
+
+  straightWall(200, 5);
+  straightWall(200, 200);
+  straightWall(290, 200);
+  straightWall(290, 90);
+  straightWall(380, 90);
+  straightWall(470, 90);
+  downWall(470, 330);
+  straightWall(485, 410);
+  straightWall(395, 410);
+  straightWall(305, 410);
+  downWall(290, 200);
+  straightWall(305, 280);
+  straightWall(215, 280);
+  straightWall(125, 280);
+  downWall(200, 410);
+  downWall(20, 280);
+  downWall(20, 360);
+  downWall(20, 440);
+  downWall(20, 470);
+
+  straightWall(290, 465);
+  straightWall(380, 465);
+  straightWall(470, 465);
+  straightWall(560, 465);
+  straightWall(650, 175);
+  straightWall(740, 175);
+  straightWall(830, 175);
+  straightWall(915, 175);
+  downWall(560, 430);
+  downWall(560, 350);
+  downWall(560, 270);
+  downWall(560, 190);
+
+  straightWall(810, 335);
+  straightWall(850, 335);
+  straightWall(915, 335);
+  downWall(720, 510);
+  downWall(720, 430);
+  downWall(720, 350);
+  straightWall(110, 555);
+  straightWall(200, 555);
+  straightWall(290, 555);
+  straightWall(380, 555);
+  straightWall(470, 555);
+  straightWall(560, 555);
+  straightWall(650, 555);
+  straightWall(740, 555);
+
+  downWall(100, 5);
+  downWall(100, 165);
+  downWall(200, 5);
+  downWall(470, 90);
+  downWall(470, 170);
+  downWall(470, 250);
+
+  plateau();
+
+  //wall collision
+  // https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
+}
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -1019,82 +1091,51 @@ function donkItem(x, y) {
 
 //Draw the character
 function draw() {
-  characterDown(250, 150);
+  //Spreading out the ground tiles in a for loop
+  const length = 10;
+
+  for (let x = 0; x < length; x++) {
+    for (let y = 0; y < length; y++) {
+      groundGraphic(x * groundX, y * groundY - 200);
+    }
+  }
+  level1();
+  characterDown(characterX, characterY);
   donkItem(45, 110);
-}
-
-//Spreading out the ground tiles in a for loop
-const length = 10;
-
-for (let x = 0; x < length; x++) {
-  for (let y = 0; y < length; y++) {
-    groundGraphic(x * groundX, y * groundY - 200);
+  if (keyIsDown(38)) {
+    characterY = characterY - characterSpeed;
+  } else if (keyIsDown(40)) {
+    characterY = characterY + characterSpeed;
+  } else if (keyIsDown(37)) {
+    characterX = characterX - characterSpeed;
+  } else if (keyIsDown(39)) {
+    characterX = characterX + characterSpeed;
   }
 }
+if (isGameActive) {
+  characterX = characterX + characterSpeed;
+  houseY = characterY + characterSpeed;
 
-//Stage 1
-
-straightWall(10, 200);
-straightWall(100, 200);
-straightWall(10, 5);
-straightWall(100, 5);
-
-straightWall(200, 5);
-straightWall(200, 200);
-straightWall(290, 200);
-straightWall(290, 90);
-straightWall(380, 90);
-straightWall(470, 90);
-downWall(470, 330);
-straightWall(485, 410);
-straightWall(395, 410);
-straightWall(305, 410);
-downWall(290, 200);
-straightWall(305, 280);
-straightWall(215, 280);
-straightWall(125, 280);
-downWall(200, 410);
-downWall(20, 280);
-downWall(20, 360);
-downWall(20, 440);
-downWall(20, 470);
-
-straightWall(290, 465);
-straightWall(380, 465);
-straightWall(470, 465);
-straightWall(560, 465);
-straightWall(650, 175);
-straightWall(740, 175);
-straightWall(830, 175);
-straightWall(915, 175);
-downWall(560, 430);
-downWall(560, 350);
-downWall(560, 270);
-downWall(560, 190);
-
-straightWall(810, 335);
-straightWall(850, 335);
-straightWall(915, 335);
-downWall(720, 510);
-downWall(720, 430);
-downWall(720, 350);
-straightWall(110, 555);
-straightWall(200, 555);
-straightWall(290, 555);
-straightWall(380, 555);
-straightWall(470, 555);
-straightWall(560, 555);
-straightWall(650, 555);
-straightWall(740, 555);
-
-downWall(100, 5);
-downWall(100, 165);
-downWall(200, 5);
-downWall(470, 90);
-downWall(470, 170);
-downWall(470, 250);
-
-plateau();
-
-//wall collision
-// https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
+  // moving house up
+  if (keyIsDown(38)) {
+    characterX = characterX + characterSpeed;
+  }
+  // house moving down when not clicking up
+  // else {
+  //   houseSpeedY = houseVelocity;
+  //   houseVelocity = houseVelocity + 0.07;
+  // }
+  // // move house to left/right
+  // if (keyIsDown(37)) {
+  //   houseSpeedX = -0.7;
+  // } else if (keyIsDown(39)) {
+  //   houseSpeedX = 0.7;
+  // } else {
+  //   houseSpeedX = 0;
+  // }
+  // // losing if landing on ground, flying to high or crashing into the side of the mountain
+  // if (houseY > 451 || houseY < -100 || (houseX < 220 && houseY > 220)) {
+  //   isGameActive = false;
+  //   losingScreenActive = true;
+  // }
+}

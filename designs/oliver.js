@@ -1,11 +1,11 @@
-function setup() {
-  let cnv = createCanvas(1000, 600);
-  let cnvX = (windowWidth - width) / 2;
-  let cnvY = (windowHeight - height + 0) / 2;
-  cnv.position(cnvX, cnvY);
-  frameRate(30);
-  createCanvas(1000, 600);
-}
+// function setup() {
+//   let cnv = createCanvas(1000, 600);
+//   let cnvX = (windowWidth - width) / 2;
+//   let cnvY = (windowHeight - height + 0) / 2;
+//   cnv.position(cnvX, cnvY);
+//   frameRate(30);
+//   createCanvas(1000, 600);
+// }
 
 let wallX = 100;
 let wallY = 100;
@@ -19,8 +19,12 @@ let shoeColor = [120, 50, 50];
 let characterX = 185;
 let characterY = 120;
 const characterSpeed = 9;
-
+let showDonk = true;
+const donkX = 40;
+const donkY = 110;
 let isGameActive = true;
+let donkStory1 = false;
+let donkStory2 = false;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
@@ -1097,7 +1101,31 @@ function donkItem(x, y) {
   rect(x - 15, y + 20, 5);
   rect(x + 0, y + 20, 5);
 }
+//Story after picking up donk
+function donkStory1Function() {
+  fill(255, 255, 255);
+  rect(350, 200, 300, 200);
+  fill(0, 0, 0);
+  textSize(20);
+  textFont("Arial");
+  textAlign(CENTER, CENTER);
 
+  text("You stole the sacred dônk!", 500, 300);
+  textSize(40);
+  text(">", 620, 380);
+}
+function donkStory2Function() {
+  fill(255, 255, 255);
+  rect(350, 200, 300, 200);
+  fill(0, 0, 0);
+  textSize(20);
+  textFont("Arial");
+  textAlign(CENTER, CENTER);
+
+  text("Y fgffgacred dônk!", 500, 300);
+  textSize(40);
+  text(">", 620, 380);
+}
 //Draw the character
 function draw() {
   //Spreading out the ground tiles in a for loop
@@ -1109,16 +1137,46 @@ function draw() {
     }
   }
   level1();
+  // displaying donk
+  if (showDonk === true) {
+    donkItem(donkX, donkY);
+  }
+  // removing donk if character is picking it up
+  if (
+    characterX < 50 &&
+    characterX > 20 &&
+    characterY < 125 &&
+    characterY > 80
+  ) {
+    showDonk = false;
+    isGameActive = false;
+  }
+
+  if (showDonk === false) {
+    donkStory1 = true;
+  }
+  if (donkStory1 === true) {
+    donkStory1Function();
+    if (keyIsDown(32)) {
+      donkStory1 = false;
+      donkStory2 = true;
+    }
+  }
+  if (donkStory2 === true) {
+    donkStory2Function();
+  }
   characterDown(characterX, characterY);
-  donkItem(45, 110);
-  if (keyIsDown(38)) {
-    characterY = characterY - characterSpeed;
-  } else if (keyIsDown(40)) {
-    characterY = characterY + characterSpeed;
-  } else if (keyIsDown(37)) {
-    characterX = characterX - characterSpeed;
-  } else if (keyIsDown(39)) {
-    characterX = characterX + characterSpeed;
+  //  Moving Character
+  if (isGameActive) {
+    if (keyIsDown(38)) {
+      characterY = characterY - characterSpeed;
+    } else if (keyIsDown(40)) {
+      characterY = characterY + characterSpeed;
+    } else if (keyIsDown(37)) {
+      characterX = characterX - characterSpeed;
+    } else if (keyIsDown(39)) {
+      characterX = characterX + characterSpeed;
+    }
   }
 }
 

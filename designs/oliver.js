@@ -1,3 +1,12 @@
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+  createCanvas(1000, 600);
+}
+
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
@@ -9,7 +18,7 @@ let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
 let characterX = 185;
 let characterY = 120;
-const characterSpeed = 3;
+const characterSpeed = 9;
 
 let isGameActive = true;
 
@@ -1112,53 +1121,26 @@ function draw() {
     characterX = characterX + characterSpeed;
   }
 }
-if (isGameActive) {
-  characterX = characterX + characterSpeed;
-  houseY = characterY + characterSpeed;
-
-  // moving house up
-  if (keyIsDown(38)) {
-    characterX = characterX + characterSpeed;
-  }
-  // house moving down when not clicking up
-  // else {
-  //   houseSpeedY = houseVelocity;
-  //   houseVelocity = houseVelocity + 0.07;
-  // }
-  // // move house to left/right
-  // if (keyIsDown(37)) {
-  //   houseSpeedX = -0.7;
-  // } else if (keyIsDown(39)) {
-  //   houseSpeedX = 0.7;
-  // } else {
-  //   houseSpeedX = 0;
-  // }
-  // // losing if landing on ground, flying to high or crashing into the side of the mountain
-  // if (houseY > 451 || houseY < -100 || (houseX < 220 && houseY > 220)) {
-  //   isGameActive = false;
-  //   losingScreenActive = true;
-  // }
-}
 
 // Trying out Wallcollision
 
-function wallCollision(x, y, width, height) {
-  for (let i = 0; i < wallsArray.length; i++) {
-    let stoneWall = wallArray[i];
+// function wallCollision(x, y, width, height) {
+//   for (let i = 0; i < wallsArray.length; i++) {
+//     let stoneWall = wallArray[i];
 
-    if (
-      characterX > stoneWall.x &&
-      characterX < stoneWall.x + stoneWall.width &&
-      characterY > stoneWall.y &&
-      characterY > stoneWall.y
-    ) {
-      characterSpeed = -2;
-    }
-  }
-}
+//     if (
+//       characterX > stoneWall.x &&
+//       characterX < stoneWall.x + stoneWall.width &&
+//       characterY > stoneWall.y &&
+//       characterY > stoneWall.y
+//     ) {
+//       characterSpeed = -2;
+//     }
+//   }
+// }
 
-// Objects for the walls
-let topWall = { x: 0, y: 55, width: 280, height: 55 };
-let bottomWall = { x: 0, y: 195, width: 180, height: 55 };
+// // Objects for the walls
+// let topWall = { x: 0, y: 55, width: 280, height: 55 };
+// let bottomWall = { x: 0, y: 195, width: 180, height: 55 };
 
-let wallArray = [topWall, bottomWall];
+// let wallArray = [topWall, bottomWall];

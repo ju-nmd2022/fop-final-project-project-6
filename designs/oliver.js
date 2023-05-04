@@ -18,6 +18,7 @@ let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
 let characterX = 185;
 let characterY = 120;
+let newCharacterY = 50;
 const characterSpeed = 9;
 let showDonk = true;
 const donkX = 40;
@@ -1131,6 +1132,8 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
+  wallCollision();
+
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
       groundGraphic(x * groundX, y * groundY - 200);
@@ -1181,3 +1184,35 @@ function draw() {
 }
 
 // Tile map https://developer.mozilla.org/en-US/docs/Games/Techniques/Tilemaps
+
+function wallCollision() {
+  for (let i = 0; i < wallArray.length; i++) {
+    let wall = wallArray[i];
+
+    //Wall Two
+    if (
+      characterX > wall.x &&
+      characterX < wall.x + wall.width &&
+      characterY < wall.y &&
+      characterY + 30 > wall.y
+    ) {
+      characterY = newCharacterY;
+    }
+
+    //wall Three
+    if (
+      characterX + 20 > wall.x &&
+      characterX < wall.x + wall.width &&
+      characterY < wall.y &&
+      characterY > wall.y
+    ) {
+      characterY = newCharacterY;
+    }
+  }
+}
+
+let wallOne = { x: 0, y: 55, width: 280, height: 55 };
+let wallTwo = { x: 0, y: 200, width: 390, height: 55 };
+let wallThree = { x: 280, y: 50, width: 210, height: 55 };
+
+let wallArray = [wallOne, wallTwo, wallThree];

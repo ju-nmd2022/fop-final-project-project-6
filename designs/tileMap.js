@@ -1,5 +1,3 @@
-const size = 90;
-const length = 10;
 let wallX = 100;
 let wallY = 100;
 noStroke();
@@ -396,7 +394,7 @@ function straightWall(wallX, wallY) {
   pop();
 }
 
-let tileMap = [0, 1, 2, 3, 4, 5];
+//let tileMap = [0, 1, 2, 3, 4, 5];
 
 // for (let x = 0; x < length; x++) {
 //   for (let y = 0; y < length; y++) {
@@ -418,21 +416,21 @@ let tileMap = [0, 1, 2, 3, 4, 5];
 //   }
 // }
 
-let animals = [0, 1, 2, 0, 1, 2];
+// let animals = [0, 1, 2, 0, 1, 2];
 
-function draw() {
-  background(128, 128, 128);
-  textSize(20);
-  let y = 20;
-  let x = 20;
-  for (let animal of animals) {
-    text(animal, 20, y);
-    y = y + 70;
-  }
-  if (animals === 1) {
-    straightWall(10, 10);
-  }
-}
+// function draw() {
+//   background(128, 128, 128);
+//   textSize(20);
+//   let y = 20;
+//   let x = 20;
+//   for (let animal of animals) {
+//     text(animal, 20, y);
+//     y = y + 70;
+//   }
+//   if (animals === 1) {
+//     straightWall(10, 10);
+//   }
+// }
 
 // lägga ett object i en array, sen göra en for
 // loop som loopar igenom och kollar alla värden för att

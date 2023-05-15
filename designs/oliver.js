@@ -1214,3 +1214,32 @@ function draw() {
 // let wallTwo = { x: 0, y: 200, width: 390, height: 55 };
 
 // let wallArray = [wallOne, wallTwo];
+
+function downWallCollision() {
+  for (let i = 0; i < downWallArray.length; i++) {
+    let downWall = downWallArray[i];
+
+    if (
+      characterX > downWall.x &&
+      characterX < downWall.x + downWall.width &&
+      characterY < downWall.y &&
+      characterY + 30 > downWall.y
+    ) {
+      characterY = characterY - 9;
+    }
+  }
+}
+
+const downWallOne = { x: 0, y: 200, width: 390, height: 55 };
+const downWallTwo = { x: 280, y: 405, width: 285, height: 55 };
+const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
+const downWallFour = { x: 800, y: 330, width: 200, height: 55 };
+const rightWallOne = { x: 550, y: 135, width: 20, height: 200 };
+
+let downWallArray = [
+  downWallOne,
+  downWallTwo,
+  downWallThree,
+  downWallFour,
+  rightWallOne,
+];

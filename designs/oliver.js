@@ -1131,7 +1131,7 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  wallCollision();
+  wallCollisionUp();
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {

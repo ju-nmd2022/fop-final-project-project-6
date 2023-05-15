@@ -1131,7 +1131,7 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  wallCollisionUp();
+  downWallCollision();
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
@@ -1182,8 +1182,6 @@ function draw() {
   }
 }
 
-// Tile map https://developer.mozilla.org/en-US/docs/Games/Techniques/Tilemaps
-
 // function wallCollision() {
 //   for (let i = 0; i < wallArray.length; i++) {
 //     let wall = wallArray[i];
@@ -1225,7 +1223,7 @@ function downWallCollision() {
       characterY < downWall.y &&
       characterY + 30 > downWall.y
     ) {
-      characterY = characterY - 9;
+      characterY = characterY - characterSpeed;
     }
   }
 }
@@ -1234,7 +1232,8 @@ const downWallOne = { x: 0, y: 200, width: 390, height: 55 };
 const downWallTwo = { x: 280, y: 405, width: 285, height: 55 };
 const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
 const downWallFour = { x: 800, y: 330, width: 200, height: 55 };
-const rightWallOne = { x: 550, y: 135, width: 20, height: 200 };
+
+const rightWallOne = { x: 550, y: 405, width: 20, height: 200 };
 
 let downWallArray = [
   downWallOne,
@@ -1243,3 +1242,5 @@ let downWallArray = [
   downWallFour,
   rightWallOne,
 ];
+
+//Timer   https://www.w3schools.com/js/js_timing.asp

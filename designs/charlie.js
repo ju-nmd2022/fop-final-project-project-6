@@ -2003,9 +2003,11 @@ const upWallFour = { x: 280, y: 490, width: 370, height: 55 };
 const upWallFive = { x: 650, y: 210, width: 350, height: 55 };
 
 const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
+const leftWallTwo = { x: 390, y: 180, width: 15, height: 120 };
+const leftWallThree = { x: 120, y: 260, width: 15, height: 340 };
 
 let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
-let leftWallArray = [leftWallOne];
+let leftWallArray = [leftWallOne, leftWallTwo, leftWallThree];
 
 function wallCollisionUp() {
   for (let i = 0; i < upWallArray.length; i++) {
@@ -2020,16 +2022,6 @@ function wallCollisionUp() {
     ) {
       characterY = characterY + characterSpeed;
     }
-
-    //Up Wall Two
-    // if (
-    //   characterX > wall.x &&
-    //   characterX < wall.x + wall.width &&
-    //   characterY < wall.y &&
-    //   characterY + 10 > wall.y
-    // ) {
-    //   characterY = characterY + characterSpeed;
-    // }
   }
 }
 function wallCollisionLeft() {

@@ -2002,7 +2002,7 @@ const upWallThree = { x: 105, y: 310, width: 275, height: 55 };
 const upWallFour = { x: 280, y: 490, width: 370, height: 55 };
 const upWallFive = { x: 650, y: 210, width: 350, height: 55 };
 
-const leftWallOne = { x: 0, y: 0, width: 55, height: 200 };
+const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
 
 let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
 let leftWallArray = [leftWallOne];
@@ -2038,9 +2038,9 @@ function wallCollisionLeft() {
 
     //Left Wall One
     if (
-      characterX > wall.x &&
-      characterX < wall.x + wall.widht &&
-      characterY < wall.y &&
+      characterX + 10 > wall.x &&
+      characterX < wall.x + wall.width &&
+      characterY < wall.y + wall.height &&
       characterY + 10 > wall.y
     ) {
       characterX = characterX + characterSpeed;

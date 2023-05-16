@@ -1946,6 +1946,7 @@ function draw() {
 
   wallCollisionUp();
   wallCollisionLeft();
+  wallCollisionRight();
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
       groundGraphic(x * groundX, y * groundY - 200);
@@ -2005,9 +2006,21 @@ const upWallFive = { x: 650, y: 210, width: 350, height: 55 };
 const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
 const leftWallTwo = { x: 390, y: 180, width: 15, height: 120 };
 const leftWallThree = { x: 120, y: 260, width: 15, height: 340 };
+const leftWallFour = { x: 645, y: 175, width: 15, height: 310 };
+
+const rightWallOne = { x: 280, y: 0, width: 15, height: 120 };
+const rightWallTwo = { x: 550, y: 120, width: 15, height: 290 };
+const rightWallThree = { x: 280, y: 390, width: 15, height: 100 };
+const rightWallFour = { x: 800, y: 320, width: 15, height: 230 };
 
 let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
-let leftWallArray = [leftWallOne, leftWallTwo, leftWallThree];
+let leftWallArray = [leftWallOne, leftWallTwo, leftWallThree, leftWallFour];
+let rightWallArray = [
+  rightWallOne,
+  rightWallTwo,
+  rightWallThree,
+  rightWallFour,
+];
 
 function wallCollisionUp() {
   for (let i = 0; i < upWallArray.length; i++) {
@@ -2036,6 +2049,22 @@ function wallCollisionLeft() {
       characterY + 10 > wall.y
     ) {
       characterX = characterX + characterSpeed;
+    }
+  }
+}
+
+function wallCollisionRight() {
+  for (let i = 0; i < rightWallArray.length; i++) {
+    let wall = rightWallArray[i];
+
+    //Right Wall One
+    if (
+      characterX < wall.x + wall.width &&
+      characterX + 10 > wall.x &&
+      characterY < wall.y + wall.height &&
+      characterY + 10 > wall.y
+    ) {
+      characterX = characterX - characterSpeed;
     }
   }
 }

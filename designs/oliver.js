@@ -1244,3 +1244,11 @@ let downWallArray = [
 ];
 
 //Timer   https://www.w3schools.com/js/js_timing.asp
+
+//https://medium.com/geekculture/creating-counter-with-javascript-4b1c60892c45
+//https://www.w3schools.com/jsref/met_win_clearinterval.asp
+let counter = 0;
+setTimeout(() => {
+  counter++;
+  console.log(counter);
+}, 1000);

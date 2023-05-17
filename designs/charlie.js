@@ -2056,10 +2056,10 @@ function wallCollisionLeft() {
 
     //Left Wall One
     if (
-      characterX + 20 > wall.x &&
+      characterX + 15 > wall.x &&
       characterX < wall.x + wall.width &&
       characterY < wall.y + wall.height &&
-      characterY + 20 > wall.y
+      characterY + 15 > wall.y
     ) {
       characterX = characterX + characterSpeed;
     }
@@ -2073,9 +2073,9 @@ function wallCollisionRight() {
     //Right Wall One
     if (
       characterX < wall.x + wall.width &&
-      characterX + 20 > wall.x &&
+      characterX + 15 > wall.x &&
       characterY < wall.y + wall.height &&
-      characterY + 20 > wall.y
+      characterY + 15 > wall.y
     ) {
       characterX = characterX - characterSpeed;
     }

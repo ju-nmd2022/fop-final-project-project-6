@@ -1,12 +1,13 @@
-// function setup() {
-//   let cnv = createCanvas(1000, 600);
-//   let cnvX = (windowWidth - width) / 2;
-//   let cnvY = (windowHeight - height + 0) / 2;
-//   cnv.position(cnvX, cnvY);
-//   frameRate(30);
-//   createCanvas(1000, 600);
-// }
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+  createCanvas(1000, 600);
+}
 
+let countDown = 3000;
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
@@ -1184,6 +1185,9 @@ function draw() {
       characterX = characterX + characterSpeed;
     }
   }
+  // Timer counting down.
+  countDown = countDown - 1;
+  console.log(countDown);
 }
 
 //Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.

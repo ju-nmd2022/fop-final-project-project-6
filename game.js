@@ -1,11 +1,11 @@
-function setup() {
-  let cnv = createCanvas(1000, 600);
-  let cnvX = (windowWidth - width) / 2;
-  let cnvY = (windowHeight - height + 0) / 2;
-  cnv.position(cnvX, cnvY);
-  frameRate(30);
-  createCanvas(1000, 600);
-}
+// function setup() {
+//   let cnv = createCanvas(1000, 600);
+//   let cnvX = (windowWidth - width) / 2;
+//   let cnvY = (windowHeight - height + 0) / 2;
+//   cnv.position(cnvX, cnvY);
+//   frameRate(30);
+//   createCanvas(1000, 600);
+// }
 
 let countDown = 900;
 let wallX = 100;
@@ -26,6 +26,8 @@ const donkY = 110;
 let isGameActive = true;
 let donkStory1 = false;
 let donkStory2 = false;
+let counterActive = false;
+let donkPickedUp = false;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
@@ -1048,6 +1050,14 @@ function level1() {
   //wall collision
   // https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
 }
+
+function countDownDisplay() {
+  textSize(20);
+  // textAlign(LEFT, LEFT);
+  fill(255, 255, 255);
+  let displayText = Math.ceil(countDown / 30);
+  text(displayText + " sec", 450, 15, 57, 50);
+}
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -1109,11 +1119,12 @@ function donkStory1Function() {
   fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  textAlign(CENTER, CENTER);
+  // textAlign(CENTER, CENTER);
 
   text("You stole the sacred dônk!", 500, 300);
   textSize(40);
   text(">", 620, 380);
+  textSize(20);
 }
 function donkStory2Function() {
   fill(255, 255, 255);
@@ -1121,78 +1132,12 @@ function donkStory2Function() {
   fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  textAlign(CENTER, CENTER);
+  // textAlign(CENTER, CENTER);
 
-  text("Y fgffgacred dônk!", 500, 300);
+  text("Y fgffgacred dônk!", 425, 300);
   textSize(40);
   text(">", 620, 380);
-}
-//Draw the character
-function draw() {
-  //Spreading out the ground tiles in a for loop
-  const length = 10;
-
-  downWallCollision();
-  wallCollisionUp();
-  wallCollisionLeft();
-  wallCollisionRight();
-
-  //Looping the background tile
-  for (let x = 0; x < length; x++) {
-    for (let y = 0; y < length; y++) {
-      groundGraphic(x * groundX, y * groundY - 200);
-    }
-  }
-  level1();
-  // displaying donk
-  if (showDonk === true) {
-    donkItem(donkX, donkY);
-  }
-  // removing donk if character is picking it up
-  if (
-    characterX < 50 &&
-    characterX > 20 &&
-    characterY < 125 &&
-    characterY > 80
-  ) {
-    showDonk = false;
-    isGameActive = false;
-  }
-
-  if (showDonk === false) {
-    donkStory1 = true;
-  }
-  if (donkStory1 === true) {
-    donkStory1Function();
-    if (keyIsDown(32)) {
-      donkStory1 = false;
-      donkStory2 = true;
-    }
-  }
-  if (donkStory2 === true) {
-    donkStory2Function();
-  }
-  characterDown(characterX, characterY);
-  //  Moving Character
-  if (isGameActive) {
-    if (keyIsDown(38)) {
-      characterY = characterY - characterSpeed;
-    } else if (keyIsDown(40)) {
-      characterY = characterY + characterSpeed;
-    } else if (keyIsDown(37)) {
-      characterX = characterX - characterSpeed;
-    } else if (keyIsDown(39)) {
-      characterX = characterX + characterSpeed;
-    }
-    if (countDown > 0) {
-      countDown = countDown - 1;
-      console.log(countDown);
-    } else {
-      donkStory2 = true;
-      isGameActive = false;
-    }
-  }
-  // Timer counting down.
+  textSize(20);
 }
 
 //Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.
@@ -1309,3 +1254,76 @@ let rightWallArray = [
 //https://www.w3schools.com/js/js_timing.asp
 //https://medium.com/geekculture/creating-counter-with-javascript-4b1c60892c45
 //https://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+function draw() {
+  //Spreading out the ground tiles in a for loop
+  const length = 10;
+
+  downWallCollision();
+  wallCollisionUp();
+  wallCollisionLeft();
+  wallCollisionRight();
+
+  //Looping the background tile
+  for (let x = 0; x < length; x++) {
+    for (let y = 0; y < length; y++) {
+      groundGraphic(x * groundX, y * groundY - 200);
+    }
+  }
+  countDownDisplay();
+
+  level1();
+  // displaying donk
+  if (showDonk === true) {
+    donkItem(donkX, donkY);
+  }
+  // removing donk if character is picking it up
+  if (
+    characterX < 50 &&
+    characterX > 20 &&
+    characterY < 125 &&
+    characterY > 80
+  ) {
+    showDonk = false;
+    isGameActive = false;
+    donkPickedUp = true;
+  }
+
+  // fel
+  if (donkPickedUp === true) {
+    donkStory1Function();
+    if (keyIsDown(32)) {
+      isGameActive = true;
+      donkStory1 = false;
+      counterActive = true;
+      donkPickedUp = false;
+      console.log(donkPickedUp);
+    }
+  }
+  // if (donkStory1 === true) {
+
+  // }
+  characterDown(characterX, characterY);
+  //  Moving Character
+  if (isGameActive) {
+    if (keyIsDown(38)) {
+      characterY = characterY - characterSpeed;
+    } else if (keyIsDown(40)) {
+      characterY = characterY + characterSpeed;
+    } else if (keyIsDown(37)) {
+      characterX = characterX - characterSpeed;
+    } else if (keyIsDown(39)) {
+      characterX = characterX + characterSpeed;
+    }
+  }
+  if (counterActive === true) {
+    if (countDown > 0) {
+      countDown = countDown - 1;
+      console.log(countDown);
+    } else {
+      donkStory2 = true;
+      isGameActive = false;
+    }
+  }
+  // Timer counting down.
+}

@@ -1,827 +1,12 @@
-// let shirtColor = [255, 0, 0];
-// let pantsColor = [255, 225, 0];
-// let hairColor = [255, 155, 0];
-// let shoeColor = [120, 50, 50];
-// let skinColor = [245, 220, 200];
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+}
 
-// background(255, 255, 255);
-// function characterDown(characterX, characterY) {
-//   noStroke();
-//   // outlines of front of character
-//   fill(0, 0, 0);
-//   //   head
-//   rect(characterX - 5, characterY - 5, 5);
-//   rect(characterX, characterY - 5, 5);
-//   rect(characterX + 5, characterY - 5, 5);
-//   rect(characterX + 10, characterY - 5, 5);
-//   rect(characterX + 15, characterY - 10, 5);
-//   rect(characterX + 20, characterY - 15, 5);
-//   rect(characterX + 25, characterY - 20, 5);
-//   rect(characterX + 30, characterY - 25, 5);
-//   rect(characterX + 30, characterY - 30, 5);
-//   rect(characterX + 30, characterY - 35, 5);
-//   rect(characterX + 25, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 50, 5);
-//   rect(characterX + 15, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 55, 5);
-//   rect(characterX + 5, characterY - 55, 5);
-//   rect(characterX + 0, characterY - 55, 5);
-//   rect(characterX - 5, characterY - 55, 5);
-//   rect(characterX - 10, characterY - 50, 5);
-//   rect(characterX - 15, characterY - 50, 5);
-//   rect(characterX - 20, characterY - 45, 5);
-//   rect(characterX - 20, characterY - 40, 5);
-//   rect(characterX - 25, characterY - 35, 5);
-//   rect(characterX - 25, characterY - 30, 5);
-//   rect(characterX - 25, characterY - 25, 5);
-//   rect(characterX - 20, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 10, 5);
-//   //   caracter eyes
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX - 5, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   // body
-//   rect(characterX + 25, characterY - 10, 5);
-//   rect(characterX + 30, characterY - 5, 5);
-//   rect(characterX + 35, characterY + 0, 5);
-//   rect(characterX + 35, characterY + 5, 5);
-//   rect(characterX + 30, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 15, 5);
-//   rect(characterX + 25, characterY + 20, 5);
-//   rect(characterX + 25, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 30, 5);
-//   rect(characterX + 15, characterY + 30, 5);
-//   rect(characterX + 10, characterY + 30, 5);
-
-//   rect(characterX + 5, characterY + 25, 5);
-//   rect(characterX + 5, characterY + 20, 5);
-//   rect(characterX + 0, characterY + 25, 5);
-//   rect(characterX + 0, characterY + 20, 5);
-
-//   rect(characterX - 15, characterY + 30, 5);
-//   rect(characterX - 10, characterY + 30, 5);
-//   rect(characterX - 5, characterY + 30, 5);
-
-//   rect(characterX - 20, characterY + 25, 5);
-//   rect(characterX - 20, characterY + 20, 5);
-//   rect(characterX - 20, characterY + 15, 5);
-//   rect(characterX - 20, characterY + 10, 5);
-//   rect(characterX - 25, characterY + 10, 5);
-//   rect(characterX - 30, characterY + 5, 5);
-//   rect(characterX - 30, characterY + 0, 5);
-//   rect(characterX - 25, characterY - 5, 5);
-//   rect(characterX - 20, characterY - 10, 5);
-
-//   rect(characterX - 10, characterY + 10, 5);
-//   rect(characterX - 5, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 10, 5);
-//   rect(characterX + 5, characterY + 10, 5);
-//   rect(characterX + 10, characterY + 10, 5);
-//   rect(characterX + 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 5, 5);
-//   rect(characterX + 20, characterY + 0, 5);
-//   rect(characterX - 15, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 0, 5);
-
-//   fill(shirtColor);
-//   // shirt on front of character
-//   rect(characterX - 15, characterY - 10, 5);
-//   rect(characterX - 15, characterY - 5, 5);
-//   rect(characterX - 10, characterY - 5, 5);
-//   rect(characterX - 10, characterY, 5);
-//   rect(characterX - 5, characterY, 5);
-//   rect(characterX, characterY, 5);
-//   rect(characterX + 5, characterY, 5);
-//   rect(characterX + 10, characterY, 5);
-//   rect(characterX + 15, characterY, 5);
-//   rect(characterX + 15, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 10, 5);
-//   rect(characterX - 10, characterY + 5, 5);
-//   rect(characterX - 5, characterY + 5, 5);
-//   rect(characterX + 0, characterY + 5, 5);
-//   rect(characterX + 5, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 5, 5);
-//   rect(characterX + 15, characterY + 5, 5);
-
-//   //   hair on front of character
-//   fill(hairColor);
-//   rect(characterX + 10, characterY - 50, 5);
-//   rect(characterX + 5, characterY - 50, 5);
-//   rect(characterX + 0, characterY - 50, 5);
-//   rect(characterX - 5, characterY - 50, 5);
-//   rect(characterX + 20, characterY - 45, 5);
-//   rect(characterX + 15, characterY - 45, 5);
-//   rect(characterX + 10, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 45, 5);
-//   rect(characterX + 0, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 45, 5);
-//   rect(characterX - 10, characterY - 45, 5);
-//   rect(characterX - 15, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 40, 5);
-//   rect(characterX + 15, characterY - 40, 5);
-//   rect(characterX + 10, characterY - 40, 5);
-//   rect(characterX + 5, characterY - 40, 5);
-//   rect(characterX + 0, characterY - 40, 5);
-//   rect(characterX - 5, characterY - 40, 5);
-//   rect(characterX - 10, characterY - 40, 5);
-//   rect(characterX - 15, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 35, 5);
-//   rect(characterX + 15, characterY - 35, 5);
-//   rect(characterX + 10, characterY - 35, 5);
-//   rect(characterX + 5, characterY - 35, 5);
-//   rect(characterX + 0, characterY - 35, 5);
-//   rect(characterX - 5, characterY - 35, 5);
-//   rect(characterX - 10, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 30, 5);
-//   rect(characterX + 15, characterY - 30, 5);
-//   rect(characterX + 10, characterY - 30, 5);
-//   rect(characterX + 5, characterY - 30, 5);
-//   rect(characterX + 0, characterY - 30, 5);
-
-//   //   skin on front of character
-//   fill(skinColor);
-//   rect(characterX - 15, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 30, 5);
-//   rect(characterX - 15, characterY - 30, 5);
-//   rect(characterX - 10, characterY - 30, 5);
-//   rect(characterX - 5, characterY - 30, 5);
-//   rect(characterX + 25, characterY - 30, 5);
-//   rect(characterX - 20, characterY - 25, 5);
-//   rect(characterX - 15, characterY - 25, 5);
-//   rect(characterX - 10, characterY - 25, 5);
-//   rect(characterX - 5, characterY - 25, 5);
-//   rect(characterX + 0, characterY - 25, 5);
-//   rect(characterX + 5, characterY - 25, 5);
-//   rect(characterX + 10, characterY - 25, 5);
-//   rect(characterX + 15, characterY - 25, 5);
-//   rect(characterX + 20, characterY - 25, 5);
-//   rect(characterX + 25, characterY - 25, 5);
-
-//   rect(characterX - 15, characterY - 20, 5);
-//   rect(characterX - 10, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 20, 5);
-//   rect(characterX + 5, characterY - 20, 5);
-//   rect(characterX + 15, characterY - 20, 5);
-//   rect(characterX + 20, characterY - 20, 5);
-
-//   rect(characterX - 10, characterY - 15, 5);
-//   rect(characterX + 0, characterY - 15, 5);
-//   rect(characterX + 5, characterY - 15, 5);
-//   rect(characterX + 15, characterY - 15, 5);
-
-//   rect(characterX - 5, characterY - 10, 5);
-//   rect(characterX + 0, characterY - 10, 5);
-//   rect(characterX + 5, characterY - 10, 5);
-//   rect(characterX + 10, characterY - 10, 5);
-//   // Hands
-//   rect(characterX + 25, characterY - 5, 5);
-//   rect(characterX + 25, characterY + 0, 5);
-//   rect(characterX + 25, characterY + 5, 5);
-//   rect(characterX + 30, characterY + 0, 5);
-//   rect(characterX + 30, characterY + 5, 5);
-//   rect(characterX - 20, characterY - 5, 5);
-//   rect(characterX - 20, characterY + 0, 5);
-//   rect(characterX - 20, characterY + 5, 5);
-//   rect(characterX - 25, characterY + 0, 5);
-//   rect(characterX - 25, characterY + 5, 5);
-
-//   //   pants on front caracter
-//   fill(pantsColor);
-//   rect(characterX - 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 10, 5);
-
-//   rect(characterX - 15, characterY + 15, 5);
-//   rect(characterX - 10, characterY + 15, 5);
-//   rect(characterX - 5, characterY + 15, 5);
-//   rect(characterX + 0, characterY + 15, 5);
-//   rect(characterX + 5, characterY + 15, 5);
-//   rect(characterX + 10, characterY + 15, 5);
-//   rect(characterX + 15, characterY + 15, 5);
-//   rect(characterX + 20, characterY + 15, 5);
-
-//   rect(characterX - 15, characterY + 20, 5);
-//   rect(characterX - 10, characterY + 20, 5);
-//   rect(characterX - 5, characterY + 20, 5);
-//   rect(characterX + 10, characterY + 20, 5);
-//   rect(characterX + 15, characterY + 20, 5);
-//   rect(characterX + 20, characterY + 20, 5);
-
-//   fill(shoeColor);
-//   rect(characterX - 15, characterY + 25, 5);
-//   rect(characterX - 10, characterY + 25, 5);
-//   rect(characterX - 5, characterY + 25, 5);
-//   rect(characterX + 10, characterY + 25, 5);
-//   rect(characterX + 15, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 25, 5);
-// }
-
-// function characterUp(characterX, characterY) {
-//   noStroke();
-//   // outlines of back of character
-//   fill(0, 0, 0);
-//   //   head
-//   rect(characterX - 5, characterY - 5, 5);
-//   rect(characterX, characterY - 5, 5);
-//   rect(characterX + 5, characterY - 5, 5);
-//   rect(characterX + 10, characterY - 5, 5);
-//   rect(characterX + 15, characterY - 10, 5);
-//   rect(characterX + 20, characterY - 15, 5);
-//   rect(characterX + 25, characterY - 20, 5);
-//   rect(characterX + 30, characterY - 25, 5);
-//   rect(characterX + 30, characterY - 30, 5);
-//   rect(characterX + 30, characterY - 35, 5);
-//   rect(characterX + 25, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 50, 5);
-//   rect(characterX + 15, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 55, 5);
-//   rect(characterX + 5, characterY - 55, 5);
-//   rect(characterX + 0, characterY - 55, 5);
-//   rect(characterX - 5, characterY - 55, 5);
-//   rect(characterX - 10, characterY - 50, 5);
-//   rect(characterX - 15, characterY - 50, 5);
-//   rect(characterX - 20, characterY - 45, 5);
-//   rect(characterX - 20, characterY - 40, 5);
-//   rect(characterX - 25, characterY - 35, 5);
-//   rect(characterX - 25, characterY - 30, 5);
-//   rect(characterX - 25, characterY - 25, 5);
-//   rect(characterX - 20, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 10, 5);
-
-//   // body
-//   rect(characterX + 25, characterY - 10, 5);
-//   rect(characterX + 30, characterY - 5, 5);
-//   rect(characterX + 35, characterY + 0, 5);
-//   rect(characterX + 35, characterY + 5, 5);
-//   rect(characterX + 30, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 15, 5);
-//   rect(characterX + 25, characterY + 20, 5);
-//   rect(characterX + 25, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 30, 5);
-//   rect(characterX + 15, characterY + 30, 5);
-//   rect(characterX + 10, characterY + 30, 5);
-
-//   rect(characterX + 5, characterY + 25, 5);
-//   rect(characterX + 5, characterY + 20, 5);
-//   rect(characterX + 0, characterY + 25, 5);
-//   rect(characterX + 0, characterY + 20, 5);
-
-//   rect(characterX - 15, characterY + 30, 5);
-//   rect(characterX - 10, characterY + 30, 5);
-//   rect(characterX - 5, characterY + 30, 5);
-
-//   rect(characterX - 20, characterY + 25, 5);
-//   rect(characterX - 20, characterY + 20, 5);
-//   rect(characterX - 20, characterY + 15, 5);
-//   rect(characterX - 20, characterY + 10, 5);
-//   rect(characterX - 25, characterY + 10, 5);
-//   rect(characterX - 30, characterY + 5, 5);
-//   rect(characterX - 30, characterY + 0, 5);
-//   rect(characterX - 25, characterY - 5, 5);
-//   rect(characterX - 20, characterY - 10, 5);
-
-//   rect(characterX - 10, characterY + 10, 5);
-//   rect(characterX - 5, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 10, 5);
-//   rect(characterX + 5, characterY + 10, 5);
-//   rect(characterX + 10, characterY + 10, 5);
-//   rect(characterX + 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 5, 5);
-
-//   rect(characterX + 25, characterY - 5, 5);
-//   rect(characterX + 25, characterY + 0, 5);
-//   rect(characterX + 25, characterY + 5, 5);
-//   rect(characterX - 20, characterY - 5, 5);
-//   rect(characterX - 20, characterY + 0, 5);
-//   rect(characterX - 20, characterY + 5, 5);
-
-//   fill(shirtColor);
-//   // red shirt on front of character
-//   rect(characterX - 15, characterY - 10, 5);
-//   rect(characterX - 15, characterY - 5, 5);
-//   rect(characterX - 10, characterY - 5, 5);
-//   rect(characterX - 10, characterY, 5);
-//   rect(characterX - 5, characterY, 5);
-//   rect(characterX, characterY, 5);
-//   rect(characterX + 5, characterY, 5);
-//   rect(characterX + 10, characterY, 5);
-//   rect(characterX + 15, characterY, 5);
-//   rect(characterX + 15, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 10, 5);
-//   rect(characterX - 10, characterY + 5, 5);
-//   rect(characterX - 5, characterY + 5, 5);
-//   rect(characterX + 0, characterY + 5, 5);
-//   rect(characterX + 5, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 5, 5);
-//   rect(characterX + 15, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 0, 5);
-//   rect(characterX + 20, characterY + 0, 5);
-//   //   hair on front of character
-//   fill(hairColor);
-//   rect(characterX + 10, characterY - 50, 5);
-//   rect(characterX + 5, characterY - 50, 5);
-//   rect(characterX + 0, characterY - 50, 5);
-//   rect(characterX - 5, characterY - 50, 5);
-//   rect(characterX + 20, characterY - 45, 5);
-//   rect(characterX + 15, characterY - 45, 5);
-//   rect(characterX + 10, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 45, 5);
-//   rect(characterX + 0, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 45, 5);
-//   rect(characterX - 10, characterY - 45, 5);
-//   rect(characterX - 15, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 40, 5);
-//   rect(characterX + 15, characterY - 40, 5);
-//   rect(characterX + 10, characterY - 40, 5);
-//   rect(characterX + 5, characterY - 40, 5);
-//   rect(characterX + 0, characterY - 40, 5);
-//   rect(characterX - 5, characterY - 40, 5);
-//   rect(characterX - 10, characterY - 40, 5);
-//   rect(characterX - 15, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 35, 5);
-//   rect(characterX + 15, characterY - 35, 5);
-//   rect(characterX + 10, characterY - 35, 5);
-//   rect(characterX + 5, characterY - 35, 5);
-//   rect(characterX + 0, characterY - 35, 5);
-//   rect(characterX - 5, characterY - 35, 5);
-//   rect(characterX - 10, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 30, 5);
-//   rect(characterX + 15, characterY - 30, 5);
-//   rect(characterX + 10, characterY - 30, 5);
-//   rect(characterX + 5, characterY - 30, 5);
-//   rect(characterX + 0, characterY - 30, 5);
-
-//   rect(characterX - 15, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 30, 5);
-//   rect(characterX - 15, characterY - 30, 5);
-//   rect(characterX - 10, characterY - 30, 5);
-//   rect(characterX - 5, characterY - 30, 5);
-//   rect(characterX + 25, characterY - 30, 5);
-//   rect(characterX - 20, characterY - 25, 5);
-//   rect(characterX - 15, characterY - 25, 5);
-//   rect(characterX - 10, characterY - 25, 5);
-//   rect(characterX - 5, characterY - 25, 5);
-//   rect(characterX + 0, characterY - 25, 5);
-//   rect(characterX + 5, characterY - 25, 5);
-//   rect(characterX + 10, characterY - 25, 5);
-//   rect(characterX + 15, characterY - 25, 5);
-//   rect(characterX + 20, characterY - 25, 5);
-//   rect(characterX + 25, characterY - 25, 5);
-
-//   rect(characterX - 10, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 20, 5);
-//   rect(characterX + 5, characterY - 20, 5);
-//   rect(characterX + 10, characterY - 20, 5);
-//   rect(characterX + 15, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 15, 5);
-//   rect(characterX + 5, characterY - 15, 5);
-
-//   //   skin on front of character
-//   fill(skinColor);
-//   rect(characterX - 15, characterY - 20, 5);
-//   rect(characterX + 20, characterY - 20, 5);
-//   rect(characterX - 10, characterY - 15, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 15, 5);
-//   rect(characterX + 15, characterY - 15, 5);
-
-//   rect(characterX - 5, characterY - 10, 5);
-//   rect(characterX + 0, characterY - 10, 5);
-//   rect(characterX + 5, characterY - 10, 5);
-//   rect(characterX + 10, characterY - 10, 5);
-
-//   // Hands
-//   rect(characterX + 30, characterY + 0, 5);
-//   rect(characterX + 30, characterY + 5, 5);
-//   rect(characterX - 25, characterY + 0, 5);
-//   rect(characterX - 25, characterY + 5, 5);
-
-//   //   pants on front caracter
-//   fill(pantsColor);
-//   rect(characterX - 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 10, 5);
-
-//   rect(characterX - 15, characterY + 15, 5);
-//   rect(characterX - 10, characterY + 15, 5);
-//   rect(characterX - 5, characterY + 15, 5);
-//   rect(characterX + 0, characterY + 15, 5);
-//   rect(characterX + 5, characterY + 15, 5);
-//   rect(characterX + 10, characterY + 15, 5);
-//   rect(characterX + 15, characterY + 15, 5);
-//   rect(characterX + 20, characterY + 15, 5);
-
-//   rect(characterX - 15, characterY + 20, 5);
-//   rect(characterX - 10, characterY + 20, 5);
-//   rect(characterX - 5, characterY + 20, 5);
-//   rect(characterX + 10, characterY + 20, 5);
-//   rect(characterX + 15, characterY + 20, 5);
-//   rect(characterX + 20, characterY + 20, 5);
-
-//   fill(shoeColor);
-//   rect(characterX - 15, characterY + 25, 5);
-//   rect(characterX - 10, characterY + 25, 5);
-//   rect(characterX - 5, characterY + 25, 5);
-//   rect(characterX + 10, characterY + 25, 5);
-//   rect(characterX + 15, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 25, 5);
-// }
-
-// function characterLeft(characterX, characterY) {
-//   // outlines of left character
-//   fill(0, 0, 0);
-//   // Head
-//   rect(characterX - 10, characterY - 5, 5);
-//   rect(characterX - 5, characterY - 5, 5);
-//   rect(characterX, characterY - 5, 5);
-//   rect(characterX + 5, characterY - 5, 5);
-//   rect(characterX + 10, characterY - 5, 5);
-//   rect(characterX + 15, characterY - 10, 5);
-//   rect(characterX + 20, characterY - 15, 5);
-//   rect(characterX + 25, characterY - 20, 5);
-//   rect(characterX + 25, characterY - 25, 5);
-//   rect(characterX + 25, characterY - 30, 5);
-//   rect(characterX + 25, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 40, 5);
-//   rect(characterX + 20, characterY - 45, 5);
-//   rect(characterX + 15, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 50, 5);
-//   rect(characterX + 5, characterY - 55, 5);
-//   rect(characterX + 0, characterY - 55, 5);
-//   rect(characterX - 5, characterY - 55, 5);
-//   rect(characterX - 10, characterY - 55, 5);
-//   rect(characterX - 15, characterY - 50, 5);
-//   rect(characterX - 20, characterY - 50, 5);
-//   rect(characterX - 25, characterY - 45, 5);
-//   rect(characterX - 25, characterY - 40, 5);
-//   rect(characterX - 30, characterY - 35, 5);
-//   rect(characterX - 25, characterY - 30, 5);
-//   rect(characterX - 25, characterY - 25, 5);
-//   rect(characterX - 25, characterY - 20, 5);
-//   rect(characterX - 20, characterY - 15, 5);
-//   rect(characterX - 15, characterY - 10, 5);
-//   // character eyes
-//   rect(characterX - 15, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 25, 5);
-//   // charater body
-//   rect(characterX + 15, characterY + 0, 5);
-//   rect(characterX + 15, characterY + 5, 5);
-//   rect(characterX + 15, characterY + 10, 5);
-//   rect(characterX + 10, characterY + 15, 5);
-//   rect(characterX + 10, characterY + 20, 5);
-//   rect(characterX + 5, characterY + 25, 5);
-//   rect(characterX + 0, characterY + 25, 5);
-//   rect(characterX - 5, characterY + 25, 5);
-//   rect(characterX - 10, characterY + 25, 5);
-//   rect(characterX - 15, characterY + 20, 5);
-//   rect(characterX - 15, characterY + 15, 5);
-//   rect(characterX - 10, characterY + 10, 5);
-//   rect(characterX - 10, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 0, 5);
-//   rect(characterX - 5, characterY + 0, 5);
-//   rect(characterX + 0, characterY + 0, 5);
-//   rect(characterX + 5, characterY + 5, 5);
-//   rect(characterX + 5, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 15, 5);
-//   rect(characterX - 5, characterY + 15, 5);
-
-//   // shirt on left character
-//   fill(shirtColor);
-//   rect(characterX - 10, characterY + 0, 5);
-//   rect(characterX + 5, characterY + 0, 5);
-//   rect(characterX + 10, characterY + 0, 5);
-//   rect(characterX + 10, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 10, 5);
-//   // pants on left character
-//   fill(pantsColor);
-//   rect(characterX - 10, characterY + 15, 5);
-//   rect(characterX + 5, characterY + 15, 5);
-//   // shoes on left character
-//   fill(shoeColor);
-//   rect(characterX - 10, characterY + 20, 5);
-//   rect(characterX - 5, characterY + 20, 5);
-//   rect(characterX + 0, characterY + 20, 5);
-//   rect(characterX + 5, characterY + 20, 5);
-//   // hair on left character
-//   fill(hairColor);
-//   rect(characterX + 20, characterY - 20, 5);
-//   rect(characterX + 20, characterY - 25, 5);
-//   rect(characterX + 20, characterY - 30, 5);
-//   rect(characterX + 20, characterY - 35, 5);
-//   rect(characterX + 15, characterY - 20, 5);
-//   rect(characterX + 15, characterY - 25, 5);
-//   rect(characterX + 15, characterY - 30, 5);
-//   rect(characterX + 15, characterY - 35, 5);
-//   rect(characterX + 15, characterY - 40, 5);
-//   rect(characterX + 15, characterY - 45, 5);
-//   rect(characterX + 10, characterY - 25, 5);
-//   rect(characterX + 10, characterY - 30, 5);
-//   rect(characterX + 10, characterY - 35, 5);
-//   rect(characterX + 10, characterY - 40, 5);
-//   rect(characterX + 10, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 30, 5);
-//   rect(characterX + 5, characterY - 35, 5);
-//   rect(characterX + 5, characterY - 40, 5);
-//   rect(characterX + 5, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 50, 5);
-//   rect(characterX + 0, characterY - 25, 5);
-//   rect(characterX + 0, characterY - 30, 5);
-//   rect(characterX + 0, characterY - 35, 5);
-//   rect(characterX + 0, characterY - 40, 5);
-//   rect(characterX + 0, characterY - 45, 5);
-//   rect(characterX + 0, characterY - 50, 5);
-//   rect(characterX - 5, characterY - 25, 5);
-//   rect(characterX - 5, characterY - 30, 5);
-//   rect(characterX - 5, characterY - 35, 5);
-//   rect(characterX - 5, characterY - 40, 5);
-//   rect(characterX - 5, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 50, 5);
-//   rect(characterX - 10, characterY - 30, 5);
-//   rect(characterX - 10, characterY - 35, 5);
-//   rect(characterX - 10, characterY - 40, 5);
-//   rect(characterX - 10, characterY - 45, 5);
-//   rect(characterX - 10, characterY - 50, 5);
-//   rect(characterX - 15, characterY - 35, 5);
-//   rect(characterX - 15, characterY - 40, 5);
-//   rect(characterX - 15, characterY - 45, 5);
-//   rect(characterX - 20, characterY - 40, 5);
-//   rect(characterX - 20, characterY - 45, 5);
-//   rect(characterX - 25, characterY - 35, 5);
-//   // skin color on left character
-//   fill(skinColor);
-//   rect(characterX - 20, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 30, 5);
-//   rect(characterX - 20, characterY - 25, 5);
-//   rect(characterX - 20, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 30, 5);
-//   rect(characterX - 15, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 25, 5);
-//   rect(characterX - 10, characterY - 20, 5);
-//   rect(characterX - 10, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 10, 5);
-//   rect(characterX - 5, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX - 5, characterY - 10, 5);
-//   rect(characterX + 0, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 15, 5);
-//   rect(characterX + 0, characterY - 10, 5);
-//   rect(characterX + 5, characterY - 25, 5);
-//   rect(characterX + 5, characterY - 20, 5);
-//   rect(characterX + 5, characterY - 15, 5);
-//   rect(characterX + 5, characterY - 10, 5);
-//   rect(characterX + 10, characterY - 20, 5);
-//   rect(characterX + 10, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 10, 5);
-//   rect(characterX + 15, characterY - 15, 5);
-
-//   rect(characterX + 0, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 5, 5);
-//   rect(characterX - 5, characterY + 10, 5);
-//   rect(characterX - 5, characterY + 5, 5);
-// }
-
-// function characterRight(characterX, characterY) {
-//   // outline of right character
-//   fill(0, 0, 0);
-//   // head
-//   rect(characterX - 10, characterY - 5, 5);
-//   rect(characterX - 5, characterY - 5, 5);
-//   rect(characterX, characterY - 5, 5);
-//   rect(characterX + 5, characterY - 5, 5);
-//   rect(characterX + 10, characterY - 5, 5);
-//   rect(characterX + 15, characterY - 10, 5);
-//   rect(characterX + 20, characterY - 15, 5);
-//   rect(characterX + 25, characterY - 20, 5);
-//   rect(characterX + 25, characterY - 25, 5);
-//   rect(characterX + 25, characterY - 30, 5);
-//   rect(characterX + 30, characterY - 35, 5);
-//   rect(characterX + 25, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 50, 5);
-//   rect(characterX + 15, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 55, 5);
-//   rect(characterX + 5, characterY - 55, 5);
-//   rect(characterX + 0, characterY - 55, 5);
-//   rect(characterX - 5, characterY - 55, 5);
-//   rect(characterX - 10, characterY - 50, 5);
-//   rect(characterX - 15, characterY - 50, 5);
-//   rect(characterX - 20, characterY - 45, 5);
-//   rect(characterX - 20, characterY - 40, 5);
-//   rect(characterX - 25, characterY - 35, 5);
-//   rect(characterX - 25, characterY - 30, 5);
-//   rect(characterX - 25, characterY - 25, 5);
-//   rect(characterX - 25, characterY - 20, 5);
-//   rect(characterX - 20, characterY - 15, 5);
-//   rect(characterX - 15, characterY - 10, 5);
-//   // eyes
-//   rect(characterX + 15, characterY - 25, 5);
-//   rect(characterX + 15, characterY - 20, 5);
-//   // body
-//   rect(characterX + 15, characterY + 0, 5);
-//   rect(characterX + 15, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 10, 5);
-//   rect(characterX + 15, characterY + 15, 5);
-//   rect(characterX + 15, characterY + 20, 5);
-//   rect(characterX + 10, characterY + 25, 5);
-//   rect(characterX + 5, characterY + 25, 5);
-//   rect(characterX + 0, characterY + 25, 5);
-//   rect(characterX - 5, characterY + 25, 5);
-//   rect(characterX - 10, characterY + 20, 5);
-//   rect(characterX - 10, characterY + 15, 5);
-//   rect(characterX - 15, characterY + 10, 5);
-//   rect(characterX - 15, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 0, 5);
-//   rect(characterX + 0, characterY + 0, 5);
-//   rect(characterX + 5, characterY + 0, 5);
-//   rect(characterX + 0, characterY + 15, 5);
-//   rect(characterX + 5, characterY + 15, 5);
-//   rect(characterX - 5, characterY + 5, 5);
-//   rect(characterX - 5, characterY + 10, 5);
-//   // shirt on right character
-//   fill(shirtColor);
-//   rect(characterX + 10, characterY + 0, 5);
-//   rect(characterX - 5, characterY + 0, 5);
-//   rect(characterX - 10, characterY + 0, 5);
-//   rect(characterX - 10, characterY + 5, 5);
-//   rect(characterX - 10, characterY + 10, 5);
-//   // pants on right character
-//   fill(pantsColor);
-//   rect(characterX - 5, characterY + 15, 5);
-//   rect(characterX + 10, characterY + 15, 5);
-//   // shoes on right character
-//   fill(shoeColor);
-//   rect(characterX - 5, characterY + 20, 5);
-//   rect(characterX + 0, characterY + 20, 5);
-//   rect(characterX + 5, characterY + 20, 5);
-//   rect(characterX + 10, characterY + 20, 5);
-//   // hair on right character
-//   fill(hairColor);
-//   rect(characterX - 20, characterY - 20, 5);
-//   rect(characterX - 20, characterY - 25, 5);
-//   rect(characterX - 20, characterY - 30, 5);
-//   rect(characterX - 20, characterY - 35, 5);
-//   rect(characterX - 15, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 25, 5);
-//   rect(characterX - 15, characterY - 30, 5);
-//   rect(characterX - 15, characterY - 35, 5);
-//   rect(characterX - 15, characterY - 40, 5);
-//   rect(characterX - 15, characterY - 45, 5);
-//   rect(characterX - 10, characterY - 25, 5);
-//   rect(characterX - 10, characterY - 30, 5);
-//   rect(characterX - 10, characterY - 35, 5);
-//   rect(characterX - 10, characterY - 40, 5);
-//   rect(characterX - 10, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 35, 5);
-//   rect(characterX - 5, characterY - 40, 5);
-//   rect(characterX - 5, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 50, 5);
-//   rect(characterX + 0, characterY - 30, 5);
-//   rect(characterX + 0, characterY - 35, 5);
-//   rect(characterX + 0, characterY - 40, 5);
-//   rect(characterX + 0, characterY - 45, 5);
-//   rect(characterX + 0, characterY - 50, 5);
-//   rect(characterX + 5, characterY - 35, 5);
-//   rect(characterX + 5, characterY - 40, 5);
-//   rect(characterX + 5, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 40, 5);
-//   rect(characterX + 10, characterY - 45, 5);
-//   rect(characterX + 10, characterY - 50, 5);
-//   rect(characterX + 15, characterY - 40, 5);
-//   rect(characterX + 15, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 40, 5);
-//   rect(characterX + 20, characterY - 45, 5);
-//   rect(characterX + 25, characterY - 35, 5);
-
-//   // skin on right character
-//   fill(skinColor);
-//   rect(characterX + 15, characterY - 35, 5);
-//   rect(characterX + 10, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 30, 5);
-//   rect(characterX + 15, characterY - 30, 5);
-//   rect(characterX + 10, characterY - 30, 5);
-//   rect(characterX + 5, characterY - 30, 5);
-//   rect(characterX - 5, characterY - 30, 5);
-//   rect(characterX + 20, characterY - 25, 5);
-//   rect(characterX + 10, characterY - 25, 5);
-//   rect(characterX + 5, characterY - 25, 5);
-//   rect(characterX + 0, characterY - 25, 5);
-//   rect(characterX - 5, characterY - 25, 5);
-//   rect(characterX + 20, characterY - 20, 5);
-//   rect(characterX + 10, characterY - 20, 5);
-//   rect(characterX + 5, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 20, 5);
-//   rect(characterX - 10, characterY - 20, 5);
-//   rect(characterX + 15, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 15, 5);
-//   rect(characterX + 5, characterY - 15, 5);
-//   rect(characterX + 0, characterY - 15, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 15, 5);
-//   rect(characterX - 15, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 10, 5);
-//   rect(characterX + 5, characterY - 10, 5);
-//   rect(characterX + 0, characterY - 10, 5);
-//   rect(characterX - 5, characterY - 10, 5);
-//   rect(characterX - 10, characterY - 10, 5);
-//   rect(characterX + 5, characterY + 5, 5);
-//   rect(characterX + 5, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 5, 5);
-//   rect(characterX + 0, characterY + 10, 5);
-// }
-
-// function donkItem(x, y) {
-//   // outlines of donk
-//   fill(220, 220, 220);
-//   rect(x - 10, y - 5, 5);
-//   rect(x - 5, y - 10, 5);
-//   rect(x + 0, y - 10, 5);
-//   rect(x + 5, y - 5, 5);
-//   rect(x + 5, y + 0, 5);
-//   rect(x + 0, y + 0, 5);
-//   rect(x - 5, y + 0, 5);
-//   rect(x - 10, y + 0, 5);
-//   rect(x - 15, y + 0, 5);
-//   rect(x - 20, y + 0, 5);
-//   rect(x - 20, y + 5, 5);
-//   rect(x - 20, y + 10, 5);
-//   rect(x - 20, y + 15, 5);
-//   rect(x - 20, y + 20, 5);
-//   rect(x - 15, y + 25, 5);
-//   rect(x - 10, y + 25, 5);
-//   rect(x - 5, y + 25, 5);
-//   rect(x + 0, y + 25, 5);
-//   rect(x + 5, y + 20, 5);
-//   rect(x + 5, y + 15, 5);
-//   rect(x + 5, y + 10, 5);
-//   rect(x + 5, y + 5, 5);
-//   // cork
-//   fill(0, 0, 0);
-//   rect(x - 20, y - 5, 5);
-//   rect(x - 15, y - 5, 5);
-
-//   // liquid
-//   fill(255, 175, 0);
-//   rect(x - 15, y + 5, 5);
-//   rect(x - 10, y + 5, 5);
-//   rect(x - 5, y + 5, 5);
-//   rect(x + 0, y + 5, 5);
-//   fill(255, 155, 0);
-//   rect(x - 15, y + 10, 5);
-//   rect(x - 10, y + 10, 5);
-//   rect(x - 5, y + 10, 5);
-//   rect(x + 0, y + 10, 5);
-//   fill(240, 140, 0);
-//   rect(x - 15, y + 15, 5);
-//   rect(x - 10, y + 15, 5);
-//   rect(x - 5, y + 15, 5);
-//   rect(x + 0, y + 15, 5);
-//   fill(225, 125, 0);
-//   rect(x - 10, y + 20, 5);
-//   rect(x - 5, y + 20, 5);
-//   fill(240, 140, 0);
-//   rect(x - 15, y + 20, 5);
-//   rect(x + 0, y + 20, 5);
-// }
-// function draw() {
-//   noStroke();
-//   characterDown(100, 100);
-//   characterUp(100, 200);
-//   characterLeft(200, 100);
-//   characterRight(200, 200);
-//   donkItem(300, 200);
-// }
-
-// function setup() {
-//   let cnv = createCanvas(1000, 600);
-//   let cnvX = (windowWidth - width) / 2;
-//   let cnvY = (windowHeight - height + 0) / 2;
-//   cnv.position(cnvX, cnvY);
-//   frameRate(30);
-//   createCanvas(1000, 600);
-// }
-
-import { characterDown } from "./characterDown.js";
-
+let countDown = 900;
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
@@ -840,13 +25,11 @@ const donkY = 110;
 let isGameActive = true;
 let donkStory1 = false;
 let donkStory2 = false;
+let counterActive = false;
+let ifDonkWasPickedUp = false;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
-
-background(10, 10, 10);
-
-noStroke();
 
 // BACKGROUND
 function groundGraphic(groundX, groundY) {
@@ -1298,7 +481,6 @@ function straightWall(wallX, wallY) {
   rect(wallX + 60, wallY + 15, 5);
   rect(wallX + 55, wallY + 15, 5);
   rect(wallX + 60, wallY + 20, 5);
-
   rect(wallX + 20, wallY + 15, 5);
   rect(wallX + 5, wallY + 15, 5);
   rect(wallX, wallY + 15, 5);
@@ -1436,224 +618,224 @@ function downWall(wallX, wallY) {
 }
 
 //Character Going Down Graphic
-// function characterDown(characterX, characterY) {
-//   noStroke();
-//   // outlines of front of character
-//   fill(0, 0, 0);
-//   //   head
-//   rect(characterX - 5, characterY - 5, 5);
-//   rect(characterX, characterY - 5, 5);
-//   rect(characterX + 5, characterY - 5, 5);
-//   rect(characterX + 10, characterY - 5, 5);
-//   rect(characterX + 15, characterY - 10, 5);
-//   rect(characterX + 20, characterY - 15, 5);
-//   rect(characterX + 25, characterY - 20, 5);
-//   rect(characterX + 30, characterY - 25, 5);
-//   rect(characterX + 30, characterY - 30, 5);
-//   rect(characterX + 30, characterY - 35, 5);
-//   rect(characterX + 25, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 50, 5);
-//   rect(characterX + 15, characterY - 50, 5);
-//   rect(characterX + 10, characterY - 55, 5);
-//   rect(characterX + 5, characterY - 55, 5);
-//   rect(characterX + 0, characterY - 55, 5);
-//   rect(characterX - 5, characterY - 55, 5);
-//   rect(characterX - 10, characterY - 50, 5);
-//   rect(characterX - 15, characterY - 50, 5);
-//   rect(characterX - 20, characterY - 45, 5);
-//   rect(characterX - 20, characterY - 40, 5);
-//   rect(characterX - 25, characterY - 35, 5);
-//   rect(characterX - 25, characterY - 30, 5);
-//   rect(characterX - 25, characterY - 25, 5);
-//   rect(characterX - 20, characterY - 20, 5);
-//   rect(characterX - 15, characterY - 15, 5);
-//   rect(characterX - 10, characterY - 10, 5);
-//   //   caracter eyes
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX - 5, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 15, 5);
-//   rect(characterX + 10, characterY - 20, 5);
-//   rect(characterX - 5, characterY - 15, 5);
-//   // body
-//   rect(characterX + 25, characterY - 10, 5);
-//   rect(characterX + 30, characterY - 5, 5);
-//   rect(characterX + 35, characterY + 0, 5);
-//   rect(characterX + 35, characterY + 5, 5);
-//   rect(characterX + 30, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 10, 5);
-//   rect(characterX + 25, characterY + 15, 5);
-//   rect(characterX + 25, characterY + 20, 5);
-//   rect(characterX + 25, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 30, 5);
-//   rect(characterX + 15, characterY + 30, 5);
-//   rect(characterX + 10, characterY + 30, 5);
+function characterDown(characterX, characterY) {
+  noStroke();
+  // outlines of front of character
+  fill(0, 0, 0);
+  //   head
+  rect(characterX - 5, characterY - 5, 5);
+  rect(characterX, characterY - 5, 5);
+  rect(characterX + 5, characterY - 5, 5);
+  rect(characterX + 10, characterY - 5, 5);
+  rect(characterX + 15, characterY - 10, 5);
+  rect(characterX + 20, characterY - 15, 5);
+  rect(characterX + 25, characterY - 20, 5);
+  rect(characterX + 30, characterY - 25, 5);
+  rect(characterX + 30, characterY - 30, 5);
+  rect(characterX + 30, characterY - 35, 5);
+  rect(characterX + 25, characterY - 40, 5);
+  rect(characterX + 25, characterY - 45, 5);
+  rect(characterX + 20, characterY - 50, 5);
+  rect(characterX + 15, characterY - 50, 5);
+  rect(characterX + 10, characterY - 55, 5);
+  rect(characterX + 5, characterY - 55, 5);
+  rect(characterX + 0, characterY - 55, 5);
+  rect(characterX - 5, characterY - 55, 5);
+  rect(characterX - 10, characterY - 50, 5);
+  rect(characterX - 15, characterY - 50, 5);
+  rect(characterX - 20, characterY - 45, 5);
+  rect(characterX - 20, characterY - 40, 5);
+  rect(characterX - 25, characterY - 35, 5);
+  rect(characterX - 25, characterY - 30, 5);
+  rect(characterX - 25, characterY - 25, 5);
+  rect(characterX - 20, characterY - 20, 5);
+  rect(characterX - 15, characterY - 15, 5);
+  rect(characterX - 10, characterY - 10, 5);
+  //   caracter eyes
+  rect(characterX - 5, characterY - 15, 5);
+  rect(characterX - 5, characterY - 20, 5);
+  rect(characterX - 5, characterY - 15, 5);
+  rect(characterX + 10, characterY - 15, 5);
+  rect(characterX + 10, characterY - 20, 5);
+  rect(characterX - 5, characterY - 15, 5);
+  // body
+  rect(characterX + 25, characterY - 10, 5);
+  rect(characterX + 30, characterY - 5, 5);
+  rect(characterX + 35, characterY + 0, 5);
+  rect(characterX + 35, characterY + 5, 5);
+  rect(characterX + 30, characterY + 10, 5);
+  rect(characterX + 25, characterY + 10, 5);
+  rect(characterX + 25, characterY + 15, 5);
+  rect(characterX + 25, characterY + 20, 5);
+  rect(characterX + 25, characterY + 25, 5);
+  rect(characterX + 20, characterY + 30, 5);
+  rect(characterX + 15, characterY + 30, 5);
+  rect(characterX + 10, characterY + 30, 5);
 
-//   rect(characterX + 5, characterY + 25, 5);
-//   rect(characterX + 5, characterY + 20, 5);
-//   rect(characterX + 0, characterY + 25, 5);
-//   rect(characterX + 0, characterY + 20, 5);
+  rect(characterX + 5, characterY + 25, 5);
+  rect(characterX + 5, characterY + 20, 5);
+  rect(characterX + 0, characterY + 25, 5);
+  rect(characterX + 0, characterY + 20, 5);
 
-//   rect(characterX - 15, characterY + 30, 5);
-//   rect(characterX - 10, characterY + 30, 5);
-//   rect(characterX - 5, characterY + 30, 5);
+  rect(characterX - 15, characterY + 30, 5);
+  rect(characterX - 10, characterY + 30, 5);
+  rect(characterX - 5, characterY + 30, 5);
 
-//   rect(characterX - 20, characterY + 25, 5);
-//   rect(characterX - 20, characterY + 20, 5);
-//   rect(characterX - 20, characterY + 15, 5);
-//   rect(characterX - 20, characterY + 10, 5);
-//   rect(characterX - 25, characterY + 10, 5);
-//   rect(characterX - 30, characterY + 5, 5);
-//   rect(characterX - 30, characterY + 0, 5);
-//   rect(characterX - 25, characterY - 5, 5);
-//   rect(characterX - 20, characterY - 10, 5);
+  rect(characterX - 20, characterY + 25, 5);
+  rect(characterX - 20, characterY + 20, 5);
+  rect(characterX - 20, characterY + 15, 5);
+  rect(characterX - 20, characterY + 10, 5);
+  rect(characterX - 25, characterY + 10, 5);
+  rect(characterX - 30, characterY + 5, 5);
+  rect(characterX - 30, characterY + 0, 5);
+  rect(characterX - 25, characterY - 5, 5);
+  rect(characterX - 20, characterY - 10, 5);
 
-//   rect(characterX - 10, characterY + 10, 5);
-//   rect(characterX - 5, characterY + 10, 5);
-//   rect(characterX + 0, characterY + 10, 5);
-//   rect(characterX + 5, characterY + 10, 5);
-//   rect(characterX + 10, characterY + 10, 5);
-//   rect(characterX + 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 5, 5);
-//   rect(characterX + 20, characterY + 0, 5);
-//   rect(characterX - 15, characterY + 5, 5);
-//   rect(characterX - 15, characterY + 0, 5);
+  rect(characterX - 10, characterY + 10, 5);
+  rect(characterX - 5, characterY + 10, 5);
+  rect(characterX + 0, characterY + 10, 5);
+  rect(characterX + 5, characterY + 10, 5);
+  rect(characterX + 10, characterY + 10, 5);
+  rect(characterX + 15, characterY + 10, 5);
+  rect(characterX + 20, characterY + 5, 5);
+  rect(characterX + 20, characterY + 0, 5);
+  rect(characterX - 15, characterY + 5, 5);
+  rect(characterX - 15, characterY + 0, 5);
 
-//   fill(shirtColor);
-//   // red shirt on front of character
-//   rect(characterX - 15, characterY - 10, 5);
-//   rect(characterX - 15, characterY - 5, 5);
-//   rect(characterX - 10, characterY - 5, 5);
-//   rect(characterX - 10, characterY, 5);
-//   rect(characterX - 5, characterY, 5);
-//   rect(characterX, characterY, 5);
-//   rect(characterX + 5, characterY, 5);
-//   rect(characterX + 10, characterY, 5);
-//   rect(characterX + 15, characterY, 5);
-//   rect(characterX + 15, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 5, 5);
-//   rect(characterX + 20, characterY - 10, 5);
-//   rect(characterX - 10, characterY + 5, 5);
-//   rect(characterX - 5, characterY + 5, 5);
-//   rect(characterX + 0, characterY + 5, 5);
-//   rect(characterX + 5, characterY + 5, 5);
-//   rect(characterX + 10, characterY + 5, 5);
-//   rect(characterX + 15, characterY + 5, 5);
+  fill(shirtColor);
+  // red shirt on front of character
+  rect(characterX - 15, characterY - 10, 5);
+  rect(characterX - 15, characterY - 5, 5);
+  rect(characterX - 10, characterY - 5, 5);
+  rect(characterX - 10, characterY, 5);
+  rect(characterX - 5, characterY, 5);
+  rect(characterX, characterY, 5);
+  rect(characterX + 5, characterY, 5);
+  rect(characterX + 10, characterY, 5);
+  rect(characterX + 15, characterY, 5);
+  rect(characterX + 15, characterY - 5, 5);
+  rect(characterX + 20, characterY - 5, 5);
+  rect(characterX + 20, characterY - 10, 5);
+  rect(characterX - 10, characterY + 5, 5);
+  rect(characterX - 5, characterY + 5, 5);
+  rect(characterX + 0, characterY + 5, 5);
+  rect(characterX + 5, characterY + 5, 5);
+  rect(characterX + 10, characterY + 5, 5);
+  rect(characterX + 15, characterY + 5, 5);
 
-//   //   hair on front of character
-//   fill(hairColor);
-//   rect(characterX + 10, characterY - 50, 5);
-//   rect(characterX + 5, characterY - 50, 5);
-//   rect(characterX + 0, characterY - 50, 5);
-//   rect(characterX - 5, characterY - 50, 5);
-//   rect(characterX + 20, characterY - 45, 5);
-//   rect(characterX + 15, characterY - 45, 5);
-//   rect(characterX + 10, characterY - 45, 5);
-//   rect(characterX + 5, characterY - 45, 5);
-//   rect(characterX + 0, characterY - 45, 5);
-//   rect(characterX - 5, characterY - 45, 5);
-//   rect(characterX - 10, characterY - 45, 5);
-//   rect(characterX - 15, characterY - 45, 5);
-//   rect(characterX + 20, characterY - 40, 5);
-//   rect(characterX + 15, characterY - 40, 5);
-//   rect(characterX + 10, characterY - 40, 5);
-//   rect(characterX + 5, characterY - 40, 5);
-//   rect(characterX + 0, characterY - 40, 5);
-//   rect(characterX - 5, characterY - 40, 5);
-//   rect(characterX - 10, characterY - 40, 5);
-//   rect(characterX - 15, characterY - 40, 5);
-//   rect(characterX + 25, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 35, 5);
-//   rect(characterX + 15, characterY - 35, 5);
-//   rect(characterX + 10, characterY - 35, 5);
-//   rect(characterX + 5, characterY - 35, 5);
-//   rect(characterX + 0, characterY - 35, 5);
-//   rect(characterX - 5, characterY - 35, 5);
-//   rect(characterX - 10, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 35, 5);
-//   rect(characterX + 20, characterY - 30, 5);
-//   rect(characterX + 15, characterY - 30, 5);
-//   rect(characterX + 10, characterY - 30, 5);
-//   rect(characterX + 5, characterY - 30, 5);
-//   rect(characterX + 0, characterY - 30, 5);
+  //   hair on front of character
+  fill(hairColor);
+  rect(characterX + 10, characterY - 50, 5);
+  rect(characterX + 5, characterY - 50, 5);
+  rect(characterX + 0, characterY - 50, 5);
+  rect(characterX - 5, characterY - 50, 5);
+  rect(characterX + 20, characterY - 45, 5);
+  rect(characterX + 15, characterY - 45, 5);
+  rect(characterX + 10, characterY - 45, 5);
+  rect(characterX + 5, characterY - 45, 5);
+  rect(characterX + 0, characterY - 45, 5);
+  rect(characterX - 5, characterY - 45, 5);
+  rect(characterX - 10, characterY - 45, 5);
+  rect(characterX - 15, characterY - 45, 5);
+  rect(characterX + 20, characterY - 40, 5);
+  rect(characterX + 15, characterY - 40, 5);
+  rect(characterX + 10, characterY - 40, 5);
+  rect(characterX + 5, characterY - 40, 5);
+  rect(characterX + 0, characterY - 40, 5);
+  rect(characterX - 5, characterY - 40, 5);
+  rect(characterX - 10, characterY - 40, 5);
+  rect(characterX - 15, characterY - 40, 5);
+  rect(characterX + 25, characterY - 35, 5);
+  rect(characterX + 20, characterY - 35, 5);
+  rect(characterX + 15, characterY - 35, 5);
+  rect(characterX + 10, characterY - 35, 5);
+  rect(characterX + 5, characterY - 35, 5);
+  rect(characterX + 0, characterY - 35, 5);
+  rect(characterX - 5, characterY - 35, 5);
+  rect(characterX - 10, characterY - 35, 5);
+  rect(characterX - 20, characterY - 35, 5);
+  rect(characterX + 20, characterY - 30, 5);
+  rect(characterX + 15, characterY - 30, 5);
+  rect(characterX + 10, characterY - 30, 5);
+  rect(characterX + 5, characterY - 30, 5);
+  rect(characterX + 0, characterY - 30, 5);
 
-//   //   skin on front of character
-//   fill(245, 220, 200);
-//   rect(characterX - 15, characterY - 35, 5);
-//   rect(characterX - 20, characterY - 30, 5);
-//   rect(characterX - 15, characterY - 30, 5);
-//   rect(characterX - 10, characterY - 30, 5);
-//   rect(characterX - 5, characterY - 30, 5);
-//   rect(characterX + 25, characterY - 30, 5);
-//   rect(characterX - 20, characterY - 25, 5);
-//   rect(characterX - 15, characterY - 25, 5);
-//   rect(characterX - 10, characterY - 25, 5);
-//   rect(characterX - 5, characterY - 25, 5);
-//   rect(characterX + 0, characterY - 25, 5);
-//   rect(characterX + 5, characterY - 25, 5);
-//   rect(characterX + 10, characterY - 25, 5);
-//   rect(characterX + 15, characterY - 25, 5);
-//   rect(characterX + 20, characterY - 25, 5);
-//   rect(characterX + 25, characterY - 25, 5);
+  //   skin on front of character
+  fill(245, 220, 200);
+  rect(characterX - 15, characterY - 35, 5);
+  rect(characterX - 20, characterY - 30, 5);
+  rect(characterX - 15, characterY - 30, 5);
+  rect(characterX - 10, characterY - 30, 5);
+  rect(characterX - 5, characterY - 30, 5);
+  rect(characterX + 25, characterY - 30, 5);
+  rect(characterX - 20, characterY - 25, 5);
+  rect(characterX - 15, characterY - 25, 5);
+  rect(characterX - 10, characterY - 25, 5);
+  rect(characterX - 5, characterY - 25, 5);
+  rect(characterX + 0, characterY - 25, 5);
+  rect(characterX + 5, characterY - 25, 5);
+  rect(characterX + 10, characterY - 25, 5);
+  rect(characterX + 15, characterY - 25, 5);
+  rect(characterX + 20, characterY - 25, 5);
+  rect(characterX + 25, characterY - 25, 5);
 
-//   rect(characterX - 15, characterY - 20, 5);
-//   rect(characterX - 10, characterY - 20, 5);
-//   rect(characterX + 0, characterY - 20, 5);
-//   rect(characterX + 5, characterY - 20, 5);
-//   rect(characterX + 15, characterY - 20, 5);
-//   rect(characterX + 20, characterY - 20, 5);
+  rect(characterX - 15, characterY - 20, 5);
+  rect(characterX - 10, characterY - 20, 5);
+  rect(characterX + 0, characterY - 20, 5);
+  rect(characterX + 5, characterY - 20, 5);
+  rect(characterX + 15, characterY - 20, 5);
+  rect(characterX + 20, characterY - 20, 5);
 
-//   rect(characterX - 10, characterY - 15, 5);
-//   rect(characterX + 0, characterY - 15, 5);
-//   rect(characterX + 5, characterY - 15, 5);
-//   rect(characterX + 15, characterY - 15, 5);
+  rect(characterX - 10, characterY - 15, 5);
+  rect(characterX + 0, characterY - 15, 5);
+  rect(characterX + 5, characterY - 15, 5);
+  rect(characterX + 15, characterY - 15, 5);
 
-//   rect(characterX - 5, characterY - 10, 5);
-//   rect(characterX + 0, characterY - 10, 5);
-//   rect(characterX + 5, characterY - 10, 5);
-//   rect(characterX + 10, characterY - 10, 5);
-//   // Hands
-//   rect(characterX + 25, characterY - 5, 5);
-//   rect(characterX + 25, characterY + 0, 5);
-//   rect(characterX + 25, characterY + 5, 5);
-//   rect(characterX + 30, characterY + 0, 5);
-//   rect(characterX + 30, characterY + 5, 5);
-//   rect(characterX - 20, characterY - 5, 5);
-//   rect(characterX - 20, characterY + 0, 5);
-//   rect(characterX - 20, characterY + 5, 5);
-//   rect(characterX - 25, characterY + 0, 5);
-//   rect(characterX - 25, characterY + 5, 5);
+  rect(characterX - 5, characterY - 10, 5);
+  rect(characterX + 0, characterY - 10, 5);
+  rect(characterX + 5, characterY - 10, 5);
+  rect(characterX + 10, characterY - 10, 5);
+  // Hands
+  rect(characterX + 25, characterY - 5, 5);
+  rect(characterX + 25, characterY + 0, 5);
+  rect(characterX + 25, characterY + 5, 5);
+  rect(characterX + 30, characterY + 0, 5);
+  rect(characterX + 30, characterY + 5, 5);
+  rect(characterX - 20, characterY - 5, 5);
+  rect(characterX - 20, characterY + 0, 5);
+  rect(characterX - 20, characterY + 5, 5);
+  rect(characterX - 25, characterY + 0, 5);
+  rect(characterX - 25, characterY + 5, 5);
 
-//   //   pants on front caracter
-//   fill(pantsColor);
-//   rect(characterX - 15, characterY + 10, 5);
-//   rect(characterX + 20, characterY + 10, 5);
+  //   pants on front caracter
+  fill(pantsColor);
+  rect(characterX - 15, characterY + 10, 5);
+  rect(characterX + 20, characterY + 10, 5);
 
-//   rect(characterX - 15, characterY + 15, 5);
-//   rect(characterX - 10, characterY + 15, 5);
-//   rect(characterX - 5, characterY + 15, 5);
-//   rect(characterX + 0, characterY + 15, 5);
-//   rect(characterX + 5, characterY + 15, 5);
-//   rect(characterX + 10, characterY + 15, 5);
-//   rect(characterX + 15, characterY + 15, 5);
-//   rect(characterX + 20, characterY + 15, 5);
+  rect(characterX - 15, characterY + 15, 5);
+  rect(characterX - 10, characterY + 15, 5);
+  rect(characterX - 5, characterY + 15, 5);
+  rect(characterX + 0, characterY + 15, 5);
+  rect(characterX + 5, characterY + 15, 5);
+  rect(characterX + 10, characterY + 15, 5);
+  rect(characterX + 15, characterY + 15, 5);
+  rect(characterX + 20, characterY + 15, 5);
 
-//   rect(characterX - 15, characterY + 20, 5);
-//   rect(characterX - 10, characterY + 20, 5);
-//   rect(characterX - 5, characterY + 20, 5);
-//   rect(characterX + 10, characterY + 20, 5);
-//   rect(characterX + 15, characterY + 20, 5);
-//   rect(characterX + 20, characterY + 20, 5);
+  rect(characterX - 15, characterY + 20, 5);
+  rect(characterX - 10, characterY + 20, 5);
+  rect(characterX - 5, characterY + 20, 5);
+  rect(characterX + 10, characterY + 20, 5);
+  rect(characterX + 15, characterY + 20, 5);
+  rect(characterX + 20, characterY + 20, 5);
 
-//   fill(shoeColor);
-//   rect(characterX - 15, characterY + 25, 5);
-//   rect(characterX - 10, characterY + 25, 5);
-//   rect(characterX - 5, characterY + 25, 5);
-//   rect(characterX + 10, characterY + 25, 5);
-//   rect(characterX + 15, characterY + 25, 5);
-//   rect(characterX + 20, characterY + 25, 5);
-// }
+  fill(shoeColor);
+  rect(characterX - 15, characterY + 25, 5);
+  rect(characterX - 10, characterY + 25, 5);
+  rect(characterX - 5, characterY + 25, 5);
+  rect(characterX + 10, characterY + 25, 5);
+  rect(characterX + 15, characterY + 25, 5);
+  rect(characterX + 20, characterY + 25, 5);
+}
 
 //Item PLateu
 function plateau() {
@@ -1862,6 +1044,14 @@ function level1() {
   //wall collision
   // https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
 }
+
+function countDownDisplay() {
+  textSize(20);
+  // textAlign(LEFT, LEFT);
+  fill(255, 255, 255);
+  let displayText = Math.ceil(countDown / 30);
+  text(displayText + " sec", 450, 15, 57, 50);
+}
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -1923,11 +1113,12 @@ function donkStory1Function() {
   fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  textAlign(CENTER, CENTER);
+  // textAlign(CENTER, CENTER);
 
   text("You stole the sacred dônk!", 500, 300);
   textSize(40);
   text(">", 620, 380);
+  textSize(20);
 }
 function donkStory2Function() {
   fill(255, 255, 255);
@@ -1935,107 +1126,29 @@ function donkStory2Function() {
   fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  textAlign(CENTER, CENTER);
+  // textAlign(CENTER, CENTER);
 
-  text("Y fgffgacred dônk!", 500, 300);
+  text("Y fgffgacred dônk!", 425, 300);
   textSize(40);
   text(">", 620, 380);
+  textSize(20);
 }
-//Draw the character
-function draw() {
-  //Spreading out the ground tiles in a for loop
-  const length = 10;
 
-  wallCollisionUp();
-  wallCollisionLeft();
-  wallCollisionRight();
-  for (let x = 0; x < length; x++) {
-    for (let y = 0; y < length; y++) {
-      groundGraphic(x * groundX, y * groundY - 200);
-    }
-  }
-  level1();
-  // displaying donk
-  if (showDonk === true) {
-    donkItem(donkX, donkY);
-  }
-  // removing donk if character is picking it up
-  if (
-    characterX < 50 &&
-    characterX > 20 &&
-    characterY < 125 &&
-    characterY > 80
-  ) {
-    showDonk = false;
-    isGameActive = false;
-  }
+//Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.
+function wallCollisionDown() {
+  for (let i = 0; i < downWallArray.length; i++) {
+    let downWall = downWallArray[i];
 
-  if (showDonk === false) {
-    donkStory1 = true;
-  }
-  if (donkStory1 === true) {
-    donkStory1Function();
-    if (keyIsDown(32)) {
-      donkStory1 = false;
-      donkStory2 = true;
-    }
-  }
-  if (donkStory2 === true) {
-    donkStory2Function();
-  }
-  characterDown(characterX, characterY);
-  //  Moving Character
-  if (isGameActive) {
-    if (keyIsDown(38)) {
+    if (
+      characterX > downWall.x &&
+      characterX < downWall.x + downWall.width &&
+      characterY < downWall.y &&
+      characterY + 30 > downWall.y
+    ) {
       characterY = characterY - characterSpeed;
-    } else if (keyIsDown(40)) {
-      characterY = characterY + characterSpeed;
-    } else if (keyIsDown(37)) {
-      characterX = characterX - characterSpeed;
-    } else if (keyIsDown(39)) {
-      characterX = characterX + characterSpeed;
     }
   }
 }
-
-// Tile map https://developer.mozilla.org/en-US/docs/Games/Techniques/Tilemaps
-const upWallOne = { x: 0, y: 35, width: 300, height: 55 };
-const upWallTwo = { x: 280, y: 120, width: 270, height: 55 };
-const upWallThree = { x: 105, y: 310, width: 275, height: 55 };
-const upWallFour = { x: 280, y: 490, width: 370, height: 55 };
-const upWallFive = { x: 650, y: 210, width: 350, height: 55 };
-
-const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
-const leftWallTwo = { x: 390, y: 180, width: 15, height: 120 };
-const leftWallThree = { x: 120, y: 260, width: 15, height: 340 };
-const leftWallFour = { x: 645, y: 175, width: 15, height: 310 };
-const leftWallFive = { x: 190, y: 0, width: 20, height: 70 };
-const leftWallSix = { x: 190, y: 150, width: 20, height: 70 };
-
-const rightWallOne = { x: 280, y: 0, width: 15, height: 120 };
-const rightWallTwo = { x: 550, y: 120, width: 15, height: 290 };
-const rightWallThree = { x: 280, y: 390, width: 15, height: 100 };
-const rightWallFour = { x: 800, y: 320, width: 15, height: 230 };
-const rightWallFive = { x: 180, y: 0, width: 20, height: 70 };
-const rightWallSix = { x: 180, y: 150, width: 20, height: 70 };
-
-let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
-let leftWallArray = [
-  leftWallOne,
-  leftWallTwo,
-  leftWallThree,
-  leftWallFour,
-  leftWallFive,
-  leftWallSix,
-];
-let rightWallArray = [
-  rightWallOne,
-  rightWallTwo,
-  rightWallThree,
-  rightWallFour,
-  rightWallFive,
-  rightWallSix,
-];
 
 function wallCollisionUp() {
   for (let i = 0; i < upWallArray.length; i++) {
@@ -2058,10 +1171,10 @@ function wallCollisionLeft() {
 
     //Left Wall One
     if (
-      characterX + 15 > wall.x &&
+      characterX + 10 > wall.x &&
       characterX < wall.x + wall.width &&
       characterY < wall.y + wall.height &&
-      characterY + 15 > wall.y
+      characterY + 10 > wall.y
     ) {
       characterX = characterX + characterSpeed;
     }
@@ -2075,11 +1188,132 @@ function wallCollisionRight() {
     //Right Wall One
     if (
       characterX < wall.x + wall.width &&
-      characterX + 15 > wall.x &&
+      characterX + 10 > wall.x &&
       characterY < wall.y + wall.height &&
-      characterY + 15 > wall.y
+      characterY + 10 > wall.y
     ) {
       characterX = characterX - characterSpeed;
     }
   }
+}
+
+const downWallOne = { x: 0, y: 200, width: 390, height: 55 };
+const downWallTwo = { x: 280, y: 405, width: 285, height: 55 };
+const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
+const downWallFour = { x: 800, y: 330, width: 200, height: 55 };
+
+const upWallOne = { x: 0, y: 35, width: 300, height: 55 };
+const upWallTwo = { x: 280, y: 120, width: 270, height: 55 };
+const upWallThree = { x: 105, y: 310, width: 275, height: 55 };
+const upWallFour = { x: 280, y: 490, width: 370, height: 55 };
+const upWallFive = { x: 650, y: 210, width: 350, height: 55 };
+
+const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
+const leftWallTwo = { x: 390, y: 180, width: 15, height: 120 };
+const leftWallThree = { x: 120, y: 260, width: 15, height: 340 };
+const leftWallFour = { x: 645, y: 175, width: 15, height: 310 };
+const leftWallFive = { x: 190, y: 0, width: 10, height: 70 };
+const leftWallSix = { x: 190, y: 150, width: 10, height: 70 };
+
+const rightWallOne = { x: 280, y: 0, width: 15, height: 120 };
+const rightWallTwo = { x: 550, y: 120, width: 15, height: 290 };
+const rightWallThree = { x: 280, y: 390, width: 15, height: 100 };
+const rightWallFour = { x: 800, y: 320, width: 15, height: 230 };
+const rightWallFive = { x: 180, y: 0, width: 10, height: 70 };
+const rightWallSix = { x: 180, y: 150, width: 10, height: 70 };
+
+let downWallArray = [downWallOne, downWallTwo, downWallThree, downWallFour];
+
+let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
+
+let leftWallArray = [
+  leftWallOne,
+  leftWallTwo,
+  leftWallThree,
+  leftWallFour,
+  leftWallFive,
+  leftWallSix,
+];
+
+let rightWallArray = [
+  rightWallOne,
+  rightWallTwo,
+  rightWallThree,
+  rightWallFour,
+  rightWallFive,
+  rightWallSix,
+];
+
+//Timer
+//https://www.w3schools.com/js/js_timing.asp
+//https://medium.com/geekculture/creating-counter-with-javascript-4b1c60892c45
+//https://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+function draw() {
+  //Spreading out the ground tiles in a for loop
+  const length = 10;
+
+  wallCollisionDown();
+  wallCollisionUp();
+  wallCollisionLeft();
+  wallCollisionRight();
+
+  //Looping the background tile
+  for (let x = 0; x < length; x++) {
+    for (let y = 0; y < length; y++) {
+      groundGraphic(x * groundX, y * groundY - 200);
+    }
+  }
+  countDownDisplay();
+
+  level1();
+  // displaying donk
+  if (showDonk === true) {
+    donkItem(donkX, donkY);
+    if (
+      characterX < 50 &&
+      characterX > 20 &&
+      characterY < 125 &&
+      characterY > 80
+    ) {
+      showDonk = false;
+      isGameActive = false;
+      ifDonkWasPickedUp = true;
+    }
+  }
+  // removing donk if character is picking it up
+
+  // fel
+  if (ifDonkWasPickedUp === true) {
+    donkStory1Function();
+    if (keyIsDown(32)) {
+      isGameActive = true;
+      counterActive = true;
+      ifDonkWasPickedUp = false;
+    }
+  }
+
+  characterDown(characterX, characterY);
+  //  Moving Character
+  if (isGameActive) {
+    if (keyIsDown(38)) {
+      characterY = characterY - characterSpeed;
+    } else if (keyIsDown(40)) {
+      characterY = characterY + characterSpeed;
+    } else if (keyIsDown(37)) {
+      characterX = characterX - characterSpeed;
+    } else if (keyIsDown(39)) {
+      characterX = characterX + characterSpeed;
+    }
+  }
+  if (counterActive === true) {
+    if (countDown > 0) {
+      countDown = countDown - 1;
+      console.log(countDown);
+    } else {
+      donkStory2 = true;
+      isGameActive = false;
+    }
+  }
+  // Timer counting down.
 }

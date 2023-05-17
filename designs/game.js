@@ -1138,7 +1138,7 @@ function donkStory2Function() {
 }
 
 //Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.
-function downWallCollision() {
+function wallCollisionDown() {
   for (let i = 0; i < downWallArray.length; i++) {
     let downWall = downWallArray[i];
 
@@ -1256,7 +1256,7 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  downWallCollision();
+  wallCollisionDown();
   wallCollisionUp();
   wallCollisionLeft();
   wallCollisionRight();

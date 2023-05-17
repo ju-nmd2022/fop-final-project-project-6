@@ -7,7 +7,7 @@ function setup() {
   createCanvas(1000, 600);
 }
 
-let countDown = 3000;
+let countDown = 900;
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
@@ -1184,10 +1184,15 @@ function draw() {
     } else if (keyIsDown(39)) {
       characterX = characterX + characterSpeed;
     }
+    if (countDown > 0) {
+      countDown = countDown - 1;
+      console.log(countDown);
+    } else {
+      donkStory2 = true;
+      isGameActive = false;
+    }
   }
   // Timer counting down.
-  countDown = countDown - 1;
-  console.log(countDown);
 }
 
 //Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.

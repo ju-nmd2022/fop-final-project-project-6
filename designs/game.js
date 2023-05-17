@@ -1333,6 +1333,7 @@ function draw() {
       characterX = characterX + characterSpeed;
     }
   }
+  // Timer ticking down to 0
   if (counterActive === true) {
     if (countDown > 0) {
       countDown = countDown - 1;
@@ -1349,6 +1350,4 @@ function draw() {
       chasingWallX = characterX - 1000;
     }
   }
-
-  // Timer counting down.
 }

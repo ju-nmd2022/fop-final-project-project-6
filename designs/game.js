@@ -8,7 +8,7 @@ function setup() {
   frameRate(30);
 }
 
-let countDown = 900;
+let countDown = 150;
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
@@ -29,6 +29,7 @@ let donkStory1 = false;
 let donkStory2 = false;
 let counterActive = false;
 let ifDonkWasPickedUp = false;
+let chasingWallX = -1000;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
@@ -1137,6 +1138,11 @@ function donkStory2Function() {
   textSize(20);
 }
 
+function chasingBox() {
+  fill(200, 200, 0);
+  rect(chasingWallX, 0, 1000, 600);
+}
+
 //Got help in the labs with wall collision, making objects for the walls, putting them in an array, looping the array.
 function wallCollisionDown() {
   for (let i = 0; i < downWallArray.length; i++) {
@@ -1331,10 +1337,18 @@ function draw() {
     if (countDown > 0) {
       countDown = countDown - 1;
       console.log(countDown);
-    } else {
-      donkStory2 = true;
-      isGameActive = false;
     }
   }
+
+  if (countDown === 0) {
+    chasingBox();
+    chasingWallX = chasingWallX + 5;
+
+    if (chasingWallX + 1000 > characterX) {
+      isGameActive = false;
+      chasingWallX = characterX - 1000;
+    }
+  }
+
   // Timer counting down.
 }

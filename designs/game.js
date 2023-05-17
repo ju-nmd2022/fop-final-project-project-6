@@ -1286,7 +1286,25 @@ function draw() {
   }
   // removing donk if character is picking it up
 
-  // fel
+  if (keyIsDown(49)) {
+    shirtColor = [20, 180, 150];
+    pantsColor = [20, 20, 20];
+    hairColor = [120, 65, 0];
+    shoeColor = [200, 200, 200];
+  }
+  if (keyIsDown(50)) {
+    shirtColor = [0, 0, 0];
+    pantsColor = [255, 225, 0];
+    hairColor = [120, 65, 0];
+    shoeColor = [0, 100, 200];
+  }
+  if (keyIsDown(51)) {
+    shirtColor = [255, 0, 0];
+    pantsColor = [255, 225, 0];
+    hairColor = [255, 155, 0];
+    shoeColor = [120, 50, 50];
+  }
+
   if (ifDonkWasPickedUp === true) {
     donkStory1Function();
     if (keyIsDown(32)) {

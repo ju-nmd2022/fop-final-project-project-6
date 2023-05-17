@@ -2007,15 +2007,15 @@ const leftWallOne = { x: 0, y: 0, width: 15, height: 200 };
 const leftWallTwo = { x: 390, y: 180, width: 15, height: 120 };
 const leftWallThree = { x: 120, y: 260, width: 15, height: 340 };
 const leftWallFour = { x: 645, y: 175, width: 15, height: 310 };
-const leftWallFive = { x: 190, y: 0, width: 10, height: 70 };
-const leftWallSix = { x: 190, y: 150, width: 10, height: 70 };
+const leftWallFive = { x: 190, y: 0, width: 20, height: 70 };
+const leftWallSix = { x: 190, y: 150, width: 20, height: 70 };
 
 const rightWallOne = { x: 280, y: 0, width: 15, height: 120 };
 const rightWallTwo = { x: 550, y: 120, width: 15, height: 290 };
 const rightWallThree = { x: 280, y: 390, width: 15, height: 100 };
 const rightWallFour = { x: 800, y: 320, width: 15, height: 230 };
-const rightWallFive = { x: 180, y: 0, width: 10, height: 70 };
-const rightWallSix = { x: 180, y: 150, width: 10, height: 70 };
+const rightWallFive = { x: 180, y: 0, width: 20, height: 70 };
+const rightWallSix = { x: 180, y: 150, width: 20, height: 70 };
 
 let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
 let leftWallArray = [
@@ -2056,10 +2056,10 @@ function wallCollisionLeft() {
 
     //Left Wall One
     if (
-      characterX + 10 > wall.x &&
+      characterX + 20 > wall.x &&
       characterX < wall.x + wall.width &&
       characterY < wall.y + wall.height &&
-      characterY + 10 > wall.y
+      characterY + 20 > wall.y
     ) {
       characterX = characterX + characterSpeed;
     }
@@ -2073,9 +2073,9 @@ function wallCollisionRight() {
     //Right Wall One
     if (
       characterX < wall.x + wall.width &&
-      characterX + 10 > wall.x &&
+      characterX + 20 > wall.x &&
       characterY < wall.y + wall.height &&
-      characterY + 10 > wall.y
+      characterY + 20 > wall.y
     ) {
       characterX = characterX - characterSpeed;
     }

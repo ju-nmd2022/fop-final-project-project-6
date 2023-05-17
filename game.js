@@ -1,11 +1,10 @@
-// function setup() {
-//   let cnv = createCanvas(1000, 600);
-//   let cnvX = (windowWidth - width) / 2;
-//   let cnvY = (windowHeight - height + 0) / 2;
-//   cnv.position(cnvX, cnvY);
-//   frameRate(30);
-//   createCanvas(1000, 600);
-// }
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+}
 
 let countDown = 900;
 let wallX = 100;
@@ -27,14 +26,10 @@ let isGameActive = true;
 let donkStory1 = false;
 let donkStory2 = false;
 let counterActive = false;
-let donkPickedUp = false;
+let ifDonkWasPickedUp = false;
 
 //downWall Size(w 40px, h 85px)
 //straightWall Size(w 105px, h 55px) 90px width for seamless connection
-
-background(10, 10, 10);
-
-noStroke();
 
 // BACKGROUND
 function groundGraphic(groundX, groundY) {
@@ -1276,33 +1271,29 @@ function draw() {
   // displaying donk
   if (showDonk === true) {
     donkItem(donkX, donkY);
+    if (
+      characterX < 50 &&
+      characterX > 20 &&
+      characterY < 125 &&
+      characterY > 80
+    ) {
+      showDonk = false;
+      isGameActive = false;
+      ifDonkWasPickedUp = true;
+    }
   }
   // removing donk if character is picking it up
-  if (
-    characterX < 50 &&
-    characterX > 20 &&
-    characterY < 125 &&
-    characterY > 80
-  ) {
-    showDonk = false;
-    isGameActive = false;
-    donkPickedUp = true;
-  }
 
   // fel
-  if (donkPickedUp === true) {
+  if (ifDonkWasPickedUp === true) {
     donkStory1Function();
     if (keyIsDown(32)) {
       isGameActive = true;
-      donkStory1 = false;
       counterActive = true;
-      donkPickedUp = false;
-      console.log(donkPickedUp);
+      ifDonkWasPickedUp = false;
     }
   }
-  // if (donkStory1 === true) {
 
-  // }
   characterDown(characterX, characterY);
   //  Moving Character
   if (isGameActive) {

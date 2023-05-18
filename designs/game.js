@@ -1,34 +1,44 @@
 // import { characterDown } from "./characterDown.js";
 
-function setup() {
-  let cnv = createCanvas(1000, 600);
-  let cnvX = (windowWidth - width) / 2;
-  let cnvY = (windowHeight - height + 0) / 2;
-  cnv.position(cnvX, cnvY);
-  frameRate(30);
-}
+// function setup() {
+//   let cnv = createCanvas(1000, 600);
+//   let cnvX = (windowWidth - width) / 2;
+//   let cnvY = (windowHeight - height + 0) / 2;
+//   cnv.position(cnvX, cnvY);
+//   frameRate(30);
+// }
 
+//Values for counter
 let countDown = 150;
+let counterActive = false;
+
+//Values for ground and wall graphics
 let wallX = 100;
 let wallY = 100;
 let groundX = 100;
 let groundY = 100;
+
 //character array for colours
 let shirtColor = [255, 0, 0];
 let pantsColor = [255, 225, 0];
 let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
+
+//Character values
 let characterX = 185;
 let characterY = 120;
 const characterSpeed = 9;
+
+//Values for Donk item and story
 let showDonk = true;
 const donkX = 40;
 const donkY = 110;
-let isGameActive = true;
 let donkStory1 = false;
 let donkStory2 = false;
-let counterActive = false;
 let ifDonkWasPickedUp = false;
+
+//Game active value and chasing wall
+let isGameActive = true;
 let chasingWallX = -1000;
 
 //downWall Size(w 40px, h 85px)
@@ -840,6 +850,8 @@ function characterDown(characterX, characterY) {
   rect(characterX + 15, characterY + 25, 5);
   rect(characterX + 20, characterY + 25, 5);
 }
+
+//Character going up graphic
 function characterUp(characterX, characterY) {
   noStroke();
   // outlines of back of character
@@ -1058,6 +1070,7 @@ function characterUp(characterX, characterY) {
   rect(characterX + 20, characterY + 25, 5);
 }
 
+//Character going left graphic
 function characterLeft(characterX, characterY) {
   // outlines of left character
   fill(0, 0, 0);
@@ -1212,6 +1225,7 @@ function characterLeft(characterX, characterY) {
   rect(characterX - 5, characterY + 5, 5);
 }
 
+//Character going right graphic
 function characterRight(characterX, characterY) {
   // outline of right character
   fill(0, 0, 0);
@@ -1371,7 +1385,7 @@ function characterRight(characterX, characterY) {
   rect(characterX + 0, characterY + 10, 5);
 }
 
-//Item PLateu
+//Item PLateu for the donk
 function plateau() {
   let plateauX = 0;
   let plateauY = 0;
@@ -1510,6 +1524,7 @@ function plateau() {
   pop();
 }
 
+//Level 1, building the stage with graphics
 function level1() {
   //Stage 1
 
@@ -1579,6 +1594,7 @@ function level1() {
   // https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
 }
 
+//Displaying the count down timer with numbers and seconds
 function countDownDisplay() {
   textSize(20);
   // textAlign(LEFT, LEFT);
@@ -1640,7 +1656,7 @@ function donkItem(x, y) {
   rect(x - 15, y + 20, 5);
   rect(x + 0, y + 20, 5);
 }
-//Story after picking up donk
+//Screen showing when item is picked up
 function donkStory1Function() {
   fill(255, 255, 255);
   rect(350, 200, 300, 200);
@@ -1654,6 +1670,8 @@ function donkStory1Function() {
   text(">", 620, 380);
   textSize(20);
 }
+
+//Second screen showing up after the first one
 function donkStory2Function() {
   fill(255, 255, 255);
   rect(350, 200, 300, 200);
@@ -1668,6 +1686,7 @@ function donkStory2Function() {
   textSize(20);
 }
 
+//Graphic for the wall chasing the character
 function chasingBox() {
   fill(200, 200, 0);
   rect(chasingWallX, 0, 1000, 600);
@@ -1678,6 +1697,7 @@ function wallCollisionDown() {
   for (let i = 0; i < downWallArray.length; i++) {
     let downWall = downWallArray[i];
 
+    //Checking the characters position, then making the character "collide"
     if (
       characterX > downWall.x &&
       characterX < downWall.x + downWall.width &&
@@ -1689,11 +1709,11 @@ function wallCollisionDown() {
   }
 }
 
+//Wall collision for the walls uppward
 function wallCollisionUp() {
   for (let i = 0; i < upWallArray.length; i++) {
     let wall = upWallArray[i];
 
-    //Up Wall One
     if (
       characterX > wall.x &&
       characterX < wall.x + wall.width &&
@@ -1704,11 +1724,12 @@ function wallCollisionUp() {
     }
   }
 }
+
+//Wall collision for the walls going left
 function wallCollisionLeft() {
   for (let i = 0; i < leftWallArray.length; i++) {
     let wall = leftWallArray[i];
 
-    //Left Wall One
     if (
       characterX + 10 > wall.x &&
       characterX < wall.x + wall.width &&
@@ -1720,6 +1741,7 @@ function wallCollisionLeft() {
   }
 }
 
+//Wall collision for the walls going right
 function wallCollisionRight() {
   for (let i = 0; i < rightWallArray.length; i++) {
     let wall = rightWallArray[i];
@@ -1736,6 +1758,7 @@ function wallCollisionRight() {
   }
 }
 
+//Objects defining the walls, giving them values that the loop checks for
 const downWallOne = { x: 0, y: 200, width: 390, height: 55 };
 const downWallTwo = { x: 280, y: 405, width: 285, height: 55 };
 const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
@@ -1761,6 +1784,7 @@ const rightWallFour = { x: 800, y: 320, width: 15, height: 230 };
 const rightWallFive = { x: 180, y: 0, width: 10, height: 70 };
 const rightWallSix = { x: 180, y: 150, width: 10, height: 70 };
 
+//Array's where the objects are put in for the loop
 let downWallArray = [downWallOne, downWallTwo, downWallThree, downWallFour];
 
 let upWallArray = [upWallOne, upWallTwo, upWallThree, upWallFour, upWallFive];
@@ -1783,21 +1807,18 @@ let rightWallArray = [
   rightWallSix,
 ];
 
-//Timer
-//https://www.w3schools.com/js/js_timing.asp
-//https://medium.com/geekculture/creating-counter-with-javascript-4b1c60892c45
-//https://www.w3schools.com/jsref/met_win_clearinterval.asp
-
+//Draw function where the game plays
 function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
+  //Wall collision functions
   wallCollisionDown();
   wallCollisionUp();
   wallCollisionLeft();
   wallCollisionRight();
 
-  //Looping the background tile
+  //Looping the background tile 10x10
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
       groundGraphic(x * groundX, y * groundY - 200);
@@ -1822,6 +1843,7 @@ function draw() {
   }
   // removing donk if character is picking it up
 
+  //Changing the array values for the characters clothes
   if (keyIsDown(49)) {
     shirtColor = [20, 180, 150];
     pantsColor = [20, 20, 20];
@@ -1841,6 +1863,7 @@ function draw() {
     shoeColor = [120, 50, 50];
   }
 
+  //Displaying the story screen when donk item is picked up, then after starting the timer
   if (ifDonkWasPickedUp === true) {
     donkStory1Function();
     if (keyIsDown(32)) {
@@ -1849,6 +1872,7 @@ function draw() {
       ifDonkWasPickedUp = false;
     }
   }
+
   characterDown(characterX, characterY);
 
   //  Moving Character
@@ -1863,7 +1887,7 @@ function draw() {
       characterX = characterX + characterSpeed;
     }
   }
-  // Timer ticking down to 0
+  // Timer ticking down to 0 and stopping
   if (counterActive === true) {
     if (countDown > 0) {
       countDown = countDown - 1;
@@ -1871,6 +1895,7 @@ function draw() {
     }
   }
 
+  //Chasing wall going from left to right, game stops if the wall collides with the character
   if (countDown === 0) {
     chasingBox();
     chasingWallX = chasingWallX + 10;

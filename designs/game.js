@@ -1,12 +1,12 @@
 // import { characterDown } from "./characterDown.js";
 
-// function setup() {
-//   let cnv = createCanvas(1000, 600);
-//   let cnvX = (windowWidth - width) / 2;
-//   let cnvY = (windowHeight - height + 0) / 2;
-//   cnv.position(cnvX, cnvY);
-//   frameRate(30);
-// }
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+}
 
 //Values for counter
 let countDown = 150;

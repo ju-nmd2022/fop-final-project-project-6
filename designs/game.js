@@ -35,7 +35,7 @@ const donkX = 40;
 const donkY = 110;
 let chosingCharacterPage = true;
 let donkStory1 = false;
-let donkStory2 = false;
+let losingScreen = false;
 let ifDonkWasPickedUp = false;
 
 //Game active value and chasing wall
@@ -2184,18 +2184,38 @@ function donkStory1Function(boxX, boxY) {
 }
 
 //Second screen showing up after the first one
-function donkStory2Function() {
+function losingScreenFunction(boxX, boxY) {
+  noStroke();
+  fill(0, 0, 0, 200);
+  rect(0, 0, 1000, 600);
+  fill(60, 60, 60);
+  rect(boxX + 0, boxY + 0, 300, 50);
+  fill(70, 70, 70);
+  rect(boxX + 0, boxY + 50, 300, 50);
+  fill(80, 80, 80);
+  rect(boxX + 0, boxY + 100, 300, 50);
+  fill(90, 90, 90);
+  rect(boxX + 0, boxY + 150, 300, 50);
   fill(255, 255, 255);
-  rect(350, 200, 300, 200);
-  fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  // textAlign(CENTER, CENTER);
-
-  text("Y fgffgacred dônk!", 425, 300);
-  textSize(40);
-  text(">", 620, 380);
+  text("You didn't get out of", boxX + 60, boxY + 54);
+  text("the cave in time...", boxX + 72, boxY + 76);
+  textSize(10);
+  text("That kind of sucks", boxX + 106, boxY + 94);
   textSize(20);
+
+  textSize(20);
+  downWall(boxX - 80, boxY + 50);
+  downWall(boxX - 80, boxY + 0);
+  downWall(boxX - 80, boxY + 115);
+  downWall(boxX + 200, boxY + 50);
+  downWall(boxX + 200, boxY + 0);
+  downWall(boxX + 200, boxY + 115);
+  timerContainer(boxX + 200, boxY + 120);
+  fill(255, 255, 255);
+  text("Press space", boxX + 148, boxY + 150);
+  text("to try again", boxX + 154, boxY + 170);
 }
 
 //Graphic for the wall chasing the character
@@ -2421,6 +2441,23 @@ function draw() {
     if (chasingWallX + 1000 > characterX) {
       isGameActive = false;
       chasingWallX = characterX - 1000;
+      losingScreen = true;
+    }
+  }
+
+  if (losingScreen === true) {
+    losingScreenFunction(350, 200);
+    if (keyIsDown(32)) {
+      isGameActive = true;
+      counterActive = true;
+      ifDonkWasPickedUp = false;
+      characterX = 185;
+      characterY = 120;
+      showDonk = true;
+      countDown = 150;
+      counterActive = false;
+      losingScreen = false;
+      chosingCharacterPage = true;
     }
   }
 }

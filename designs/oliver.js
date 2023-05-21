@@ -1178,7 +1178,7 @@ function donkStory1Function() {
   textSize(40);
   text(">", 620, 380);
 }
-function donkStory2Function() {
+function losingScreen() {
   fill(255, 255, 255);
   rect(350, 200, 300, 200);
   fill(0, 0, 0);
@@ -1230,7 +1230,7 @@ function draw() {
     }
   }
   if (donkStory2 === true) {
-    donkStory2Function();
+    losingScreen();
   }
   characterDown(characterX, characterY);
   //  Moving Character

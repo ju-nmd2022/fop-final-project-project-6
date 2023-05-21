@@ -606,7 +606,7 @@ function timerContainer(signX, signY) {
   rect(signX + 60, signY + 40, 5);
 }
 
-function donkStory1Function(boxX, boxY) {
+function losingScreen(boxX, boxY) {
   noStroke();
   fill(0, 0, 0, 200);
   rect(0, 0, 1000, 600);
@@ -621,9 +621,10 @@ function donkStory1Function(boxX, boxY) {
   fill(255, 255, 255);
   textSize(20);
   textFont("Arial");
-  text("You stole the sacred dônk ", boxX + 32, boxY + 74);
+  text("You didn't get out of", boxX + 60, boxY + 54);
+  text("the cave in time...", boxX + 72, boxY + 76);
   textSize(10);
-  text("Leave the cave before the time is out!", boxX + 60, boxY + 90);
+  text("That kind of sucks", boxX + 106, boxY + 94);
   textSize(20);
 
   textSize(20);
@@ -635,8 +636,9 @@ function donkStory1Function(boxX, boxY) {
   downWall(boxX + 200, boxY + 115);
   timerContainer(300, 220);
   fill(255, 255, 255);
-  text("Press space", boxX + 147, boxY + 160);
+  text("Press space", boxX + 148, boxY + 150);
+  text("to try again", boxX + 154, boxY + 170);
 }
 function draw() {
-  donkStory1Function(100, 100);
+  losingScreen(100, 100);
 }

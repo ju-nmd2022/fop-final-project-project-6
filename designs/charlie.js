@@ -800,8 +800,11 @@ function choseCharacter(boxX, boxY) {
   text("1", boxX + 64, boxY + 85);
   text("2", boxX + 144, boxY + 85);
   text("3", boxX + 224, boxY + 85);
-
   textSize(20);
+
+  characterOne(165, 250);
+  characterTwo(245, 250);
+  characterThree(325, 250);
 
   downWall(20, 150);
   downWall(20, 100);
@@ -813,7 +816,4 @@ function choseCharacter(boxX, boxY) {
 
 function draw() {
   choseCharacter(100, 100);
-  characterOne(165, 250);
-  characterTwo(245, 250);
-  characterThree(325, 250);
 }

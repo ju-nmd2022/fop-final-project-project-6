@@ -1,12 +1,12 @@
 // import { characterDown } from "./characterDown.js";
 
-// function setup() {
-//   let cnv = createCanvas(1000, 600);
-//   let cnvX = (windowWidth - width) / 2;
-//   let cnvY = (windowHeight - height + 0) / 2;
-//   cnv.position(cnvX, cnvY);
-//   frameRate(30);
-// }
+function setup() {
+  let cnv = createCanvas(1000, 600);
+  let cnvX = (windowWidth - width) / 2;
+  let cnvY = (windowHeight - height + 0) / 2;
+  cnv.position(cnvX, cnvY);
+  frameRate(30);
+}
 
 //Values for counter
 let countDown = 150;
@@ -2152,18 +2152,35 @@ function donkItem(x, y) {
   rect(x + 0, y + 20, 5);
 }
 //Screen showing when item is picked up
-function donkStory1Function() {
+function donkStory1Function(boxX, boxY) {
+  noStroke();
+  fill(0, 0, 0, 200);
+  rect(0, 0, 1000, 600);
+  fill(60, 60, 60);
+  rect(boxX + 0, boxY + 0, 300, 50);
+  fill(70, 70, 70);
+  rect(boxX + 0, boxY + 50, 300, 50);
+  fill(80, 80, 80);
+  rect(boxX + 0, boxY + 100, 300, 50);
+  fill(90, 90, 90);
+  rect(boxX + 0, boxY + 150, 300, 50);
   fill(255, 255, 255);
-  rect(350, 200, 300, 200);
-  fill(0, 0, 0);
   textSize(20);
   textFont("Arial");
-  // textAlign(CENTER, CENTER);
-
-  text("You stole the sacred dônk!", 500, 300);
-  textSize(40);
-  text(">", 620, 380);
+  text("You stole the sacred dônk ", boxX + 32, boxY + 74);
+  textSize(10);
+  text("Leave the cave before the time is out!", boxX + 60, boxY + 90);
   textSize(20);
+
+  downWall(boxX - 80, boxY + 50);
+  downWall(boxX - 80, boxY + 0);
+  downWall(boxX - 80, boxY + 115);
+  downWall(boxX + 200, boxY + 50);
+  downWall(boxX + 200, boxY + 0);
+  downWall(boxX + 200, boxY + 115);
+  timerContainer(boxX + 200, boxY + 120);
+  fill(255, 255, 255);
+  text("Press space", boxX + 147, boxY + 160);
 }
 
 //Second screen showing up after the first one
@@ -2369,7 +2386,7 @@ function draw() {
   }
   //Displaying the story screen when donk item is picked up, then after starting the timer
   if (ifDonkWasPickedUp === true) {
-    donkStory1Function();
+    donkStory1Function(350, 200);
     if (keyIsDown(32)) {
       isGameActive = true;
       counterActive = true;

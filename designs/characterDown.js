@@ -1,4 +1,4 @@
-export function characterDown(characterX, characterY) {
+function characterOne(characterX, characterY) {
   noStroke();
   // outlines of front of character
   fill(0, 0, 0);

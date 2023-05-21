@@ -20,7 +20,7 @@ let groundY = 100;
 
 //character array for colours
 let shirtColor = [255, 0, 0];
-let pantsColor = [255, 225, 0];
+let pantsColor = [255, 214, 0];
 let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
 
@@ -632,7 +632,7 @@ function downWall(wallX, wallY) {
 }
 
 //Character Going Down Graphic
-function characterDown(characterX, characterY) {
+function characterOne(characterX, characterY) {
   noStroke();
   // outlines of front of character
   fill(0, 0, 0);
@@ -2286,22 +2286,22 @@ function draw() {
 
   //Changing the array values for the characters clothes
   if (keyIsDown(49)) {
-    shirtColor = [20, 180, 150];
-    pantsColor = [20, 20, 20];
-    hairColor = [120, 65, 0];
-    shoeColor = [200, 200, 200];
+    shirtColor = [255, 0, 0];
+    pantsColor = [255, 214, 0];
+    hairColor = [255, 155, 0];
+    shoeColor = [120, 50, 50];
   }
   if (keyIsDown(50)) {
     shirtColor = [0, 0, 0];
-    pantsColor = [255, 225, 0];
+    pantsColor = [255, 214, 0];
     hairColor = [120, 65, 0];
     shoeColor = [0, 100, 200];
   }
   if (keyIsDown(51)) {
-    shirtColor = [255, 0, 0];
-    pantsColor = [255, 225, 0];
-    hairColor = [255, 155, 0];
-    shoeColor = [120, 50, 50];
+    shirtColor = [255, 0, 255];
+    pantsColor = [255, 214, 0];
+    hairColor = [255, 200, 0];
+    shoeColor = [0, 0, 0];
   }
 
   //Displaying the story screen when donk item is picked up, then after starting the timer
@@ -2314,7 +2314,7 @@ function draw() {
     }
   }
 
-  characterDown(characterX, characterY);
+  characterOne(characterX, characterY);
 
   //  Moving Character
   if (isGameActive) {

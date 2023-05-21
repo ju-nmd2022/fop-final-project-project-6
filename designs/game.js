@@ -2455,6 +2455,7 @@ function draw() {
       characterY = 120;
       showDonk = true;
       countDown = 150;
+      chasingWallX = -1000;
       counterActive = false;
       losingScreen = false;
       chosingCharacterPage = true;

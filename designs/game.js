@@ -20,7 +20,7 @@ let groundY = 100;
 
 //character array for colours
 let shirtColor = [255, 0, 0];
-let pantsColor = [255, 225, 0];
+let pantsColor = [255, 214, 0];
 let hairColor = [255, 155, 0];
 let shoeColor = [120, 50, 50];
 
@@ -33,12 +33,13 @@ const characterSpeed = 9;
 let showDonk = true;
 const donkX = 40;
 const donkY = 110;
+let chosingCharacterPage = true;
 let donkStory1 = false;
 let donkStory2 = false;
 let ifDonkWasPickedUp = false;
 
 //Game active value and chasing wall
-let isGameActive = true;
+let isGameActive = false;
 let chasingWallX = -1000;
 
 //downWall Size(w 40px, h 85px)
@@ -2044,6 +2045,58 @@ function countDownDisplay() {
   textSize(30);
   text(displayText + " sec", 465, 25, 100, 50);
 }
+//Chosing color of the character
+function choseCharacter(boxX, boxY) {
+  noStroke();
+  fill(0, 0, 0, 200);
+  rect(0, 0, 1000, 600);
+  fill(60, 60, 60);
+  rect(boxX + 0, boxY + 0, 300, 50);
+  fill(70, 70, 70);
+  rect(boxX + 0, boxY + 50, 300, 50);
+  fill(80, 80, 80);
+  rect(boxX + 0, boxY + 100, 300, 50);
+  fill(90, 90, 90);
+  rect(boxX + 0, boxY + 150, 300, 50);
+  fill(255, 255, 255);
+  textSize(20);
+  textFont("Arial");
+  text("Chose your character", boxX + 52, boxY + 30);
+  textSize(10);
+  text("Press the number on your keyboard to chose", boxX + 49, boxY + 45);
+  textSize(20);
+  text("1", boxX + 64, boxY + 85);
+  text("2", boxX + 144, boxY + 85);
+  text("3", boxX + 224, boxY + 85);
+  textSize(20);
+
+  shirtColor = [255, 0, 0];
+  pantsColor = [255, 214, 0];
+  hairColor = [255, 155, 0];
+  shoeColor = [120, 50, 50];
+  characterDown(boxX + 65, boxY + 150);
+  shirtColor = [0, 0, 0];
+  pantsColor = [255, 214, 0];
+  hairColor = [120, 65, 0];
+  shoeColor = [0, 100, 200];
+  characterDown(boxX + 145, boxY + 150);
+  shirtColor = [255, 0, 255];
+  pantsColor = [255, 214, 0];
+  hairColor = [255, 200, 0];
+  shoeColor = [0, 0, 0];
+  characterDown(boxX + 225, boxY + 150);
+  shirtColor = [0, 0, 0];
+  pantsColor = [0, 0, 0];
+  hairColor = [0, 0, 0];
+  shoeColor = [0, 0, 0];
+  downWall(boxX - 80, boxY + 50);
+  downWall(boxX - 80, boxY + 0);
+  downWall(boxX - 80, boxY + 115);
+  downWall(boxX + 200, boxY + 50);
+  downWall(boxX + 200, boxY + 0);
+  downWall(boxX + 200, boxY + 115);
+}
+
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -2267,8 +2320,9 @@ function draw() {
     }
   }
   countDownDisplay();
-
   level1();
+  characterDown(characterX, characterY);
+
   // displaying donk
   if (showDonk === true) {
     donkItem(donkX, donkY);
@@ -2286,25 +2340,33 @@ function draw() {
   // removing donk if character is picking it up
 
   //Changing the array values for the characters clothes
-  if (keyIsDown(49)) {
-    shirtColor = [20, 180, 150];
-    pantsColor = [20, 20, 20];
-    hairColor = [120, 65, 0];
-    shoeColor = [200, 200, 200];
+  if (chosingCharacterPage) {
+    choseCharacter(350, 200);
+    if (keyIsDown(49)) {
+      shirtColor = [255, 0, 0];
+      pantsColor = [255, 214, 0];
+      hairColor = [255, 155, 0];
+      shoeColor = [120, 50, 50];
+      chosingCharacterPage = false;
+      isGameActive = true;
+    }
+    if (keyIsDown(50)) {
+      shirtColor = [0, 0, 0];
+      pantsColor = [255, 214, 0];
+      hairColor = [120, 65, 0];
+      shoeColor = [0, 100, 200];
+      chosingCharacterPage = false;
+      isGameActive = true;
+    }
+    if (keyIsDown(51)) {
+      shirtColor = [255, 0, 255];
+      pantsColor = [255, 214, 0];
+      hairColor = [255, 200, 0];
+      shoeColor = [0, 0, 0];
+      chosingCharacterPage = false;
+      isGameActive = true;
+    }
   }
-  if (keyIsDown(50)) {
-    shirtColor = [0, 0, 0];
-    pantsColor = [255, 225, 0];
-    hairColor = [120, 65, 0];
-    shoeColor = [0, 100, 200];
-  }
-  if (keyIsDown(51)) {
-    shirtColor = [255, 0, 0];
-    pantsColor = [255, 225, 0];
-    hairColor = [255, 155, 0];
-    shoeColor = [120, 50, 50];
-  }
-
   //Displaying the story screen when donk item is picked up, then after starting the timer
   if (ifDonkWasPickedUp === true) {
     donkStory1Function();
@@ -2314,9 +2376,6 @@ function draw() {
       ifDonkWasPickedUp = false;
     }
   }
-
-  characterDown(characterX, characterY);
-
   //  Moving Character
   if (isGameActive) {
     if (keyIsDown(38)) {

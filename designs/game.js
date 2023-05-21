@@ -2080,10 +2080,10 @@ function choseCharacter(boxX, boxY) {
   hairColor = [120, 65, 0];
   shoeColor = [0, 100, 200];
   characterDown(boxX + 145, boxY + 150);
-  shirtColor = [255, 0, 255];
-  pantsColor = [255, 214, 0];
-  hairColor = [255, 200, 0];
-  shoeColor = [0, 0, 0];
+  shirtColor = [255, 180, 255];
+  pantsColor = [40, 40, 40];
+  hairColor = [185, 150, 40];
+  shoeColor = [255, 255, 255];
   characterDown(boxX + 225, boxY + 150);
   shirtColor = [0, 0, 0];
   pantsColor = [0, 0, 0];

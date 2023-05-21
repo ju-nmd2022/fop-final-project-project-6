@@ -2448,7 +2448,6 @@ function draw() {
   if (losingScreen === true) {
     losingScreenFunction(350, 200);
     if (keyIsDown(32)) {
-      isGameActive = true;
       counterActive = true;
       ifDonkWasPickedUp = false;
       characterX = 185;

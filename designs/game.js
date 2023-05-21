@@ -2376,10 +2376,10 @@ function draw() {
       isGameActive = true;
     }
     if (keyIsDown(51)) {
-      shirtColor = [255, 0, 255];
-      pantsColor = [255, 214, 0];
-      hairColor = [255, 200, 0];
-      shoeColor = [0, 0, 0];
+      shirtColor = [255, 180, 255];
+      pantsColor = [40, 40, 40];
+      hairColor = [185, 150, 40];
+      shoeColor = [255, 255, 255];
       chosingCharacterPage = false;
       isGameActive = true;
     }

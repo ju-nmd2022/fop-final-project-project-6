@@ -37,6 +37,7 @@ let chosingCharacterPage = true;
 let donkStory1 = false;
 let losingScreen = false;
 let ifDonkWasPickedUp = false;
+let blockingWallActive = true;
 
 //Game active value and chasing wall
 let isGameActive = false;
@@ -2402,6 +2403,25 @@ let rightWallArray = [
   rightWallFive,
   rightWallSix,
 ];
+
+function blockingWall() {
+  for (let i = 0; i < blockingWallArray.length; i++) {
+    let wall = blockingWallArray[i];
+
+    //Blocking wall in beginning of game to not let player pass before picking up donk
+    if (
+      characterX < wall.x + wall.width &&
+      characterX + 10 > wall.x &&
+      characterY < wall.y + wall.height &&
+      characterY + 10 > wall.y
+    ) {
+      characterX = characterX - characterSpeed;
+    }
+  }
+}
+const blockingWall1 = { x: 280, y: 120, width: 15, height: 150 };
+
+let blockingWallArray = [blockingWall1];
 
 function downWallCollisionTwo() {
   for (let i = 0; i < level2DownWallArray.length; i++) {

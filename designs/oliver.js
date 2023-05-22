@@ -1196,10 +1196,10 @@ function draw() {
   const length = 10;
 
   //downWallCollision();
-  downWallCollisionTwo();
-  upWallCollisionTwo();
-  leftWallCollisionTwo();
-  rightWallCollisionTwo();
+  lev2DownWallColl();
+  lev2UpWallColl();
+  lev2LeftWallColl();
+  lev2RightWallColl();
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
@@ -1220,7 +1220,7 @@ function draw() {
     characterY > 80
   ) {
     showDonk = false;
-    isGameActive = false;
+    isCharacterSober = false;
   }
 
   if (showDonk === false) {
@@ -1238,7 +1238,7 @@ function draw() {
   }
   characterDown(characterX, characterY);
   //  Moving Character
-  if (isGameActive) {
+  if (isCharacterSober) {
     if (keyIsDown(38)) {
       characterY = characterY - characterSpeed;
     } else if (keyIsDown(40)) {
@@ -1309,7 +1309,7 @@ function draw() {
 //   downWallFour,
 // ];
 
-function downWallCollisionTwo() {
+function lev2DownWallColl() {
   for (let i = 0; i < level2DownWallArray.length; i++) {
     let downWallTwo = level2DownWallArray[i];
 
@@ -1324,7 +1324,7 @@ function downWallCollisionTwo() {
   }
 }
 
-function upWallCollisionTwo() {
+function lev2UpWallColl() {
   for (let i = 0; i < level2UpWallArray.length; i++) {
     let upWallTwo = level2UpWallArray[i];
 
@@ -1339,7 +1339,7 @@ function upWallCollisionTwo() {
   }
 }
 
-function leftWallCollisionTwo() {
+function lev2LeftWallColl() {
   for (let i = 0; i < level2LeftWallArray.length; i++) {
     let leftWallTwo = level2LeftWallArray[i];
 
@@ -1354,7 +1354,7 @@ function leftWallCollisionTwo() {
   }
 }
 
-function rightWallCollisionTwo() {
+function lev2RightWallColl() {
   for (let i = 0; i < level2RightWallArray.length; i++) {
     let rightWallTwo = level2RightWallArray[i];
 

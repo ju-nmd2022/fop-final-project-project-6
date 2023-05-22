@@ -9,7 +9,7 @@ function setup() {
 }
 
 //Values for counter
-let countDown = 150;
+let countDown = 600;
 let counterActive = false;
 
 //Values for ground and wall graphics
@@ -27,7 +27,7 @@ let shoeColor = [120, 50, 50];
 //Character values
 let characterX = 185;
 let characterY = 120;
-const characterSpeed = 9;
+let characterSpeed = 9;
 
 //Values for Donk item and story
 let showDonk = true;
@@ -36,11 +36,20 @@ const donkY = 110;
 let chosingCharacterPage = true;
 let donkStory1 = false;
 let losingScreen = false;
-let ifDonkWasPickedUp = false;
+let donkWasPickedUp = false;
+let showBeer = true;
+let beerWasPickedUp = false;
+let showKanelbulle = true;
+let kanelbulleWasPickedUp = false;
 let blockingWallActive = true;
 
+//levels active
+let level1Active = true;
+let level2Active = false;
+
 //Game active value and chasing wall
-let isGameActive = false;
+let isCharacterSober = false;
+let isCharacterDrunk = false;
 let chasingWallX = -1000;
 
 //downWall Size(w 40px, h 85px)
@@ -2216,6 +2225,112 @@ function donkItem(x, y) {
   rect(x - 15, y + 20, 5);
   rect(x + 0, y + 20, 5);
 }
+
+//Kanelbulle
+function kanelbulle(kanelX, kanelY) {
+  noStroke();
+  fill(150, 100, 0);
+  //  base
+  rect(kanelX - 5, kanelY + 0, 5);
+  rect(kanelX + 0, kanelY + 0, 5);
+  rect(kanelX + 5, kanelY + 0, 5);
+  rect(kanelX + 10, kanelY + 0, 5);
+
+  rect(kanelX - 15, kanelY - 5, 5);
+  rect(kanelX - 10, kanelY - 5, 5);
+  rect(kanelX + 10, kanelY - 5, 5);
+  rect(kanelX + 15, kanelY - 5, 5);
+
+  rect(kanelX - 15, kanelY - 10, 5);
+  rect(kanelX - 5, kanelY - 10, 5);
+  rect(kanelX + 0, kanelY - 10, 5);
+  rect(kanelX + 5, kanelY - 10, 5);
+  rect(kanelX + 15, kanelY - 10, 5);
+
+  rect(kanelX - 10, kanelY - 15, 5);
+  rect(kanelX + 10, kanelY - 15, 5);
+  // swirl
+  fill(110, 60, 0);
+  rect(kanelX - 10, kanelY + 0, 5);
+  rect(kanelX - 5, kanelY - 5, 5);
+  rect(kanelX + 0, kanelY - 5, 5);
+  rect(kanelX + 5, kanelY - 5, 5);
+  rect(kanelX + 10, kanelY - 10, 5);
+  rect(kanelX - 10, kanelY - 10, 5);
+  rect(kanelX + 5, kanelY - 15, 5);
+  rect(kanelX + 0, kanelY - 15, 5);
+  rect(kanelX - 5, kanelY - 15, 5);
+  // sugar on top
+  fill(255, 255, 255);
+  rect(kanelX + 7, kanelY - 2, 2);
+  rect(kanelX + 8, kanelY - 7, 2);
+  rect(kanelX - 2, kanelY - 2, 2);
+  rect(kanelX - 11, kanelY - 7, 2);
+  rect(kanelX - 3, kanelY - 7, 2);
+  rect(kanelX - 6, kanelY - 12, 2);
+  rect(kanelX - 0, kanelY - 12, 2);
+  rect(kanelX + 6, kanelY - 12, 2);
+  rect(kanelX + 2, kanelY - 7, 2);
+  rect(kanelX - 8, kanelY - 2, 2);
+}
+
+//Beer Glass
+function beerGlass(beerX, beerY) {
+  noStroke();
+  fill(220, 220, 220);
+  rect(beerX - 5, beerY + 0, 5);
+  rect(beerX + 0, beerY + 0, 5);
+  rect(beerX + 5, beerY + 0, 5);
+  rect(beerX + 10, beerY + 0, 5);
+  rect(beerX + 10, beerY - 5, 5);
+  rect(beerX - 5, beerY - 5, 5);
+  rect(beerX + 10, beerY - 10, 5);
+  rect(beerX - 5, beerY - 10, 5);
+  rect(beerX + 10, beerY - 15, 5);
+  rect(beerX - 5, beerY - 15, 5);
+  rect(beerX + 15, beerY - 20, 5);
+  rect(beerX - 10, beerY - 20, 5);
+  rect(beerX - 10, beerY - 25, 5);
+  rect(beerX - 10, beerY - 30, 5);
+  rect(beerX + 15, beerY - 25, 5);
+  rect(beerX + 15, beerY - 30, 5);
+  fill(240, 140, 0);
+  rect(beerX - 5, beerY - 30, 5);
+  rect(beerX - 5, beerY - 25, 5);
+  rect(beerX - 5, beerY - 20, 5);
+  fill(240, 170, 0);
+  rect(beerX - 0, beerY - 30, 5);
+  rect(beerX - 0, beerY - 25, 5);
+  rect(beerX - 0, beerY - 20, 5);
+  rect(beerX - 0, beerY - 15, 5);
+  rect(beerX - 0, beerY - 10, 5);
+  rect(beerX - 0, beerY - 5, 5);
+  fill(240, 180, 0);
+  rect(beerX + 5, beerY - 20, 5);
+  rect(beerX + 5, beerY - 15, 5);
+  rect(beerX + 5, beerY - 10, 5);
+  rect(beerX + 5, beerY - 5, 5);
+  fill(240, 200, 0);
+  rect(beerX + 10, beerY - 30, 5);
+  rect(beerX + 10, beerY - 25, 5);
+  rect(beerX + 10, beerY - 20, 5);
+  fill(255, 255, 255);
+  rect(beerX - 10, beerY - 35, 5);
+  rect(beerX - 5, beerY - 35, 5);
+  rect(beerX - 0, beerY - 35, 5);
+  rect(beerX + 5, beerY - 35, 5);
+  rect(beerX + 10, beerY - 35, 5);
+  rect(beerX + 15, beerY - 35, 5);
+  rect(beerX - 5, beerY - 40, 5);
+  rect(beerX - 0, beerY - 40, 5);
+  rect(beerX + 5, beerY - 40, 5);
+  rect(beerX + 10, beerY - 40, 5);
+  rect(beerX + 5, beerY - 30, 5);
+  rect(beerX + 5, beerY - 25, 5);
+  rect(beerX + 10, beerY - 55, 5);
+  rect(beerX + 5, beerY - 60, 5);
+  rect(beerX + 0, beerY - 50, 5);
+}
 //Screen showing when item is picked up
 function donkStory1Function(boxX, boxY) {
   noStroke();
@@ -2423,7 +2538,7 @@ const blockingWall1 = { x: 280, y: 120, width: 15, height: 150 };
 
 let blockingWallArray = [blockingWall1];
 
-function downWallCollisionTwo() {
+function lev2DownWallColl() {
   for (let i = 0; i < level2DownWallArray.length; i++) {
     let downWallTwo = level2DownWallArray[i];
 
@@ -2438,7 +2553,7 @@ function downWallCollisionTwo() {
   }
 }
 
-function upWallCollisionTwo() {
+function lev2UpWallColl() {
   for (let i = 0; i < level2UpWallArray.length; i++) {
     let upWallTwo = level2UpWallArray[i];
 
@@ -2453,7 +2568,7 @@ function upWallCollisionTwo() {
   }
 }
 
-function leftWallCollisionTwo() {
+function lev2LeftWallColl() {
   for (let i = 0; i < level2LeftWallArray.length; i++) {
     let leftWallTwo = level2LeftWallArray[i];
 
@@ -2468,7 +2583,7 @@ function leftWallCollisionTwo() {
   }
 }
 
-function rightWallCollisionTwo() {
+function lev2RightWallColl() {
   for (let i = 0; i < level2RightWallArray.length; i++) {
     let rightWallTwo = level2RightWallArray[i];
 
@@ -2510,7 +2625,6 @@ const levelTwoRightOne = { x: 175, y: 155, width: 10, height: 130 };
 const levelTwoRightTwo = { x: 470, y: 155, width: 10, height: 250 };
 const levelTwoRightThree = { x: 850, y: 55, width: 10, height: 200 };
 const levelTwoRightFour = { x: 700, y: 360, width: 10, height: 200 };
-const levelTwoRightFive = { x: 995, y: 290, width: 10, height: 100 };
 
 //Array for the downwalls for level 2
 let level2DownWallArray = [
@@ -2543,7 +2657,6 @@ let level2RightWallArray = [
   levelTwoRightTwo,
   levelTwoRightThree,
   levelTwoRightFour,
-  levelTwoRightFive,
 ];
 
 //Draw function where the game plays
@@ -2551,23 +2664,77 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  //Wall collision functions
-  wallCollisionDown();
-  wallCollisionUp();
-  wallCollisionLeft();
-  wallCollisionRight();
-
   //Looping the background tile 10x10
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
       groundGraphic(x * groundX, y * groundY - 200);
     }
   }
-  countDownDisplay();
-  level1();
+
+  if (blockingWallActive) {
+    blockingWall();
+  }
+
+  if (level1Active) {
+    wallCollisionDown();
+    wallCollisionUp();
+    wallCollisionLeft();
+    wallCollisionRight();
+    level1();
+    if (characterX >= 1000) {
+      level1Active = false;
+      level2Active = true;
+      characterX = 0;
+      characterY = characterY - 20;
+    }
+  }
+  if (level2Active) {
+    lev2DownWallColl();
+    lev2UpWallColl();
+    lev2LeftWallColl();
+    lev2RightWallColl();
+    level2();
+    if (showBeer === true) {
+      beerGlass(250, 130);
+      if (
+        characterX > 220 &&
+        characterX < 260 &&
+        characterY > 80 &&
+        characterY < 130
+      ) {
+        showBeer = false;
+        isCharacterSober = false;
+        isCharacterDrunk = true;
+        characterSpeed = 5;
+      }
+    }
+
+    if (showKanelbulle === true && countDown > 0) {
+      kanelbulle(820, 230);
+      if (
+        characterX > 800 &&
+        characterX < 840 &&
+        characterY > 210 &&
+        characterY < 240
+      ) {
+        showKanelbulle = false;
+        isCharacterDrunk = false;
+        isCharacterSober = true;
+        characterSpeed = 9;
+        countDown = countDown + 150;
+      }
+    }
+
+    if (characterX >= 1000) {
+      level2Active = false;
+      characterX = 0;
+      counterActive = false;
+    }
+  }
   characterDown(characterX, characterY);
 
-  // displaying donk
+  // displaying donk and removing donk if character is picking it up
+
   if (showDonk === true) {
     donkItem(donkX, donkY);
     if (
@@ -2577,12 +2744,12 @@ function draw() {
       characterY > 80
     ) {
       showDonk = false;
-      isGameActive = false;
-      ifDonkWasPickedUp = true;
+      isCharacterSober = false;
+      donkWasPickedUp = true;
+      blockingWallActive = false;
     }
   }
-  // removing donk if character is picking it up
-
+  countDownDisplay();
   //Changing the array values for the characters clothes
   if (chosingCharacterPage) {
     choseCharacter(350, 200);
@@ -2592,7 +2759,7 @@ function draw() {
       hairColor = [255, 155, 0];
       shoeColor = [120, 50, 50];
       chosingCharacterPage = false;
-      isGameActive = true;
+      isCharacterSober = true;
     }
     if (keyIsDown(50)) {
       shirtColor = [0, 0, 0];
@@ -2600,7 +2767,7 @@ function draw() {
       hairColor = [120, 65, 0];
       shoeColor = [0, 100, 200];
       chosingCharacterPage = false;
-      isGameActive = true;
+      isCharacterSober = true;
     }
     if (keyIsDown(51)) {
       shirtColor = [255, 180, 255];
@@ -2608,20 +2775,20 @@ function draw() {
       hairColor = [185, 150, 40];
       shoeColor = [255, 255, 255];
       chosingCharacterPage = false;
-      isGameActive = true;
+      isCharacterSober = true;
     }
   }
   //Displaying the story screen when donk item is picked up, then after starting the timer
-  if (ifDonkWasPickedUp === true) {
+  if (donkWasPickedUp === true) {
     donkStory1Function(350, 200);
     if (keyIsDown(32)) {
-      isGameActive = true;
+      isCharacterSober = true;
       counterActive = true;
-      ifDonkWasPickedUp = false;
+      donkWasPickedUp = false;
     }
   }
   //  Moving Character
-  if (isGameActive) {
+  if (isCharacterSober) {
     if (keyIsDown(38)) {
       characterY = characterY - characterSpeed;
     } else if (keyIsDown(40)) {
@@ -2632,8 +2799,20 @@ function draw() {
       characterX = characterX + characterSpeed;
     }
   }
+
+  if (isCharacterDrunk) {
+    if (keyIsDown(40)) {
+      characterY = characterY - characterSpeed;
+    } else if (keyIsDown(38)) {
+      characterY = characterY + characterSpeed;
+    } else if (keyIsDown(39)) {
+      characterX = characterX - characterSpeed;
+    } else if (keyIsDown(37)) {
+      characterX = characterX + characterSpeed;
+    }
+  }
   // Timer ticking down to 0 and stopping
-  if (counterActive === true) {
+  if (counterActive) {
     if (countDown > 0) {
       countDown = countDown - 1;
       console.log(countDown);
@@ -2646,7 +2825,7 @@ function draw() {
     chasingWallX = chasingWallX + 10;
 
     if (chasingWallX + 1000 > characterX) {
-      isGameActive = false;
+      isCharacterSober = false;
       chasingWallX = characterX - 1000;
       losingScreen = true;
     }
@@ -2656,15 +2835,20 @@ function draw() {
     losingScreenFunction(350, 200);
     if (keyIsDown(32)) {
       counterActive = true;
-      ifDonkWasPickedUp = false;
+      donkWasPickedUp = false;
       characterX = 185;
       characterY = 120;
       showDonk = true;
-      countDown = 150;
+      countDown = 600;
       chasingWallX = -1000;
       counterActive = false;
       losingScreen = false;
       chosingCharacterPage = true;
+      blockingWallActive = true;
+      level1Active = true;
+      level2Active = false;
+      showKanelbulle = true;
+      showBeer = true;
     }
   }
 }

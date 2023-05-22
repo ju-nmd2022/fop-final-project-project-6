@@ -19,10 +19,10 @@ let groundX = 100;
 let groundY = 100;
 
 //character array for colours
-let shirtColor = [255, 0, 0];
-let pantsColor = [255, 214, 0];
-let hairColor = [255, 155, 0];
-let shoeColor = [120, 50, 50];
+let shirtColor = [0, 0, 0];
+let pantsColor = [0, 0, 0];
+let hairColor = [0, 0, 0];
+let shoeColor = [0, 0, 0];
 
 //Character values
 let characterX = 185;

@@ -1595,6 +1595,70 @@ function level1() {
   // https://stackoverflow.com/questions/74660149/wall-collision-in-a-maze-with-line-segment-intersection
 }
 
+//Level 2 stage graphics
+function level2() {
+  straightWall(10, 300);
+  straightWall(10, 140);
+  straightWall(100, 300);
+  straightWall(190, 170);
+  downWall(100, 265);
+  downWall(100, 185);
+  downWall(10, 105);
+  downWall(10, 25);
+
+  straightWall(115, 25);
+  straightWall(205, 25);
+  straightWall(295, 25);
+  straightWall(385, 25);
+  straightWall(475, 25);
+  straightWall(565, 25);
+  straightWall(655, 25);
+  straightWall(745, 25);
+  straightWall(795, 25);
+  straightWall(280, 170);
+
+  straightWall(570, 255);
+  straightWall(660, 255);
+  straightWall(750, 255);
+  straightWall(840, 255);
+  straightWall(920, 255);
+
+  straightWall(715, 365);
+  straightWall(805, 365);
+  straightWall(895, 365);
+  straightWall(920, 365);
+
+  straightWall(505, 170);
+  straightWall(595, 170);
+  straightWall(685, 170);
+
+  downWall(685, 170);
+  downWall(780, 170);
+  downWall(780, 100);
+  downWall(780, 40);
+
+  downWall(280, 170);
+  downWall(400, 170);
+  downWall(400, 250);
+  downWall(400, 330);
+  downWall(280, 250);
+  downWall(280, 330);
+  downWall(280, 410);
+  downWall(280, 490);
+  downWall(625, 490);
+  downWall(625, 410);
+  downWall(625, 380);
+  downWall(475, 330);
+  downWall(475, 250);
+
+  straightWall(370, 525);
+  straightWall(460, 525);
+  straightWall(550, 525);
+  straightWall(640, 525);
+
+  straightWall(490, 395);
+}
+
 // container to display timer in
 function timerContainer(signX, signY) {
   fill(0, 0, 0);

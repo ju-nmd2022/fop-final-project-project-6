@@ -1195,7 +1195,11 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  downWallCollision();
+  //downWallCollision();
+  downWallCollisionTwo();
+  upWallCollisionTwo();
+  leftWallCollisionTwo();
+  rightWallCollisionTwo();
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
@@ -1278,32 +1282,152 @@ function draw() {
 
 // let wallArray = [wallOne, wallTwo];
 
-function downWallCollision() {
-  for (let i = 0; i < downWallArray.length; i++) {
-    let downWall = downWallArray[i];
+// function downWallCollision() {
+//   for (let i = 0; i < downWallArray.length; i++) {
+//     let downWall = downWallArray[i];
+
+//     if (
+//       characterX > downWall.x &&
+//       characterX < downWall.x + downWall.width &&
+//       characterY < downWall.y &&
+//       characterY + 30 > downWall.y
+//     ) {
+//       characterY = characterY - characterSpeed;
+//     }
+//   }
+// }
+
+// const levelOneDownOne = { x: 0, y: 200, width: 390, height: 55 };
+// const levelOneDownTwo = { x: 280, y: 405, width: 285, height: 55 };
+// const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
+// const downWallFour = { x: 800, y: 330, width: 200, height: 55 };
+
+// let downWallArray = [
+//   levelOneDownOne,
+//   levelOneDownTwo,
+//   downWallThree,
+//   downWallFour,
+// ];
+
+function downWallCollisionTwo() {
+  for (let i = 0; i < level2DownWallArray.length; i++) {
+    let downWallTwo = level2DownWallArray[i];
 
     if (
-      characterX > downWall.x &&
-      characterX < downWall.x + downWall.width &&
-      characterY < downWall.y &&
-      characterY + 30 > downWall.y
+      characterX > downWallTwo.x &&
+      characterX < downWallTwo.x + downWallTwo.width &&
+      characterY < downWallTwo.y &&
+      characterY + 30 > downWallTwo.y
     ) {
       characterY = characterY - characterSpeed;
     }
   }
 }
 
-const downWallOne = { x: 0, y: 200, width: 390, height: 55 };
-const downWallTwo = { x: 280, y: 405, width: 285, height: 55 };
-const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
-const downWallFour = { x: 800, y: 330, width: 200, height: 55 };
+function upWallCollisionTwo() {
+  for (let i = 0; i < level2UpWallArray.length; i++) {
+    let upWallTwo = level2UpWallArray[i];
 
-const rightWallOne = { x: 550, y: 405, width: 20, height: 200 };
+    if (
+      characterX > upWallTwo.x &&
+      characterX < upWallTwo.x + upWallTwo.width &&
+      characterY < upWallTwo.y &&
+      characterY + 10 > upWallTwo.y
+    ) {
+      characterY = characterY + characterSpeed;
+    }
+  }
+}
 
-let downWallArray = [
-  downWallOne,
-  downWallTwo,
-  downWallThree,
-  downWallFour,
-  rightWallOne,
+function leftWallCollisionTwo() {
+  for (let i = 0; i < level2LeftWallArray.length; i++) {
+    let leftWallTwo = level2LeftWallArray[i];
+
+    if (
+      characterX + 10 > leftWallTwo.x &&
+      characterX < leftWallTwo.x + leftWallTwo.width &&
+      characterY < leftWallTwo.y + leftWallTwo.height &&
+      characterY + 10 > leftWallTwo.y
+    ) {
+      characterX = characterX + characterSpeed;
+    }
+  }
+}
+
+function rightWallCollisionTwo() {
+  for (let i = 0; i < level2RightWallArray.length; i++) {
+    let rightWallTwo = level2RightWallArray[i];
+
+    //Right Wall One
+    if (
+      characterX < rightWallTwo.x + rightWallTwo.width &&
+      characterX + 10 > rightWallTwo.x &&
+      characterY < rightWallTwo.y + rightWallTwo.height &&
+      characterY + 10 > rightWallTwo.y
+    ) {
+      characterX = characterX - characterSpeed;
+    }
+  }
+}
+
+//Objects for the downwalls two
+const levelTwoDownOne = { x: 0, y: 300, width: 185, height: 55 };
+const levelTwoDownTwo = { x: 175, y: 167, width: 210, height: 55 };
+const levelTwoDownThree = { x: 470, y: 167, width: 320, height: 55 };
+const levelTwoDownFour = { x: 370, y: 525, width: 360, height: 55 };
+const levelTwoDownFive = { x: 700, y: 360, width: 300, height: 55 };
+const levelTwoDownSix = { x: 775, y: 255, width: 95, height: 55 };
+
+//Objects for the upwalls two
+const levelTwoUpOne = { x: 0, y: 155, width: 105, height: 55 };
+const levelTwoUpTwo = { x: 105, y: 45, width: 765, height: 55 };
+const levelTwoUpThree = { x: 480, y: 425, width: 90, height: 55 };
+const levelTwoUpFour = { x: 570, y: 280, width: 435, height: 55 };
+
+//Objects for the leftwalls two
+const levelTwoLeftOne = { x: 0, y: 140, width: 10, height: 200 };
+const levelTwoLeftTwo = { x: 105, y: 40, width: 10, height: 120 };
+const levelTwoLeftThree = { x: 380, y: 170, width: 10, height: 470 };
+const levelTwoLeftFour = { x: 570, y: 280, width: 10, height: 140 };
+const levelTwoLeftFive = { x: 785, y: 170, width: 10, height: 80 };
+
+//Objects for the leftwalls two
+const levelTwoRightOne = { x: 175, y: 155, width: 10, height: 130 };
+const levelTwoRightTwo = { x: 470, y: 155, width: 10, height: 250 };
+const levelTwoRightThree = { x: 850, y: 55, width: 10, height: 200 };
+const levelTwoRightFour = { x: 700, y: 360, width: 10, height: 200 };
+const levelTwoRightFive = { x: 995, y: 290, width: 10, height: 100 };
+
+//Array for the downwalls for level 2
+let level2DownWallArray = [
+  levelTwoDownOne,
+  levelTwoDownTwo,
+  levelTwoDownThree,
+  levelTwoDownFour,
+  levelTwoDownFive,
+  levelTwoDownSix,
+];
+
+//Array for the upwalls for level 2
+let level2UpWallArray = [
+  levelTwoUpOne,
+  levelTwoUpTwo,
+  levelTwoUpThree,
+  levelTwoUpFour,
+];
+
+let level2LeftWallArray = [
+  levelTwoLeftOne,
+  levelTwoLeftTwo,
+  levelTwoLeftThree,
+  levelTwoLeftFour,
+  levelTwoLeftFive,
+];
+
+let level2RightWallArray = [
+  levelTwoRightOne,
+  levelTwoRightTwo,
+  levelTwoRightThree,
+  levelTwoRightFour,
+  levelTwoRightFive,
 ];

@@ -44,6 +44,63 @@ function kanelbulle(kanelX, kanelY) {
   rect(kanelX + 2, kanelY - 7, 2);
   rect(kanelX - 8, kanelY - 2, 2);
 }
+
+function beerGlass(beerX, beerY) {
+  noStroke();
+  fill(220, 220, 220);
+  rect(beerX - 5, beerY + 0, 5);
+  rect(beerX + 0, beerY + 0, 5);
+  rect(beerX + 5, beerY + 0, 5);
+  rect(beerX + 10, beerY + 0, 5);
+  rect(beerX + 10, beerY - 5, 5);
+  rect(beerX - 5, beerY - 5, 5);
+  rect(beerX + 10, beerY - 10, 5);
+  rect(beerX - 5, beerY - 10, 5);
+  rect(beerX + 10, beerY - 15, 5);
+  rect(beerX - 5, beerY - 15, 5);
+  rect(beerX + 15, beerY - 20, 5);
+  rect(beerX - 10, beerY - 20, 5);
+  rect(beerX - 10, beerY - 25, 5);
+  rect(beerX - 10, beerY - 30, 5);
+  rect(beerX + 15, beerY - 25, 5);
+  rect(beerX + 15, beerY - 30, 5);
+  fill(240, 140, 0);
+  rect(beerX - 5, beerY - 30, 5);
+  rect(beerX - 5, beerY - 25, 5);
+  rect(beerX - 5, beerY - 20, 5);
+  fill(240, 170, 0);
+  rect(beerX - 0, beerY - 30, 5);
+  rect(beerX - 0, beerY - 25, 5);
+  rect(beerX - 0, beerY - 20, 5);
+  rect(beerX - 0, beerY - 15, 5);
+  rect(beerX - 0, beerY - 10, 5);
+  rect(beerX - 0, beerY - 5, 5);
+  fill(240, 180, 0);
+  rect(beerX + 5, beerY - 20, 5);
+  rect(beerX + 5, beerY - 15, 5);
+  rect(beerX + 5, beerY - 10, 5);
+  rect(beerX + 5, beerY - 5, 5);
+  fill(240, 200, 0);
+  rect(beerX + 10, beerY - 30, 5);
+  rect(beerX + 10, beerY - 25, 5);
+  rect(beerX + 10, beerY - 20, 5);
+  fill(255, 255, 255);
+  rect(beerX - 10, beerY - 35, 5);
+  rect(beerX - 5, beerY - 35, 5);
+  rect(beerX - 0, beerY - 35, 5);
+  rect(beerX + 5, beerY - 35, 5);
+  rect(beerX + 10, beerY - 35, 5);
+  rect(beerX + 15, beerY - 35, 5);
+  rect(beerX - 5, beerY - 40, 5);
+  rect(beerX - 0, beerY - 40, 5);
+  rect(beerX + 5, beerY - 40, 5);
+  rect(beerX + 10, beerY - 40, 5);
+  rect(beerX + 5, beerY - 30, 5);
+  rect(beerX + 5, beerY - 25, 5);
+  rect(beerX + 10, beerY - 55, 5);
+  rect(beerX + 5, beerY - 60, 5);
+  rect(beerX + 0, beerY - 50, 5);
+}
 function downWall(wallX, wallY) {
   push();
   fill(40, 40, 60);
@@ -640,5 +697,5 @@ function losingScreen(boxX, boxY) {
   text("to try again", boxX + 154, boxY + 170);
 }
 function draw() {
-  losingScreen(100, 100);
+  beerGlass(100, 100);
 }

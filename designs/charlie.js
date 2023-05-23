@@ -1,106 +1,3 @@
-function kanelbulle(kanelX, kanelY) {
-  noStroke();
-  fill(150, 100, 0);
-  //  base
-  rect(kanelX - 5, kanelY + 0, 5);
-  rect(kanelX + 0, kanelY + 0, 5);
-  rect(kanelX + 5, kanelY + 0, 5);
-  rect(kanelX + 10, kanelY + 0, 5);
-
-  rect(kanelX - 15, kanelY - 5, 5);
-  rect(kanelX - 10, kanelY - 5, 5);
-  rect(kanelX + 10, kanelY - 5, 5);
-  rect(kanelX + 15, kanelY - 5, 5);
-
-  rect(kanelX - 15, kanelY - 10, 5);
-  rect(kanelX - 5, kanelY - 10, 5);
-  rect(kanelX + 0, kanelY - 10, 5);
-  rect(kanelX + 5, kanelY - 10, 5);
-  rect(kanelX + 15, kanelY - 10, 5);
-
-  rect(kanelX - 10, kanelY - 15, 5);
-  rect(kanelX + 10, kanelY - 15, 5);
-  // swirl
-  fill(110, 60, 0);
-  rect(kanelX - 10, kanelY + 0, 5);
-  rect(kanelX - 5, kanelY - 5, 5);
-  rect(kanelX + 0, kanelY - 5, 5);
-  rect(kanelX + 5, kanelY - 5, 5);
-  rect(kanelX + 10, kanelY - 10, 5);
-  rect(kanelX - 10, kanelY - 10, 5);
-  rect(kanelX + 5, kanelY - 15, 5);
-  rect(kanelX + 0, kanelY - 15, 5);
-  rect(kanelX - 5, kanelY - 15, 5);
-  // sugar on top
-  fill(255, 255, 255);
-  rect(kanelX + 7, kanelY - 2, 2);
-  rect(kanelX + 8, kanelY - 7, 2);
-  rect(kanelX - 2, kanelY - 2, 2);
-  rect(kanelX - 11, kanelY - 7, 2);
-  rect(kanelX - 3, kanelY - 7, 2);
-  rect(kanelX - 6, kanelY - 12, 2);
-  rect(kanelX - 0, kanelY - 12, 2);
-  rect(kanelX + 6, kanelY - 12, 2);
-  rect(kanelX + 2, kanelY - 7, 2);
-  rect(kanelX - 8, kanelY - 2, 2);
-}
-
-function beerGlass(beerX, beerY) {
-  noStroke();
-  fill(220, 220, 220);
-  rect(beerX - 5, beerY + 0, 5);
-  rect(beerX + 0, beerY + 0, 5);
-  rect(beerX + 5, beerY + 0, 5);
-  rect(beerX + 10, beerY + 0, 5);
-  rect(beerX + 10, beerY - 5, 5);
-  rect(beerX - 5, beerY - 5, 5);
-  rect(beerX + 10, beerY - 10, 5);
-  rect(beerX - 5, beerY - 10, 5);
-  rect(beerX + 10, beerY - 15, 5);
-  rect(beerX - 5, beerY - 15, 5);
-  rect(beerX + 15, beerY - 20, 5);
-  rect(beerX - 10, beerY - 20, 5);
-  rect(beerX - 10, beerY - 25, 5);
-  rect(beerX - 10, beerY - 30, 5);
-  rect(beerX + 15, beerY - 25, 5);
-  rect(beerX + 15, beerY - 30, 5);
-  fill(240, 140, 0);
-  rect(beerX - 5, beerY - 30, 5);
-  rect(beerX - 5, beerY - 25, 5);
-  rect(beerX - 5, beerY - 20, 5);
-  fill(240, 170, 0);
-  rect(beerX - 0, beerY - 30, 5);
-  rect(beerX - 0, beerY - 25, 5);
-  rect(beerX - 0, beerY - 20, 5);
-  rect(beerX - 0, beerY - 15, 5);
-  rect(beerX - 0, beerY - 10, 5);
-  rect(beerX - 0, beerY - 5, 5);
-  fill(240, 180, 0);
-  rect(beerX + 5, beerY - 20, 5);
-  rect(beerX + 5, beerY - 15, 5);
-  rect(beerX + 5, beerY - 10, 5);
-  rect(beerX + 5, beerY - 5, 5);
-  fill(240, 200, 0);
-  rect(beerX + 10, beerY - 30, 5);
-  rect(beerX + 10, beerY - 25, 5);
-  rect(beerX + 10, beerY - 20, 5);
-  fill(255, 255, 255);
-  rect(beerX - 10, beerY - 35, 5);
-  rect(beerX - 5, beerY - 35, 5);
-  rect(beerX - 0, beerY - 35, 5);
-  rect(beerX + 5, beerY - 35, 5);
-  rect(beerX + 10, beerY - 35, 5);
-  rect(beerX + 15, beerY - 35, 5);
-  rect(beerX - 5, beerY - 40, 5);
-  rect(beerX - 0, beerY - 40, 5);
-  rect(beerX + 5, beerY - 40, 5);
-  rect(beerX + 10, beerY - 40, 5);
-  rect(beerX + 5, beerY - 30, 5);
-  rect(beerX + 5, beerY - 25, 5);
-  rect(beerX + 10, beerY - 55, 5);
-  rect(beerX + 5, beerY - 60, 5);
-  rect(beerX + 0, beerY - 50, 5);
-}
 function downWall(wallX, wallY) {
   push();
   fill(40, 40, 60);
@@ -224,480 +121,209 @@ function downWall(wallX, wallY) {
 
   pop();
 }
-function timerContainer(signX, signY) {
+function donkItem(x, y) {
+  // outlines of donk
+  fill(220, 220, 220);
+  rect(x - 10, y - 5, 5);
+  rect(x - 5, y - 10, 5);
+  rect(x + 0, y - 10, 5);
+  rect(x + 5, y - 5, 5);
+  rect(x + 5, y + 0, 5);
+  rect(x + 0, y + 0, 5);
+  rect(x - 5, y + 0, 5);
+  rect(x - 10, y + 0, 5);
+  rect(x - 15, y + 0, 5);
+  rect(x - 20, y + 0, 5);
+  rect(x - 20, y + 5, 5);
+  rect(x - 20, y + 10, 5);
+  rect(x - 20, y + 15, 5);
+  rect(x - 20, y + 20, 5);
+  rect(x - 15, y + 25, 5);
+  rect(x - 10, y + 25, 5);
+  rect(x - 5, y + 25, 5);
+  rect(x + 0, y + 25, 5);
+  rect(x + 5, y + 20, 5);
+  rect(x + 5, y + 15, 5);
+  rect(x + 5, y + 10, 5);
+  rect(x + 5, y + 5, 5);
+  // cork
   fill(0, 0, 0);
-  noStroke();
-  // Frame of the container
-  rect(signX - 60, signY + 5, 5);
-  rect(signX - 55, signY, 5);
-  rect(signX - 50, signY, 5);
-  rect(signX - 45, signY, 5);
-  rect(signX - 40, signY, 5);
-  rect(signX - 35, signY, 5);
-  rect(signX - 30, signY, 5);
-  rect(signX - 25, signY, 5);
-  rect(signX - 20, signY, 5);
-  rect(signX - 15, signY, 5);
-  rect(signX - 10, signY, 5);
-  rect(signX - 5, signY, 5);
-  rect(signX, signY, 5);
-  rect(signX + 5, signY, 5);
-  rect(signX + 10, signY, 5);
-  rect(signX + 15, signY, 5);
-  rect(signX + 20, signY, 5);
+  rect(x - 20, y - 5, 5);
+  rect(x - 15, y - 5, 5);
 
-  rect(signX + 25, signY, 5);
-  rect(signX + 30, signY, 5);
-  rect(signX + 35, signY, 5);
-  rect(signX + 40, signY, 5);
-  rect(signX + 45, signY, 5);
-  rect(signX + 50, signY, 5);
-  rect(signX + 55, signY, 5);
-  rect(signX + 60, signY + 5, 5);
-
-  rect(signX + 65, signY + 10, 5);
-  rect(signX + 65, signY + 15, 5);
-  rect(signX + 65, signY + 20, 5);
-  rect(signX + 65, signY + 25, 5);
-  rect(signX + 65, signY + 30, 5);
-  rect(signX + 65, signY + 35, 5);
-  rect(signX + 65, signY + 40, 5);
-  rect(signX + 65, signY + 45, 5);
-  rect(signX + 65, signY + 50, 5);
-  rect(signX + 65, signY + 55, 5);
-
-  rect(signX + 60, signY + 60, 5);
-  rect(signX + 55, signY + 65, 5);
-  rect(signX + 50, signY + 65, 5);
-  rect(signX + 45, signY + 65, 5);
-  rect(signX + 40, signY + 65, 5);
-  rect(signX + 35, signY + 65, 5);
-  rect(signX + 30, signY + 65, 5);
-  rect(signX + 25, signY + 65, 5);
-  rect(signX + 20, signY + 65, 5);
-  rect(signX + 15, signY + 65, 5);
-  rect(signX + 10, signY + 65, 5);
-  rect(signX + 5, signY + 65, 5);
-  rect(signX + 0, signY + 65, 5);
-  rect(signX - 5, signY + 65, 5);
-  rect(signX - 10, signY + 65, 5);
-  rect(signX - 15, signY + 65, 5);
-  rect(signX - 20, signY + 65, 5);
-  rect(signX - 25, signY + 65, 5);
-  rect(signX - 30, signY + 65, 5);
-  rect(signX - 35, signY + 65, 5);
-  rect(signX - 40, signY + 65, 5);
-  rect(signX - 45, signY + 65, 5);
-  rect(signX - 50, signY + 65, 5);
-  rect(signX - 55, signY + 65, 5);
-  rect(signX - 60, signY + 60, 5);
-
-  rect(signX - 65, signY + 10, 5);
-  rect(signX - 65, signY + 15, 5);
-  rect(signX - 65, signY + 20, 5);
-  rect(signX - 65, signY + 25, 5);
-  rect(signX - 65, signY + 30, 5);
-  rect(signX - 65, signY + 35, 5);
-  rect(signX - 65, signY + 40, 5);
-  rect(signX - 65, signY + 45, 5);
-  rect(signX - 65, signY + 50, 5);
-  rect(signX - 65, signY + 55, 5);
-
-  fill(125, 85, 20);
-  rect(signX - 55, signY + 5, 5);
-  rect(signX - 50, signY + 5, 5);
-  rect(signX - 45, signY + 5, 5);
-  rect(signX - 40, signY + 5, 5);
-
-  rect(signX - 60, signY + 10, 5);
-  rect(signX - 60, signY + 15, 5);
-  rect(signX - 60, signY + 20, 5);
-  rect(signX - 60, signY + 25, 5);
-  rect(signX - 60, signY + 30, 5);
-  rect(signX - 60, signY + 35, 5);
-  rect(signX - 60, signY + 40, 5);
-  rect(signX - 60, signY + 45, 5);
-  rect(signX - 55, signY + 15, 5);
-
-  rect(signX - 55, signY + 60, 5);
-  rect(signX - 50, signY + 60, 5);
-  rect(signX - 45, signY + 60, 5);
-  rect(signX - 40, signY + 60, 5);
-  rect(signX - 35, signY + 60, 5);
-
-  rect(signX - 35, signY + 15, 5);
-  rect(signX - 30, signY + 15, 5);
-  rect(signX - 25, signY + 15, 5);
-
-  rect(signX - 30, signY + 55, 5);
-  rect(signX - 25, signY + 55, 5);
-  rect(signX - 20, signY + 55, 5);
-  rect(signX - 15, signY + 55, 5);
-  rect(signX - 10, signY + 55, 5);
-
-  rect(signX - 45, signY + 35, 5);
-  rect(signX - 40, signY + 35, 5);
-  rect(signX - 35, signY + 35, 5);
-  rect(signX - 30, signY + 35, 5);
-  rect(signX - 25, signY + 35, 5);
-
-  rect(signX - 15, signY + 45, 5);
-  rect(signX - 10, signY + 45, 5);
-  rect(signX - 5, signY + 45, 5);
-  rect(signX - 0, signY + 45, 5);
-  rect(signX + 5, signY + 45, 5);
-
-  rect(signX + 10, signY + 25, 5);
-  rect(signX + 15, signY + 25, 5);
-  rect(signX + 20, signY + 25, 5);
-  rect(signX + 25, signY + 25, 5);
-
-  rect(signX - 50, signY + 25, 5);
-  rect(signX - 55, signY + 25, 5);
-  rect(signX - 40, signY + 25, 5);
-  rect(signX - 45, signY + 25, 5);
-  fill(105, 65, 20);
-
-  rect(signX - 60, signY + 50, 5);
-  rect(signX - 60, signY + 55, 5);
-  rect(signX - 35, signY + 5, 5);
-  rect(signX - 30, signY + 5, 5);
-  rect(signX - 25, signY + 5, 5);
-  rect(signX - 20, signY + 5, 5);
-  rect(signX - 15, signY + 5, 5);
-  rect(signX - 10, signY + 5, 5);
-  rect(signX - 5, signY + 5, 5);
-  rect(signX - 0, signY + 5, 5);
-  rect(signX - 20, signY + 15, 5);
-  rect(signX - 15, signY + 15, 5);
-  rect(signX - 10, signY + 15, 5);
-  rect(signX - 5, signY + 15, 5);
-  rect(signX - 0, signY + 15, 5);
-  rect(signX - 40, signY + 15, 5);
-  rect(signX - 45, signY + 15, 5);
-  rect(signX - 50, signY + 15, 5);
-
-  rect(signX - 15, signY + 20, 5);
-  rect(signX - 20, signY + 20, 5);
-  rect(signX - 25, signY + 20, 5);
-  rect(signX - 30, signY + 20, 5);
-  rect(signX - 35, signY + 20, 5);
-
-  rect(signX + 5, signY + 25, 5);
-  rect(signX - 0, signY + 25, 5);
-  rect(signX - 5, signY + 25, 5);
-  rect(signX - 10, signY + 25, 5);
-  rect(signX - 15, signY + 25, 5);
-  rect(signX - 20, signY + 25, 5);
-  rect(signX - 25, signY + 25, 5);
-
-  rect(signX - 10, signY + 35, 5);
-  rect(signX - 15, signY + 35, 5);
-  rect(signX - 20, signY + 35, 5);
-  rect(signX - 5, signY + 35, 5);
-  rect(signX - 0, signY + 35, 5);
-  rect(signX + 5, signY + 35, 5);
-
-  rect(signX - 5, signY + 30, 5);
-  rect(signX - 0, signY + 30, 5);
-  rect(signX + 5, signY + 30, 5);
-  rect(signX + 10, signY + 30, 5);
-  rect(signX + 15, signY + 30, 5);
-  rect(signX + 20, signY + 30, 5);
-
-  rect(signX - 35, signY + 55, 5);
-  rect(signX - 40, signY + 55, 5);
-  rect(signX - 45, signY + 55, 5);
-  rect(signX - 50, signY + 55, 5);
-  rect(signX - 55, signY + 55, 5);
-
-  rect(signX - 30, signY + 25, 5);
-  rect(signX - 35, signY + 25, 5);
-
-  rect(signX - 30, signY + 30, 5);
-  rect(signX - 35, signY + 30, 5);
-  rect(signX - 40, signY + 30, 5);
-  rect(signX - 45, signY + 30, 5);
-  rect(signX - 50, signY + 30, 5);
-  rect(signX - 55, signY + 30, 5);
-
-  rect(signX - 50, signY + 35, 5);
-  rect(signX - 55, signY + 35, 5);
-  rect(signX - 45, signY + 40, 5);
-  rect(signX - 50, signY + 40, 5);
-  rect(signX - 55, signY + 40, 5);
-
-  fill(85, 55, 20);
-  rect(signX - 55, signY + 10, 5);
-  rect(signX - 50, signY + 10, 5);
-  rect(signX - 45, signY + 10, 5);
-  rect(signX - 40, signY + 10, 5);
-  rect(signX - 35, signY + 10, 5);
-  rect(signX - 30, signY + 10, 5);
-  rect(signX - 25, signY + 10, 5);
-  rect(signX - 20, signY + 10, 5);
-  rect(signX - 15, signY + 10, 5);
-  rect(signX - 10, signY + 10, 5);
-  rect(signX - 5, signY + 10, 5);
-  rect(signX - 0, signY + 10, 5);
-  rect(signX - 30, signY + 60, 5);
-  rect(signX - 25, signY + 60, 5);
-  rect(signX - 20, signY + 60, 5);
-  rect(signX - 15, signY + 60, 5);
-
-  rect(signX - 10, signY + 30, 5);
-  rect(signX - 25, signY + 30, 5);
-  rect(signX - 20, signY + 30, 5);
-  rect(signX - 15, signY + 30, 5);
-
-  rect(signX - 25, signY + 50, 5);
-  rect(signX - 30, signY + 50, 5);
-  rect(signX - 35, signY + 50, 5);
-  rect(signX - 40, signY + 50, 5);
-  rect(signX - 45, signY + 50, 5);
-  rect(signX - 50, signY + 50, 5);
-  rect(signX - 55, signY + 50, 5);
-
-  rect(signX - 40, signY + 40, 5);
-  rect(signX - 35, signY + 40, 5);
-  rect(signX - 30, signY + 40, 5);
-  rect(signX - 25, signY + 40, 5);
-  rect(signX - 20, signY + 40, 5);
-
-  rect(signX + 30, signY + 10, 5);
-  rect(signX + 35, signY + 10, 5);
-  rect(signX + 40, signY + 10, 5);
-  rect(signX + 45, signY + 10, 5);
-  rect(signX + 50, signY + 10, 5);
-  fill(90, 50, 20);
-  rect(signX - 55, signY + 20, 5);
-  rect(signX - 50, signY + 20, 5);
-  rect(signX - 45, signY + 20, 5);
-  rect(signX - 40, signY + 20, 5);
-
-  rect(signX - 10, signY + 20, 5);
-  rect(signX - 5, signY + 20, 5);
-  rect(signX - 0, signY + 20, 5);
-  rect(signX + 5, signY + 20, 5);
-  rect(signX + 10, signY + 20, 5);
-  rect(signX + 15, signY + 20, 5);
-
-  rect(signX - 10, signY + 60, 5);
-  rect(signX - 5, signY + 60, 5);
-  rect(signX - 0, signY + 60, 5);
-  rect(signX + 5, signY + 60, 5);
-  rect(signX + 10, signY + 60, 5);
-  rect(signX + 15, signY + 60, 5);
-
-  rect(signX + 20, signY + 50, 5);
-  rect(signX + 25, signY + 50, 5);
-  rect(signX + 30, signY + 50, 5);
-  rect(signX + 5, signY + 50, 5);
-  rect(signX + 10, signY + 50, 5);
-  rect(signX + 15, signY + 50, 5);
-
-  rect(signX - 5, signY + 40, 5);
-  rect(signX - 10, signY + 40, 5);
-  rect(signX - 15, signY + 40, 5);
-
-  rect(signX - 35, signY + 45, 5);
-  rect(signX - 40, signY + 45, 5);
-  rect(signX - 45, signY + 45, 5);
-  rect(signX - 50, signY + 45, 5);
-  rect(signX - 55, signY + 45, 5);
-
-  rect(signX + 5, signY + 5, 5);
-  rect(signX + 10, signY + 5, 5);
-  rect(signX + 15, signY + 5, 5);
-  rect(signX + 20, signY + 5, 5);
-  rect(signX + 25, signY + 5, 5);
-
-  rect(signX + 25, signY + 30, 5);
-  rect(signX + 30, signY + 30, 5);
-  rect(signX + 35, signY + 30, 5);
-  rect(signX + 40, signY + 30, 5);
-  rect(signX + 45, signY + 30, 5);
-
-  rect(signX + 10, signY + 45, 5);
-  rect(signX + 15, signY + 45, 5);
-
-  fill(60, 40, 20);
-  rect(signX + 20, signY + 60, 5);
-  rect(signX + 25, signY + 60, 5);
-  rect(signX + 30, signY + 60, 5);
-  rect(signX + 35, signY + 60, 5);
-
-  rect(signX + 40, signY + 55, 5);
-  rect(signX + 45, signY + 55, 5);
-  rect(signX + 50, signY + 55, 5);
-  rect(signX + 55, signY + 55, 5);
-  rect(signX + 60, signY + 55, 5);
-
-  rect(signX + 30, signY + 5, 5);
-  rect(signX + 35, signY + 5, 5);
-  rect(signX + 40, signY + 5, 5);
-  rect(signX + 45, signY + 5, 5);
-  rect(signX + 50, signY + 5, 5);
-  rect(signX + 55, signY + 5, 5);
-  rect(signX + 60, signY + 10, 5);
-  rect(signX + 55, signY + 10, 5);
-
-  rect(signX + 10, signY + 35, 5);
-  rect(signX + 15, signY + 35, 5);
-  rect(signX + 20, signY + 35, 5);
-  rect(signX + 25, signY + 35, 5);
-
-  fill(65, 45, 20);
-  rect(signX + 10, signY + 15, 5);
-  rect(signX + 15, signY + 15, 5);
-  rect(signX + 20, signY + 15, 5);
-  rect(signX + 25, signY + 15, 5);
-  rect(signX + 30, signY + 15, 5);
-  rect(signX + 35, signY + 15, 5);
-
-  rect(signX + 50, signY + 25, 5);
-  rect(signX + 55, signY + 25, 5);
-  rect(signX + 60, signY + 25, 5);
-
-  rect(signX + 20, signY + 40, 5);
-  rect(signX + 25, signY + 40, 5);
-  rect(signX + 30, signY + 40, 5);
-  rect(signX + 35, signY + 40, 5);
-
-  rect(signX + 35, signY + 45, 5);
-  rect(signX + 40, signY + 45, 5);
-  rect(signX + 45, signY + 45, 5);
-  rect(signX + 50, signY + 45, 5);
-  rect(signX + 55, signY + 45, 5);
-  rect(signX + 60, signY + 45, 5);
-
-  rect(signX + 50, signY + 15, 5);
-  rect(signX + 55, signY + 15, 5);
-  rect(signX + 60, signY + 15, 5);
-
-  rect(signX + 10, signY + 55, 5);
-  rect(signX + 5, signY + 55, 5);
-  rect(signX - 0, signY + 55, 5);
-  rect(signX - 5, signY + 55, 5);
-  fill(45, 30, 10);
-  rect(signX + 30, signY + 55, 5);
-  rect(signX + 35, signY + 55, 5);
-  rect(signX + 40, signY + 60, 5);
-  rect(signX + 45, signY + 60, 5);
-  rect(signX + 50, signY + 60, 5);
-  rect(signX + 55, signY + 60, 5);
-
-  rect(signX + 50, signY + 50, 5);
-  rect(signX + 55, signY + 50, 5);
-  rect(signX + 60, signY + 50, 5);
-
-  rect(signX + 40, signY + 20, 5);
-  rect(signX + 45, signY + 20, 5);
-  rect(signX + 50, signY + 20, 5);
-  rect(signX + 55, signY + 20, 5);
-  rect(signX + 60, signY + 20, 5);
-
-  rect(signX + 30, signY + 35, 5);
-  rect(signX + 35, signY + 35, 5);
-  rect(signX + 40, signY + 35, 5);
-  rect(signX + 45, signY + 35, 5);
-  rect(signX + 50, signY + 35, 5);
-  rect(signX + 55, signY + 35, 5);
-  rect(signX + 60, signY + 35, 5);
-  fill(65, 40, 20);
-  rect(signX + 5, signY + 10, 5);
-  rect(signX + 10, signY + 10, 5);
-  rect(signX + 15, signY + 10, 5);
-  rect(signX + 20, signY + 10, 5);
-  rect(signX + 25, signY + 10, 5);
-
-  rect(signX + 20, signY + 20, 5);
-  rect(signX + 25, signY + 20, 5);
-  rect(signX + 30, signY + 20, 5);
-  rect(signX + 35, signY + 20, 5);
-
-  rect(signX + 15, signY + 55, 5);
-  rect(signX + 20, signY + 55, 5);
-  rect(signX + 25, signY + 55, 5);
-
-  rect(signX + 20, signY + 45, 5);
-  rect(signX + 25, signY + 45, 5);
-  rect(signX + 30, signY + 45, 5);
-
-  rect(signX + 35, signY + 50, 5);
-  rect(signX + 40, signY + 50, 5);
-  rect(signX + 45, signY + 50, 5);
-
-  rect(signX + 0, signY + 40, 5);
-  rect(signX + 5, signY + 40, 5);
-  rect(signX + 10, signY + 40, 5);
-  rect(signX + 15, signY + 40, 5);
-
-  rect(signX + 0, signY + 50, 5);
-  rect(signX - 5, signY + 50, 5);
-  rect(signX - 10, signY + 50, 5);
-  rect(signX - 15, signY + 50, 5);
-  rect(signX - 20, signY + 50, 5);
-
-  rect(signX - 20, signY + 45, 5);
-  rect(signX - 25, signY + 45, 5);
-  rect(signX - 30, signY + 45, 5);
-  rect(signX + 5, signY + 15, 5);
-
-  rect(signX + 45, signY + 15, 5);
-  rect(signX + 40, signY + 15, 5);
-
-  rect(signX + 45, signY + 25, 5);
-  rect(signX + 40, signY + 25, 5);
-  rect(signX + 35, signY + 25, 5);
-  rect(signX + 30, signY + 25, 5);
-
-  rect(signX + 55, signY + 30, 5);
-  rect(signX + 50, signY + 30, 5);
-  rect(signX + 60, signY + 30, 5);
-
-  rect(signX + 45, signY + 40, 5);
-  rect(signX + 40, signY + 40, 5);
-  rect(signX + 55, signY + 40, 5);
-  rect(signX + 50, signY + 40, 5);
-  rect(signX + 60, signY + 40, 5);
+  // liquid
+  fill(255, 175, 0);
+  rect(x - 15, y + 5, 5);
+  rect(x - 10, y + 5, 5);
+  rect(x - 5, y + 5, 5);
+  rect(x + 0, y + 5, 5);
+  fill(255, 155, 0);
+  rect(x - 15, y + 10, 5);
+  rect(x - 10, y + 10, 5);
+  rect(x - 5, y + 10, 5);
+  rect(x + 0, y + 10, 5);
+  fill(240, 140, 0);
+  rect(x - 15, y + 15, 5);
+  rect(x - 10, y + 15, 5);
+  rect(x - 5, y + 15, 5);
+  rect(x + 0, y + 15, 5);
+  fill(225, 125, 0);
+  rect(x - 10, y + 20, 5);
+  rect(x - 5, y + 20, 5);
+  fill(240, 140, 0);
+  rect(x - 15, y + 20, 5);
+  rect(x + 0, y + 20, 5);
 }
-
-function losingScreen(boxX, boxY) {
+function kanelbulle(kanelX, kanelY) {
   noStroke();
-  fill(0, 0, 0, 200);
-  rect(0, 0, 1000, 600);
+  fill(150, 100, 0);
+  //  base
+  rect(kanelX - 5, kanelY + 0, 5);
+  rect(kanelX + 0, kanelY + 0, 5);
+  rect(kanelX + 5, kanelY + 0, 5);
+  rect(kanelX + 10, kanelY + 0, 5);
+
+  rect(kanelX - 15, kanelY - 5, 5);
+  rect(kanelX - 10, kanelY - 5, 5);
+  rect(kanelX + 10, kanelY - 5, 5);
+  rect(kanelX + 15, kanelY - 5, 5);
+
+  rect(kanelX - 15, kanelY - 10, 5);
+  rect(kanelX - 5, kanelY - 10, 5);
+  rect(kanelX + 0, kanelY - 10, 5);
+  rect(kanelX + 5, kanelY - 10, 5);
+  rect(kanelX + 15, kanelY - 10, 5);
+
+  rect(kanelX - 10, kanelY - 15, 5);
+  rect(kanelX + 10, kanelY - 15, 5);
+  // swirl
+  fill(110, 60, 0);
+  rect(kanelX - 10, kanelY + 0, 5);
+  rect(kanelX - 5, kanelY - 5, 5);
+  rect(kanelX + 0, kanelY - 5, 5);
+  rect(kanelX + 5, kanelY - 5, 5);
+  rect(kanelX + 10, kanelY - 10, 5);
+  rect(kanelX - 10, kanelY - 10, 5);
+  rect(kanelX + 5, kanelY - 15, 5);
+  rect(kanelX + 0, kanelY - 15, 5);
+  rect(kanelX - 5, kanelY - 15, 5);
+  // sugar on top
+  fill(255, 255, 255);
+  rect(kanelX + 7, kanelY - 2, 2);
+  rect(kanelX + 8, kanelY - 7, 2);
+  rect(kanelX - 2, kanelY - 2, 2);
+  rect(kanelX - 11, kanelY - 7, 2);
+  rect(kanelX - 3, kanelY - 7, 2);
+  rect(kanelX - 6, kanelY - 12, 2);
+  rect(kanelX - 0, kanelY - 12, 2);
+  rect(kanelX + 6, kanelY - 12, 2);
+  rect(kanelX + 2, kanelY - 7, 2);
+  rect(kanelX - 8, kanelY - 2, 2);
+}
+function beerGlass(beerX, beerY) {
+  noStroke();
+  fill(220, 220, 220);
+  rect(beerX - 5, beerY + 0, 5);
+  rect(beerX + 0, beerY + 0, 5);
+  rect(beerX + 5, beerY + 0, 5);
+  rect(beerX + 10, beerY + 0, 5);
+  rect(beerX + 10, beerY - 5, 5);
+  rect(beerX - 5, beerY - 5, 5);
+  rect(beerX + 10, beerY - 10, 5);
+  rect(beerX - 5, beerY - 10, 5);
+  rect(beerX + 10, beerY - 15, 5);
+  rect(beerX - 5, beerY - 15, 5);
+  rect(beerX + 15, beerY - 20, 5);
+  rect(beerX - 10, beerY - 20, 5);
+  rect(beerX - 10, beerY - 25, 5);
+  rect(beerX - 10, beerY - 30, 5);
+  rect(beerX + 15, beerY - 25, 5);
+  rect(beerX + 15, beerY - 30, 5);
+  fill(240, 140, 0);
+  rect(beerX - 5, beerY - 30, 5);
+  rect(beerX - 5, beerY - 25, 5);
+  rect(beerX - 5, beerY - 20, 5);
+  fill(240, 170, 0);
+  rect(beerX - 0, beerY - 30, 5);
+  rect(beerX - 0, beerY - 25, 5);
+  rect(beerX - 0, beerY - 20, 5);
+  rect(beerX - 0, beerY - 15, 5);
+  rect(beerX - 0, beerY - 10, 5);
+  rect(beerX - 0, beerY - 5, 5);
+  fill(240, 180, 0);
+  rect(beerX + 5, beerY - 20, 5);
+  rect(beerX + 5, beerY - 15, 5);
+  rect(beerX + 5, beerY - 10, 5);
+  rect(beerX + 5, beerY - 5, 5);
+  fill(240, 200, 0);
+  rect(beerX + 10, beerY - 30, 5);
+  rect(beerX + 10, beerY - 25, 5);
+  rect(beerX + 10, beerY - 20, 5);
+  fill(255, 255, 255);
+  rect(beerX - 10, beerY - 35, 5);
+  rect(beerX - 5, beerY - 35, 5);
+  rect(beerX - 0, beerY - 35, 5);
+  rect(beerX + 5, beerY - 35, 5);
+  rect(beerX + 10, beerY - 35, 5);
+  rect(beerX + 15, beerY - 35, 5);
+  rect(beerX - 5, beerY - 40, 5);
+  rect(beerX - 0, beerY - 40, 5);
+  rect(beerX + 5, beerY - 40, 5);
+  rect(beerX + 10, beerY - 40, 5);
+  rect(beerX + 5, beerY - 30, 5);
+  rect(beerX + 5, beerY - 25, 5);
+  rect(beerX + 10, beerY - 55, 5);
+  rect(beerX + 5, beerY - 60, 5);
+  rect(beerX + 0, beerY - 50, 5);
+}
+function controllDisplay(controllX, controllY) {
+  noStroke();
+
   fill(60, 60, 60);
-  rect(boxX + 0, boxY + 0, 300, 50);
+  rect(controllX + 0, controllY + 0, 300, 50);
   fill(70, 70, 70);
-  rect(boxX + 0, boxY + 50, 300, 50);
+  rect(controllX + 0, controllY + 50, 300, 50);
   fill(80, 80, 80);
-  rect(boxX + 0, boxY + 100, 300, 50);
+  rect(controllX + 0, controllY + 100, 300, 50);
   fill(90, 90, 90);
-  rect(boxX + 0, boxY + 150, 300, 50);
+  rect(controllX + 0, controllY + 150, 300, 50);
   fill(255, 255, 255);
-  textSize(20);
+  textSize(15);
   textFont("Arial");
-  text("You didn't get out of", boxX + 60, boxY + 54);
-  text("the cave in time...", boxX + 72, boxY + 76);
-  textSize(10);
-  text("That kind of sucks", boxX + 106, boxY + 94);
+  text("Controllers", controllX + 108, controllY + 24);
+  text("Items", controllX + 127, controllY + 120);
   textSize(20);
 
-  textSize(20);
-  downWall(boxX - 80, boxY + 50);
-  downWall(boxX - 80, boxY + 0);
-  downWall(boxX - 80, boxY + 115);
-  downWall(boxX + 200, boxY + 50);
-  downWall(boxX + 200, boxY + 0);
-  downWall(boxX + 200, boxY + 115);
-  timerContainer(300, 220);
+  downWall(controllX - 80, controllY + 50);
+  downWall(controllX - 80, controllY + 0);
+  downWall(controllX - 80, controllY + 115);
+  downWall(controllX + 200, controllY + 50);
+  downWall(controllX + 200, controllY + 0);
+  downWall(controllX + 200, controllY + 115);
   fill(255, 255, 255);
-  text("Press space", boxX + 148, boxY + 150);
-  text("to try again", boxX + 154, boxY + 170);
-}
-function draw() {
-  beerGlass(100, 100);
+  rect(controllX + 130, controllY + 70, 30);
+  rect(controllX + 130, controllY + 35, 30);
+  rect(controllX + 96, controllY + 70, 30);
+  rect(controllX + 165, controllY + 70, 30);
+  fill(0, 0, 0);
+  textSize(24);
+  text("⬆", controllX + 133, controllY + 39, 50);
+  text("⬅", controllX + 97, controllY + 74, 50);
+  text("⬇", controllX + 133, controllY + 75, 50);
+  textSize(30);
+  text("➡", controllX + 168, controllY + 71, 50);
+  donkItem(controllX + 75, controllY + 165);
+  beerGlass(controllX + 220, controllY + 190);
+  fill(80, 80, 80);
+  rect(controllX + 215, controllY + 115, 30);
+  kanelbulle(controllX + 145, controllY + 180);
+  textSize(10);
+  fill(255, 255, 255);
+  text("Dônk", controllX + 58, controllY + 135, 40);
+  text("Sober up", controllX + 126, controllY + 135, 50);
+  text("Get drunk", controllX + 203, controllY + 135, 50);
 }
 
-import { characterDown } from "./characterDown.js";
+function draw() {
+  controllDisplay(100, 100);
+}

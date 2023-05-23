@@ -2233,6 +2233,55 @@ function choseCharacter(boxX, boxY) {
   downWall(boxX + 200, boxY + 115);
 }
 
+//Display of controllers and items
+function controllDisplay(controllX, controllY) {
+  noStroke();
+
+  fill(60, 60, 60);
+  rect(controllX + 0, controllY + 0, 300, 50);
+  fill(70, 70, 70);
+  rect(controllX + 0, controllY + 50, 300, 50);
+  fill(80, 80, 80);
+  rect(controllX + 0, controllY + 100, 300, 50);
+  fill(90, 90, 90);
+  rect(controllX + 0, controllY + 150, 300, 50);
+  fill(255, 255, 255);
+  textSize(15);
+  textFont("Arial");
+  text("Controllers", controllX + 108, controllY + 24);
+  text("Items", controllX + 127, controllY + 120);
+  textSize(20);
+
+  downWall(controllX - 80, controllY + 50);
+  downWall(controllX - 80, controllY + 0);
+  downWall(controllX - 80, controllY + 115);
+  downWall(controllX + 200, controllY + 50);
+  downWall(controllX + 200, controllY + 0);
+  downWall(controllX + 200, controllY + 115);
+  fill(255, 255, 255);
+  rect(controllX + 130, controllY + 70, 30);
+  rect(controllX + 130, controllY + 35, 30);
+  rect(controllX + 96, controllY + 70, 30);
+  rect(controllX + 165, controllY + 70, 30);
+  fill(0, 0, 0);
+  textSize(24);
+  text("⬆", controllX + 133, controllY + 39, 50);
+  text("⬅", controllX + 97, controllY + 74, 50);
+  text("⬇", controllX + 133, controllY + 75, 50);
+  textSize(30);
+  text("➡", controllX + 168, controllY + 71, 50);
+  donkItem(controllX + 75, controllY + 165);
+  beerGlass(controllX + 220, controllY + 190);
+  fill(80, 80, 80);
+  rect(controllX + 215, controllY + 115, 30);
+  kanelbulle(controllX + 145, controllY + 180);
+  textSize(10);
+  fill(255, 255, 255);
+  text("Dônk", controllX + 58, controllY + 135, 40);
+  text("Sober up", controllX + 126, controllY + 135, 50);
+  text("Get drunk", controllX + 203, controllY + 135, 50);
+}
+
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -2944,7 +2993,8 @@ function draw() {
   countDownDisplay();
   //Changing the array values for the characters clothes
   if (chosingCharacterPage) {
-    choseCharacter(350, 200);
+    choseCharacter(150, 200);
+    controllDisplay(550, 200);
     if (keyIsDown(49)) {
       shirtColor = [255, 0, 0];
       pantsColor = [255, 214, 0];

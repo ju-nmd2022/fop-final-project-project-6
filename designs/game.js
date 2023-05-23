@@ -2980,8 +2980,8 @@ function draw() {
       if (
         characterX > 220 &&
         characterX < 260 &&
-        characterY > 80 &&
-        characterY < 130
+        characterY > 40 &&
+        characterY < 140
       ) {
         showBeer = false;
         isCharacterSober = false;
@@ -3169,6 +3169,7 @@ function draw() {
       donkWasPickedUp = false;
       characterX = 185;
       characterY = 120;
+      characterSpeed = 9;
       showDonk = true;
       countDown = 750;
       chasingWallX = -1000;

@@ -9,7 +9,7 @@ function setup() {
 }
 
 //Values for counter
-let countDown = 900;
+let countDown = 750;
 let counterActive = false;
 
 //Values for ground and wall graphics
@@ -47,6 +47,7 @@ let blockingWallActive = true;
 let level1Active = true;
 let level2Active = false;
 let level3Active = false;
+let winningScreenActive = false;
 
 //Game active value and chasing wall
 let isCharacterSober = false;
@@ -1731,6 +1732,32 @@ function level3() {
   straightWall(630, 60);
 }
 
+function winningScreenDisplay() {
+  noStroke();
+
+  fill(60, 150, 255);
+  rect(0, 0, 1000, 80);
+  fill(70, 160, 255);
+  rect(0, 80, 1000, 80);
+  fill(80, 170, 255);
+  rect(0, 160, 1000, 80);
+  fill(90, 180, 255);
+  rect(0, 240, 1000, 80);
+  fill(100, 190, 255);
+  rect(0, 320, 1000, 80);
+  fill(110, 200, 255);
+  rect(0, 400, 1000, 80);
+
+  fill(150, 250, 50);
+  rect(0, 480, 1000, 30);
+  fill(140, 240, 40);
+  rect(0, 510, 1000, 30);
+  fill(130, 230, 30);
+  rect(0, 540, 1000, 30);
+  fill(120, 220, 20);
+  rect(0, 570, 1000, 30);
+}
+
 // container to display timer in
 function timerContainer(signX, signY) {
   fill(0, 0, 0);
@@ -2509,6 +2536,35 @@ function losingScreenFunction(boxX, boxY) {
   text("to try again", boxX + 154, boxY + 170);
 }
 
+function winningScreenFunction(boxX, boxY) {
+  noStroke();
+  fill(60, 60, 60);
+  rect(boxX + 0, boxY + 0, 300, 50);
+  fill(70, 70, 70);
+  rect(boxX + 0, boxY + 50, 300, 50);
+  fill(80, 80, 80);
+  rect(boxX + 0, boxY + 100, 300, 50);
+  fill(90, 90, 90);
+  rect(boxX + 0, boxY + 150, 300, 50);
+  fill(255, 255, 255);
+  textSize(40);
+  textFont("Arial");
+  text("You did it!", boxX + 65, boxY + 76);
+  textSize(15);
+  text("You ran out of the maze in time.", boxX + 49, boxY + 94);
+  downWall(boxX - 80, boxY + 50);
+  downWall(boxX - 80, boxY + 0);
+  downWall(boxX - 80, boxY + 115);
+  downWall(boxX + 200, boxY + 50);
+  downWall(boxX + 200, boxY + 0);
+  downWall(boxX + 200, boxY + 115);
+  timerContainer(boxX + 200, boxY + 120);
+  fill(255, 255, 255);
+  text("Press space", boxX + 160, boxY + 150);
+  text("to play again", boxX + 159, boxY + 170);
+  textSize(20);
+}
+
 //Graphic for the wall chasing the character
 function chasingBox() {
   fill(0, 0, 0);
@@ -2967,11 +3023,43 @@ function draw() {
 
     if (characterX >= 1000) {
       level3Active = false;
-      characterX = 0;
       counterActive = false;
+      winningScreenActive = true;
+      characterX = 1100;
     }
   }
 
+  if (winningScreenActive) {
+    winningScreenDisplay();
+
+    if (characterX > 500) {
+      characterX = characterX - 7;
+    } else if (characterX <= 500) {
+      characterX = characterX;
+      winningScreenFunction(350, 200);
+      if (keyIsDown(32)) {
+        counterActive = true;
+        donkWasPickedUp = false;
+        characterX = 185;
+        characterY = 120;
+        showDonk = true;
+        countDown = 750;
+        chasingWallX = -1000;
+        counterActive = false;
+        losingScreen = false;
+        chosingCharacterPage = true;
+        blockingWallActive = true;
+        level1Active = true;
+        level2Active = false;
+        level3Active = false;
+        winningScreenActive = false;
+        showKanelbulle = true;
+        showBeer = true;
+      }
+    }
+  }
+
+  //displaying character
   characterDown(characterX, characterY);
 
   // displaying donk and removing donk if character is picking it up
@@ -3068,6 +3156,7 @@ function draw() {
 
     if (chasingWallX + 1000 > characterX) {
       isCharacterSober = false;
+      isCharacterDrunk = false;
       chasingWallX = characterX - 1000;
       losingScreen = true;
     }
@@ -3081,7 +3170,7 @@ function draw() {
       characterX = 185;
       characterY = 120;
       showDonk = true;
-      countDown = 600;
+      countDown = 750;
       chasingWallX = -1000;
       counterActive = false;
       losingScreen = false;

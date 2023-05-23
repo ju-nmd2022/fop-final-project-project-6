@@ -22,7 +22,7 @@ const characterSpeed = 9;
 let showDonk = true;
 const donkX = 40;
 const donkY = 110;
-let isGameActive = true;
+let isCharacterSober = true;
 let donkStory1 = false;
 let donkStory2 = false;
 
@@ -1111,6 +1111,67 @@ function level2() {
   straightWall(490, 395);
 }
 
+function level3() {
+  straightWall(10, 0);
+  straightWall(100, 0);
+  straightWall(10, 120);
+  straightWall(190, 0);
+  downWall(10, 120);
+
+  straightWall(25, 190);
+  straightWall(0, 190);
+  downWall(-90, 220);
+  downWall(-90, 270);
+  straightWall(0, 350);
+  straightWall(25, 350);
+
+  straightWall(535, 180);
+  downWall(630, 60);
+  downWall(630, 140);
+  downWall(630, 220);
+  downWall(630, 300);
+  downWall(630, 380);
+  downWall(520, 195);
+  downWall(520, 275);
+  downWall(520, 355);
+  downWall(520, 435);
+  downWall(520, 480);
+  straightWall(610, 550);
+  straightWall(700, 550);
+  straightWall(790, 550);
+  straightWall(880, 550);
+  straightWall(915, 550);
+
+  straightWall(720, 420);
+  straightWall(790, 420);
+  straightWall(880, 420);
+  straightWall(915, 420);
+
+  downWall(10, 360);
+  downWall(175, 0);
+  downWall(175, 80);
+  downWall(175, 160);
+  downWall(175, 240);
+  downWall(250, 220);
+  downWall(250, 140);
+  downWall(250, 60);
+  straightWall(100, 435);
+  straightWall(265, 300);
+  straightWall(190, 435);
+  straightWall(190, 435);
+  straightWall(280, 435);
+  straightWall(370, 435);
+  downWall(445, 355);
+  straightWall(460, 435);
+  downWall(445, 275);
+  downWall(445, 195);
+
+  straightWall(360, 60);
+  straightWall(450, 60);
+  straightWall(540, 60);
+  straightWall(630, 60);
+}
+
 //Donk Item
 function donkItem(x, y) {
   // outlines of donk
@@ -1195,11 +1256,15 @@ function draw() {
   //Spreading out the ground tiles in a for loop
   const length = 10;
 
-  //downWallCollision();
-  lev2DownWallColl();
-  lev2UpWallColl();
-  lev2LeftWallColl();
-  lev2RightWallColl();
+  // lev2DownWallColl();
+  // lev2UpWallColl();
+  // lev2LeftWallColl();
+  // lev2RightWallColl();
+
+  lev3DownWallColl();
+  lev3UpWallColl();
+  lev3LeftWallColl();
+  lev3RightWallColl();
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
@@ -1207,7 +1272,9 @@ function draw() {
     }
   }
   //level1();
-  level2();
+  //level2();
+  level3();
+
   // displaying donk
   if (showDonk === true) {
     donkItem(donkX, donkY);
@@ -1251,52 +1318,6 @@ function draw() {
   }
 }
 
-// function wallCollision() {
-//   for (let i = 0; i < wallArray.length; i++) {
-//     let wall = wallArray[i];
-
-//     //Wall Two
-//     if (
-//       characterX > wall.x &&
-//       characterX < wall.x + wall.width &&
-//       characterY < wall.y &&
-//       characterY + 30 > wall.y
-//     ) {
-//       characterY = 10;
-//     }
-
-//     //wall Three
-//     if (
-//       characterX + 20 > wall.x &&
-//       characterX < wall.x + wall.width &&
-//       characterY < wall.y &&
-//       characterY > wall.y
-//     ) {
-//       characterY = 10;
-//     }
-//   }
-// }
-
-// let wallOne = { x: 0, y: 55, width: 300, height: 55 };
-// let wallTwo = { x: 0, y: 200, width: 390, height: 55 };
-
-// let wallArray = [wallOne, wallTwo];
-
-// function downWallCollision() {
-//   for (let i = 0; i < downWallArray.length; i++) {
-//     let downWall = downWallArray[i];
-
-//     if (
-//       characterX > downWall.x &&
-//       characterX < downWall.x + downWall.width &&
-//       characterY < downWall.y &&
-//       characterY + 30 > downWall.y
-//     ) {
-//       characterY = characterY - characterSpeed;
-//     }
-//   }
-// }
-
 // const levelOneDownOne = { x: 0, y: 200, width: 390, height: 55 };
 // const levelOneDownTwo = { x: 280, y: 405, width: 285, height: 55 };
 // const downWallThree = { x: 100, y: 550, width: 720, height: 55 };
@@ -1310,8 +1331,8 @@ function draw() {
 // ];
 
 function lev2DownWallColl() {
-  for (let i = 0; i < level2DownWallArray.length; i++) {
-    let downWallTwo = level2DownWallArray[i];
+  for (let i = 0; i < levelTwoDownWallArray.length; i++) {
+    let downWallTwo = levelTwoDownWallArray[i];
 
     if (
       characterX > downWallTwo.x &&
@@ -1398,36 +1419,116 @@ const levelTwoRightThree = { x: 850, y: 55, width: 10, height: 200 };
 const levelTwoRightFour = { x: 700, y: 360, width: 10, height: 200 };
 const levelTwoRightFive = { x: 995, y: 290, width: 10, height: 100 };
 
-//Array for the downwalls for level 2
-let level2DownWallArray = [
-  levelTwoDownOne,
-  levelTwoDownTwo,
-  levelTwoDownThree,
-  levelTwoDownFour,
-  levelTwoDownFive,
-  levelTwoDownSix,
+//Functions for wallcollision for level 3
+function lev3DownWallColl() {
+  for (let i = 0; i < level3DownWallArray.length; i++) {
+    let downWallThree = level3DownWallArray[i];
+
+    if (
+      characterX > downWallThree.x &&
+      characterX < downWallThree.x + downWallThree.width &&
+      characterY < downWallThree.y &&
+      characterY + 30 > downWallThree.y
+    ) {
+      characterY = characterY - characterSpeed;
+    }
+  }
+}
+
+function lev3UpWallColl() {
+  for (let i = 0; i < level3UpWallArray.length; i++) {
+    let upWallThree = level3UpWallArray[i];
+
+    if (
+      characterX > upWallThree.x &&
+      characterX < upWallThree.x + upWallThree.width &&
+      characterY < upWallThree.y &&
+      characterY + 10 > upWallThree.y
+    ) {
+      characterY = characterY + characterSpeed;
+    }
+  }
+}
+
+function lev3LeftWallColl() {
+  for (let i = 0; i < level3LeftWallArray.length; i++) {
+    let leftWallThree = level3LeftWallArray[i];
+
+    if (
+      characterX + 10 > leftWallThree.x &&
+      characterX < leftWallThree.x + leftWallThree.width &&
+      characterY < leftWallThree.y + leftWallThree.height &&
+      characterY + 10 > leftWallThree.y
+    ) {
+      characterX = characterX + characterSpeed;
+    }
+  }
+}
+
+function lev3RightWallColl() {
+  for (let i = 0; i < level3RightWallArray.length; i++) {
+    let rightWallThree = level3RightWallArray[i];
+
+    //Right Wall One
+    if (
+      characterX < rightWallThree.x + rightWallThree.width &&
+      characterX + 10 > rightWallThree.x &&
+      characterY < rightWallThree.y + rightWallThree.height &&
+      characterY + 10 > rightWallThree.y
+    ) {
+      characterX = characterX - characterSpeed;
+    }
+  }
+}
+
+//Objects for the walls for level 3
+const level3DownOne = { x: 0, y: 120, width: 120, height: 55 };
+const level3DownTwo = { x: 0, y: 347, width: 120, height: 55 };
+const level3DownThree = { x: 90, y: 430, width: 450, height: 55 };
+const level3DownFour = { x: 525, y: 180, width: 100, height: 55 };
+const level3DownFive = { x: 605, y: 550, width: 400, height: 55 };
+
+const level3UpOne = { x: 0, y: 15, width: 270, height: 55 };
+const level3UpTwo = { x: -20, y: 210, width: 125, height: 55 };
+const level3UpThree = { x: 245, y: 310, width: 110, height: 55 };
+const level3UpFour = { x: 330, y: 90, width: 400, height: 55 };
+const level3UpFive = { x: 700, y: 430, width: 310, height: 55 };
+
+const level3LeftOne = { x: 5, y: 0, width: 10, height: 130 };
+const level3LeftTwo = { x: 105, y: 120, width: 20, height: 110 };
+const level3LeftThree = { x: 0, y: 210, width: 20, height: 150 };
+const level3LeftFour = { x: 105, y: 335, width: 20, height: 150 };
+const level3LeftFive = { x: 340, y: 60, width: 20, height: 270 };
+const level3LeftSix = { x: 610, y: 165, width: 20, height: 400 };
+
+const level3RightOne = { x: 240, y: 20, width: 20, height: 300 };
+const level3RightTwo = { x: 510, y: 165, width: 20, height: 300 };
+const level3RightThree = { x: 700, y: 60, width: 20, height: 380 };
+
+//Arrays for level 3 walls
+let level3DownWallArray = [
+  level3DownOne,
+  level3DownTwo,
+  level3DownThree,
+  level3DownFour,
+  level3DownFive,
 ];
 
-//Array for the upwalls for level 2
-let level2UpWallArray = [
-  levelTwoUpOne,
-  levelTwoUpTwo,
-  levelTwoUpThree,
-  levelTwoUpFour,
+let level3UpWallArray = [
+  level3UpOne,
+  level3UpTwo,
+  level3UpThree,
+  level3UpFour,
+  level3UpFive,
 ];
 
-let level2LeftWallArray = [
-  levelTwoLeftOne,
-  levelTwoLeftTwo,
-  levelTwoLeftThree,
-  levelTwoLeftFour,
-  levelTwoLeftFive,
+let level3LeftWallArray = [
+  level3LeftOne,
+  level3LeftTwo,
+  level3LeftThree,
+  level3LeftFour,
+  level3LeftFive,
+  level3LeftSix,
 ];
 
-let level2RightWallArray = [
-  levelTwoRightOne,
-  levelTwoRightTwo,
-  levelTwoRightThree,
-  levelTwoRightFour,
-  levelTwoRightFive,
-];
+let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];

@@ -9,7 +9,7 @@ function setup() {
 }
 
 //Values for counter
-let countDown = 600;
+let countDown = 900;
 let counterActive = false;
 
 //Values for ground and wall graphics
@@ -46,6 +46,7 @@ let blockingWallActive = true;
 //levels active
 let level1Active = true;
 let level2Active = false;
+let level3Active = false;
 
 //Game active value and chasing wall
 let isCharacterSober = false;
@@ -1669,6 +1670,67 @@ function level2() {
   straightWall(490, 395);
 }
 
+function level3() {
+  straightWall(10, 0);
+  straightWall(100, 0);
+  straightWall(10, 120);
+  straightWall(190, 0);
+  downWall(10, 120);
+
+  straightWall(25, 190);
+  straightWall(0, 190);
+  downWall(-90, 220);
+  downWall(-90, 270);
+  straightWall(0, 350);
+  straightWall(25, 350);
+
+  straightWall(535, 180);
+  downWall(630, 60);
+  downWall(630, 140);
+  downWall(630, 220);
+  downWall(630, 300);
+  downWall(630, 380);
+  downWall(520, 195);
+  downWall(520, 275);
+  downWall(520, 355);
+  downWall(520, 435);
+  downWall(520, 480);
+  straightWall(610, 550);
+  straightWall(700, 550);
+  straightWall(790, 550);
+  straightWall(880, 550);
+  straightWall(915, 550);
+
+  straightWall(720, 420);
+  straightWall(790, 420);
+  straightWall(880, 420);
+  straightWall(915, 420);
+
+  downWall(10, 360);
+  downWall(175, 0);
+  downWall(175, 80);
+  downWall(175, 160);
+  downWall(175, 240);
+  downWall(250, 220);
+  downWall(250, 140);
+  downWall(250, 60);
+  straightWall(100, 435);
+  straightWall(265, 300);
+  straightWall(190, 435);
+  straightWall(190, 435);
+  straightWall(280, 435);
+  straightWall(370, 435);
+  downWall(445, 355);
+  straightWall(460, 435);
+  downWall(445, 275);
+  downWall(445, 195);
+
+  straightWall(360, 60);
+  straightWall(450, 60);
+  straightWall(540, 60);
+  straightWall(630, 60);
+}
+
 // container to display timer in
 function timerContainer(signX, signY) {
   fill(0, 0, 0);
@@ -2659,6 +2721,120 @@ let level2RightWallArray = [
   levelTwoRightFour,
 ];
 
+//Functions for wallcollision for level 3
+function lev3DownWallColl() {
+  for (let i = 0; i < level3DownWallArray.length; i++) {
+    let downWallThree = level3DownWallArray[i];
+
+    if (
+      characterX > downWallThree.x &&
+      characterX < downWallThree.x + downWallThree.width &&
+      characterY < downWallThree.y &&
+      characterY + 30 > downWallThree.y
+    ) {
+      characterY = characterY - characterSpeed;
+    }
+  }
+}
+
+function lev3UpWallColl() {
+  for (let i = 0; i < level3UpWallArray.length; i++) {
+    let upWallThree = level3UpWallArray[i];
+
+    if (
+      characterX > upWallThree.x &&
+      characterX < upWallThree.x + upWallThree.width &&
+      characterY < upWallThree.y &&
+      characterY + 10 > upWallThree.y
+    ) {
+      characterY = characterY + characterSpeed;
+    }
+  }
+}
+
+function lev3LeftWallColl() {
+  for (let i = 0; i < level3LeftWallArray.length; i++) {
+    let leftWallThree = level3LeftWallArray[i];
+
+    if (
+      characterX + 10 > leftWallThree.x &&
+      characterX < leftWallThree.x + leftWallThree.width &&
+      characterY < leftWallThree.y + leftWallThree.height &&
+      characterY + 10 > leftWallThree.y
+    ) {
+      characterX = characterX + characterSpeed;
+    }
+  }
+}
+
+function lev3RightWallColl() {
+  for (let i = 0; i < level3RightWallArray.length; i++) {
+    let rightWallThree = level3RightWallArray[i];
+
+    //Right Wall One
+    if (
+      characterX < rightWallThree.x + rightWallThree.width &&
+      characterX + 10 > rightWallThree.x &&
+      characterY < rightWallThree.y + rightWallThree.height &&
+      characterY + 10 > rightWallThree.y
+    ) {
+      characterX = characterX - characterSpeed;
+    }
+  }
+}
+
+//Objects for the walls for level 3
+const level3DownOne = { x: 0, y: 120, width: 120, height: 55 };
+const level3DownTwo = { x: 0, y: 347, width: 120, height: 55 };
+const level3DownThree = { x: 90, y: 430, width: 450, height: 55 };
+const level3DownFour = { x: 525, y: 180, width: 100, height: 55 };
+const level3DownFive = { x: 605, y: 550, width: 400, height: 55 };
+
+const level3UpOne = { x: 0, y: 15, width: 270, height: 55 };
+const level3UpTwo = { x: -20, y: 210, width: 125, height: 55 };
+const level3UpThree = { x: 245, y: 310, width: 110, height: 55 };
+const level3UpFour = { x: 330, y: 90, width: 400, height: 55 };
+const level3UpFive = { x: 700, y: 430, width: 310, height: 55 };
+
+const level3LeftOne = { x: 5, y: 0, width: 10, height: 130 };
+const level3LeftTwo = { x: 105, y: 120, width: 20, height: 110 };
+const level3LeftThree = { x: 0, y: 210, width: 20, height: 150 };
+const level3LeftFour = { x: 105, y: 335, width: 20, height: 150 };
+const level3LeftFive = { x: 340, y: 60, width: 20, height: 270 };
+const level3LeftSix = { x: 610, y: 165, width: 20, height: 400 };
+
+const level3RightOne = { x: 240, y: 20, width: 20, height: 300 };
+const level3RightTwo = { x: 510, y: 165, width: 20, height: 300 };
+const level3RightThree = { x: 700, y: 60, width: 20, height: 380 };
+
+//Arrays for level 3 walls
+let level3DownWallArray = [
+  level3DownOne,
+  level3DownTwo,
+  level3DownThree,
+  level3DownFour,
+  level3DownFive,
+];
+
+let level3UpWallArray = [
+  level3UpOne,
+  level3UpTwo,
+  level3UpThree,
+  level3UpFour,
+  level3UpFive,
+];
+
+let level3LeftWallArray = [
+  level3LeftOne,
+  level3LeftTwo,
+  level3LeftThree,
+  level3LeftFour,
+  level3LeftFive,
+  level3LeftSix,
+];
+
+let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];
+
 //Draw function where the game plays
 function draw() {
   //Spreading out the ground tiles in a for loop
@@ -2709,13 +2885,28 @@ function draw() {
       }
     }
 
+    if (characterX >= 1000) {
+      level2Active = false;
+      level3Active = true;
+      characterX = 0;
+      characterY = 70;
+    }
+  }
+
+  if (level3Active) {
+    lev3DownWallColl();
+    lev3UpWallColl();
+    lev3LeftWallColl();
+    lev3RightWallColl();
+    level3();
+
     if (showKanelbulle === true && countDown > 0) {
-      kanelbulle(820, 230);
+      kanelbulle(50, 285);
       if (
-        characterX > 800 &&
-        characterX < 840 &&
-        characterY > 210 &&
-        characterY < 240
+        characterX > 25 &&
+        characterX < 70 &&
+        characterY > 265 &&
+        characterY < 320
       ) {
         showKanelbulle = false;
         isCharacterDrunk = false;
@@ -2726,11 +2917,12 @@ function draw() {
     }
 
     if (characterX >= 1000) {
-      level2Active = false;
+      level3Active = false;
       characterX = 0;
       counterActive = false;
     }
   }
+
   characterDown(characterX, characterY);
 
   // displaying donk and removing donk if character is picking it up

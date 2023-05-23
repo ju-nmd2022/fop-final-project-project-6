@@ -2511,7 +2511,7 @@ function losingScreenFunction(boxX, boxY) {
 
 //Graphic for the wall chasing the character
 function chasingBox() {
-  fill(200, 200, 0);
+  fill(0, 0, 0);
   rect(chasingWallX, 0, 1000, 600);
 }
 
@@ -3089,6 +3089,7 @@ function draw() {
       blockingWallActive = true;
       level1Active = true;
       level2Active = false;
+      level3Active = false;
       showKanelbulle = true;
       showBeer = true;
     }

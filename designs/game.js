@@ -3,7 +3,7 @@
 function setup() {
   let cnv = createCanvas(1000, 600);
   let cnvX = (windowWidth - width) / 2;
-  let cnvY = (windowHeight - height + 0) / 2;
+  let cnvY = (windowHeight - height + 0) / 2 + 50;
   cnv.position(cnvX, cnvY);
   frameRate(30);
 }

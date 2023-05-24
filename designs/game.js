@@ -1,8 +1,10 @@
+//Logotype on the startscreen
 let logotype;
 function preload() {
   logotype = loadImage("logo.png");
 }
 
+//Creating the canvas for html
 function setup() {
   let cnv = createCanvas(1000, 600);
   let cnvX = (windowWidth - width) / 2;
@@ -56,9 +58,6 @@ let winningScreenActive = false;
 let isCharacterSober = false;
 let isCharacterDrunk = false;
 let chasingWallX = -1000;
-
-//downWall Size(w 40px, h 85px)
-//straightWall Size(w 105px, h 55px) 90px width for seamless connection
 
 // BACKGROUND
 function groundGraphic(groundX, groundY) {
@@ -1674,6 +1673,7 @@ function level2() {
   straightWall(490, 395);
 }
 
+//Level 3 stage graphics
 function level3() {
   straightWall(10, 0);
   straightWall(100, 0);
@@ -1735,6 +1735,7 @@ function level3() {
   straightWall(630, 60);
 }
 
+//Winning screen graphic
 function winningScreenDisplay() {
   noStroke();
 
@@ -2211,7 +2212,7 @@ function countDownDisplay() {
   textSize(30);
   text(displayText + " sec", 465, 25, 100, 50);
 }
-//Chosing color of the character
+//Chosing color of the character, with a box screen
 function choseCharacter(boxX, boxY) {
   noStroke();
   fill(0, 0, 0, 200);
@@ -2237,6 +2238,7 @@ function choseCharacter(boxX, boxY) {
   text("3", boxX + 224, boxY + 85);
   textSize(20);
 
+  //Array for changing the character colors
   shirtColor = [255, 0, 0];
   pantsColor = [255, 214, 0];
   hairColor = [255, 155, 0];
@@ -2256,6 +2258,7 @@ function choseCharacter(boxX, boxY) {
   pantsColor = [0, 0, 0];
   hairColor = [0, 0, 0];
   shoeColor = [0, 0, 0];
+  //Frame with walls on the sides of the screen
   downWall(boxX - 80, boxY + 50);
   downWall(boxX - 80, boxY + 0);
   downWall(boxX - 80, boxY + 115);
@@ -2368,7 +2371,7 @@ function donkItem(x, y) {
   rect(x + 0, y + 20, 5);
 }
 
-//Kanelbulle
+//Kanelbulle graphic
 function kanelbulle(kanelX, kanelY) {
   noStroke();
   fill(150, 100, 0);
@@ -2416,7 +2419,7 @@ function kanelbulle(kanelX, kanelY) {
   rect(kanelX - 8, kanelY - 2, 2);
 }
 
-//Beer Glass
+//Beer Glass graphic
 function beerGlass(beerX, beerY) {
   noStroke();
   fill(220, 220, 220);
@@ -2473,6 +2476,7 @@ function beerGlass(beerX, beerY) {
   rect(beerX + 5, beerY - 60, 5);
   rect(beerX + 0, beerY - 50, 5);
 }
+
 //Screen showing when item is picked up
 function donkStory1Function(boxX, boxY) {
   noStroke();
@@ -2540,6 +2544,7 @@ function losingScreenFunction(boxX, boxY) {
   text("to try again", boxX + 154, boxY + 170);
 }
 
+//Graphic for the winning screen
 function winningScreenFunction(boxX, boxY) {
   noStroke();
   fill(60, 60, 60);
@@ -2690,6 +2695,7 @@ let rightWallArray = [
   rightWallSix,
 ];
 
+//Wall that blocks the player from walkning the stage before the item is picked up, made a wall collision
 function blockingWall() {
   for (let i = 0; i < blockingWallArray.length; i++) {
     let wall = blockingWallArray[i];
@@ -2709,6 +2715,7 @@ const blockingWall1 = { x: 280, y: 120, width: 15, height: 150 };
 
 let blockingWallArray = [blockingWall1];
 
+//Level 2 wall collision loops
 function lev2DownWallColl() {
   for (let i = 0; i < level2DownWallArray.length; i++) {
     let downWallTwo = level2DownWallArray[i];
@@ -2770,7 +2777,7 @@ function lev2RightWallColl() {
   }
 }
 
-//Objects for the downwalls two
+//Objects for the wall collisions for level 2
 const levelTwoDownOne = { x: 0, y: 300, width: 185, height: 55 };
 const levelTwoDownTwo = { x: 175, y: 167, width: 210, height: 55 };
 const levelTwoDownThree = { x: 470, y: 167, width: 320, height: 55 };
@@ -2778,26 +2785,23 @@ const levelTwoDownFour = { x: 370, y: 525, width: 360, height: 55 };
 const levelTwoDownFive = { x: 700, y: 360, width: 300, height: 55 };
 const levelTwoDownSix = { x: 775, y: 255, width: 95, height: 55 };
 
-//Objects for the upwalls two
 const levelTwoUpOne = { x: 0, y: 155, width: 105, height: 55 };
 const levelTwoUpTwo = { x: 105, y: 45, width: 765, height: 55 };
 const levelTwoUpThree = { x: 480, y: 425, width: 90, height: 55 };
 const levelTwoUpFour = { x: 570, y: 280, width: 435, height: 55 };
 
-//Objects for the leftwalls two
 const levelTwoLeftOne = { x: 0, y: 140, width: 10, height: 200 };
 const levelTwoLeftTwo = { x: 105, y: 40, width: 10, height: 120 };
 const levelTwoLeftThree = { x: 380, y: 170, width: 10, height: 470 };
 const levelTwoLeftFour = { x: 570, y: 280, width: 10, height: 140 };
 const levelTwoLeftFive = { x: 785, y: 170, width: 10, height: 80 };
 
-//Objects for the leftwalls two
 const levelTwoRightOne = { x: 175, y: 155, width: 10, height: 130 };
 const levelTwoRightTwo = { x: 470, y: 155, width: 10, height: 250 };
 const levelTwoRightThree = { x: 850, y: 55, width: 10, height: 200 };
 const levelTwoRightFour = { x: 700, y: 360, width: 10, height: 200 };
 
-//Array for the downwalls for level 2
+//Array for the walls for level 2
 let level2DownWallArray = [
   levelTwoDownOne,
   levelTwoDownTwo,
@@ -2807,7 +2811,6 @@ let level2DownWallArray = [
   levelTwoDownSix,
 ];
 
-//Array for the upwalls for level 2
 let level2UpWallArray = [
   levelTwoUpOne,
   levelTwoUpTwo,
@@ -2946,9 +2949,8 @@ let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];
 
 //Draw function where the game plays
 function draw() {
-  //Spreading out the ground tiles in a for loop
+  //Spreading out the ground tiles in a for loop, used checkerboard video from lectures
   const length = 10;
-
   //Looping the background tile 10x10
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
@@ -2956,16 +2958,19 @@ function draw() {
     }
   }
 
+  //define the blocking wall
   if (blockingWallActive) {
     blockingWall();
   }
 
+  //efine what happens in level 1
   if (level1Active) {
     wallCollisionDown();
     wallCollisionUp();
     wallCollisionLeft();
     wallCollisionRight();
     level1();
+    //Switching to the next level and moving the character
     if (characterX >= 1000) {
       level1Active = false;
       level2Active = true;
@@ -2973,12 +2978,15 @@ function draw() {
       characterY = characterY - 20;
     }
   }
+
+  //Defines what happens in level 2
   if (level2Active) {
     lev2DownWallColl();
     lev2UpWallColl();
     lev2LeftWallColl();
     lev2RightWallColl();
     level2();
+    //Showing the beer glass, if character walks on it it gets picked upp
     if (showBeer === true) {
       beerGlass(250, 130);
       if (
@@ -2994,6 +3002,7 @@ function draw() {
       }
     }
 
+    //Changing to the next level
     if (characterX >= 1000) {
       level2Active = false;
       level3Active = true;
@@ -3002,6 +3011,7 @@ function draw() {
     }
   }
 
+  //Defines what happens in level 3
   if (level3Active) {
     lev3DownWallColl();
     lev3UpWallColl();
@@ -3009,6 +3019,7 @@ function draw() {
     lev3RightWallColl();
     level3();
 
+    //Shows the kanelbulle and it can get picked upp to reset values
     if (showKanelbulle === true && countDown > 0) {
       kanelbulle(50, 285);
       if (
@@ -3025,6 +3036,7 @@ function draw() {
       }
     }
 
+    //Switching to the winningscreen
     if (characterX >= 1000) {
       level3Active = false;
       counterActive = false;
@@ -3034,6 +3046,7 @@ function draw() {
     }
   }
 
+  //Defines what happens when winning screen is active, and the chasing wall stops
   if (winningScreenActive) {
     winningScreenDisplay();
     chasingWallX = -1000;
@@ -3043,6 +3056,8 @@ function draw() {
     } else if (characterX <= 500) {
       characterX = characterX;
       winningScreenFunction(350, 200);
+
+      //Reseting the game with spacebar
       if (keyIsDown(32)) {
         counterActive = true;
         donkWasPickedUp = false;
@@ -3069,7 +3084,6 @@ function draw() {
   characterDown(characterX, characterY);
 
   // displaying donk and removing donk if character is picking it up
-
   if (showDonk === true) {
     donkItem(donkX, donkY);
     if (
@@ -3084,7 +3098,9 @@ function draw() {
       blockingWallActive = false;
     }
   }
+  //Showing the counter
   countDownDisplay();
+
   //Changing the array values for the characters clothes
   if (chosingCharacterPage) {
     choseCharacter(150, 200);
@@ -3123,7 +3139,7 @@ function draw() {
       donkWasPickedUp = false;
     }
   }
-  //  Moving Character
+  //  Moving Character with normal controls
   if (isCharacterSober) {
     if (keyIsDown(38)) {
       characterY = characterY - characterSpeed;
@@ -3136,6 +3152,7 @@ function draw() {
     }
   }
 
+  //Moving character with reversed controls
   if (isCharacterDrunk) {
     if (keyIsDown(40)) {
       characterY = characterY - characterSpeed;
@@ -3147,6 +3164,7 @@ function draw() {
       characterX = characterX + characterSpeed;
     }
   }
+
   // Timer ticking down to 0 and stopping
   if (counterActive) {
     if (countDown > 0) {
@@ -3155,11 +3173,12 @@ function draw() {
     }
   }
 
-  //Chasing wall going from left to right, game stops if the wall collides with the character
+  //Chasing wall going from left to right
   if (countDown === 0) {
     chasingBox();
     chasingWallX = chasingWallX + 10;
 
+    //game stops if the wall collides with the character
     if (chasingWallX + 1000 > characterX) {
       isCharacterSober = false;
       isCharacterDrunk = false;
@@ -3168,6 +3187,7 @@ function draw() {
     }
   }
 
+  //Defines what happens when loosing screen is true, reseting the game with spacebar
   if (losingScreen === true) {
     losingScreenFunction(350, 200);
     if (keyIsDown(32)) {

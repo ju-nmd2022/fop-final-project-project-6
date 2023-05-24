@@ -1,5 +1,4 @@
 // import { characterDown } from "./characterDown.js";
-
 function setup() {
   let cnv = createCanvas(1000, 600);
   let cnvX = (windowWidth - width) / 2;

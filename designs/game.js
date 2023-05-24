@@ -3026,11 +3026,13 @@ function draw() {
       counterActive = false;
       winningScreenActive = true;
       characterX = 1100;
+      chasingWallX = -1000;
     }
   }
 
   if (winningScreenActive) {
     winningScreenDisplay();
+    chasingWallX = -1000;
 
     if (characterX > 500) {
       characterX = characterX - 7;

@@ -1,3 +1,4 @@
+// Adding image into p5js https://p5js.org/reference/#/p5/image
 let logotype;
 function preload() {
   logotype = loadImage("logo.png");

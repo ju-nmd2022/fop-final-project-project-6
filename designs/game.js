@@ -1,8 +1,8 @@
-// Adding image into p5js https://p5js.org/reference/#/p5/image
 let logotype;
 function preload() {
   logotype = loadImage("logo.png");
 }
+
 function setup() {
   let cnv = createCanvas(1000, 600);
   let cnvX = (windowWidth - width) / 2;
@@ -2216,7 +2216,7 @@ function choseCharacter(boxX, boxY) {
   noStroke();
   fill(0, 0, 0, 200);
   rect(0, 0, 1000, 600);
-  image(logotype, 300, -30, 420, 250);
+  image(logotype, 320, -30, 400, 250);
   fill(60, 60, 60);
   rect(boxX + 0, boxY + 0, 300, 50);
   fill(70, 70, 70);

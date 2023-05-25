@@ -1,6 +1,8 @@
 //Logotype on the startscreen
 let logotype;
 let song;
+
+//Used p5.js website to add the song by adding the library
 function preload() {
   logotype = loadImage("logo.png");
   soundFormats("mp3");
@@ -2950,6 +2952,7 @@ let level3LeftWallArray = [
 
 let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];
 
+//Function that resets the game values for restart
 function gameRestart() {
   counterActive = true;
   donkWasPickedUp = false;

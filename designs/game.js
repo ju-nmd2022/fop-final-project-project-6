@@ -2971,6 +2971,9 @@ function gameRestart() {
   winningScreenActive = false;
   showKanelbulle = true;
   showBeer = true;
+  isCharacterDrunk = false;
+  isCharacterSober = true;
+  characterSpeed = 9;
   song.stop();
 }
 

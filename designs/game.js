@@ -19,7 +19,7 @@ function setup() {
 }
 
 //Values for counter
-let countDown = 750;
+let countDown = 600;
 let counterActive = false;
 
 //Values for ground and wall graphics
@@ -2959,7 +2959,7 @@ function gameRestart() {
   characterX = 185;
   characterY = 120;
   showDonk = true;
-  countDown = 750;
+  countDown = 600;
   chasingWallX = -1000;
   counterActive = false;
   losingScreen = false;

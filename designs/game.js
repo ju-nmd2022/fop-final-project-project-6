@@ -2946,7 +2946,6 @@ let level3LeftWallArray = [
 ];
 
 let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];
-
 //Draw function where the game plays
 function draw() {
   //Spreading out the ground tiles in a for loop, used checkerboard video from lectures

@@ -3183,7 +3183,6 @@ function draw() {
   if (counterActive) {
     if (countDown > 0) {
       countDown = countDown - 1;
-      console.log(countDown);
     }
   }
 

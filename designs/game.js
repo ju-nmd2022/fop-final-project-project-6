@@ -19,7 +19,7 @@ function setup() {
 }
 
 //Values for counter
-let countDown = 600;
+let countDown = 750;
 let counterActive = false;
 
 //Values for ground and wall graphics
@@ -3006,6 +3006,7 @@ function draw() {
       level2Active = true;
       characterX = 0;
       characterY = characterY - 20;
+      chasingWallX = -1000;
     }
   }
 
@@ -3038,6 +3039,7 @@ function draw() {
       level3Active = true;
       characterX = 0;
       characterY = 70;
+      chasingWallX = -1000;
     }
   }
 
@@ -3062,7 +3064,7 @@ function draw() {
         isCharacterDrunk = false;
         isCharacterSober = true;
         characterSpeed = 9;
-        countDown = countDown + 150;
+        countDown = countDown + 90;
       }
     }
 

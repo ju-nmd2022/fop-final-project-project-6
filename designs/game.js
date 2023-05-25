@@ -1,7 +1,10 @@
 //Logotype on the startscreen
 let logotype;
+let song;
 function preload() {
   logotype = loadImage("logo.png");
+  soundFormats("mp3");
+  song = loadSound("8bitsong");
 }
 
 //Creating the canvas for html
@@ -2946,6 +2949,28 @@ let level3LeftWallArray = [
 ];
 
 let level3RightWallArray = [level3RightOne, level3RightTwo, level3RightThree];
+
+function gameRestart() {
+  counterActive = true;
+  donkWasPickedUp = false;
+  characterX = 185;
+  characterY = 120;
+  showDonk = true;
+  countDown = 750;
+  chasingWallX = -1000;
+  counterActive = false;
+  losingScreen = false;
+  chosingCharacterPage = true;
+  blockingWallActive = true;
+  level1Active = true;
+  level2Active = false;
+  level3Active = false;
+  winningScreenActive = false;
+  showKanelbulle = true;
+  showBeer = true;
+  song.stop();
+}
+
 //Draw function where the game plays
 function draw() {
   //Spreading out the ground tiles in a for loop, used checkerboard video from lectures
@@ -3058,23 +3083,7 @@ function draw() {
 
       //Reseting the game with spacebar
       if (keyIsDown(32)) {
-        counterActive = true;
-        donkWasPickedUp = false;
-        characterX = 185;
-        characterY = 120;
-        showDonk = true;
-        countDown = 750;
-        chasingWallX = -1000;
-        counterActive = false;
-        losingScreen = false;
-        chosingCharacterPage = true;
-        blockingWallActive = true;
-        level1Active = true;
-        level2Active = false;
-        level3Active = false;
-        winningScreenActive = false;
-        showKanelbulle = true;
-        showBeer = true;
+        gameRestart();
       }
     }
   }
@@ -3111,6 +3120,7 @@ function draw() {
       shoeColor = [120, 50, 50];
       chosingCharacterPage = false;
       isCharacterSober = true;
+      song.play();
     }
     if (keyIsDown(50)) {
       shirtColor = [0, 0, 0];
@@ -3119,6 +3129,7 @@ function draw() {
       shoeColor = [0, 100, 200];
       chosingCharacterPage = false;
       isCharacterSober = true;
+      song.play();
     }
     if (keyIsDown(51)) {
       shirtColor = [255, 180, 255];
@@ -3127,6 +3138,7 @@ function draw() {
       shoeColor = [255, 255, 255];
       chosingCharacterPage = false;
       isCharacterSober = true;
+      song.play();
     }
   }
   //Displaying the story screen when donk item is picked up, then after starting the timer
@@ -3190,23 +3202,7 @@ function draw() {
   if (losingScreen === true) {
     losingScreenFunction(350, 200);
     if (keyIsDown(32)) {
-      counterActive = true;
-      donkWasPickedUp = false;
-      characterX = 185;
-      characterY = 120;
-      characterSpeed = 9;
-      showDonk = true;
-      countDown = 750;
-      chasingWallX = -1000;
-      counterActive = false;
-      losingScreen = false;
-      chosingCharacterPage = true;
-      blockingWallActive = true;
-      level1Active = true;
-      level2Active = false;
-      level3Active = false;
-      showKanelbulle = true;
-      showBeer = true;
+      gameRestart();
     }
   }
 }

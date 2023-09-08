@@ -2959,7 +2959,7 @@ function gameRestart() {
   characterX = 185;
   characterY = 120;
   showDonk = true;
-  countDown = 600;
+  countDown = 750;
   chasingWallX = -1000;
   counterActive = false;
   losingScreen = false;
